@@ -7,4 +7,62 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\Picture\Blizzard.png" />
+    <None Remove="Resources\Picture\Cloudy.png" />
+    <None Remove="Resources\Picture\Day.png" />
+    <None Remove="Resources\Picture\Downpour.png" />
+    <None Remove="Resources\Picture\Icon.png" />
+    <None Remove="Resources\Picture\Line.png" />
+    <None Remove="Resources\Picture\MorningEvening.png" />
+    <None Remove="Resources\Picture\Night.png" />
+    <None Remove="Resources\Picture\Rainy.png" />
+    <None Remove="Resources\Picture\Snow.png" />
+    <None Remove="Resources\Picture\Sunny.png" />
+    <None Remove="Resources\Picture\Thunderstorm.png" />
+    <None Remove="Resources\Picture\Wind.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Picture\Blizzard.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Picture\Cloudy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Picture\Day.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Picture\Downpour.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Picture\Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Picture\Line.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Picture\MorningEvening.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Picture\Night.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Picture\Rainy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Picture\Snow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Picture\Sunny.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Picture\Thunderstorm.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Picture\Wind.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>

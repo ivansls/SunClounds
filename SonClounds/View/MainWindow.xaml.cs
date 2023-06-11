@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SonClounds.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace SonClounds
         public MainWindow()
         {
             InitializeComponent();
+            PageFrame.Content = new First();
         }
     }
 }
