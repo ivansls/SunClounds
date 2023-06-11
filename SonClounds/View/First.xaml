@@ -20,7 +20,15 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Image Grid.Column="1" Source="/Resources/Picture/Line.png"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Image Grid.Column="1" Grid.Row="2" Grid.RowSpan="5" Source="/Resources/Picture/Line.png" Margin="0,0,0,20"/>
         </Grid>
 
         <Grid Grid.Column="0">
