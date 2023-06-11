@@ -7,4 +7,18 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\Picture\Day.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\Theme\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Picture\Day.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>

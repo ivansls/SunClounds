@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace pr7.ViewModel.Helpers
+namespace SonClounds.ViewModel.Helpers
 {
     internal class BindableCommand : ICommand
     {

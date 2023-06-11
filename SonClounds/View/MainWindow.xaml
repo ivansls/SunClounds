@@ -6,8 +6,10 @@
         xmlns:local="clr-namespace:SonClounds"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="/Resources/Picture/Day.png"/>
+    </Window.Background>
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="НИЧЕГО НЕ ТРОГАТЬ ДО ТОГО КАК НЕ ВЫДАДУТ ЗАДАНИЕ(СКАЧАЛИ МОЛОДЦЫ, А ПОКА СИДИМ И НЕ РЫПАЕМСЯ , ЖДЁМ КОМАНДУ, ПАРАЛЛЕЛЬНО ЧИТАЕМ ЛЕКЦИЮ ПО ГИТХАБУ И ЧИТАЕМ ТЗ (ВСЁ ПРИКРЕПЛЕННО К 10Й ПРАКТИЧЕСКОЙ)). " VerticalAlignment="Center" Height="313" Width="769" FontSize="22" Foreground="Red"/>
-
+        <Frame Content="{Binding framePage}"/>
     </Grid>
 </Window>
