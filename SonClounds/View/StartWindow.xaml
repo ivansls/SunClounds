@@ -1,0 +1,108 @@
+﻿<Window x:Class="SonClounds.View.StartWindow"
+        xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SonClounds.View"
+        mc:Ignorable="d"
+        
+        Title="" Height="450" Width="800" WindowStyle="None">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.6*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.18*"/>
+            <ColumnDefinition Width="0.25*"/>
+            <ColumnDefinition Width="0.05*"/>
+            <ColumnDefinition Width="0.05*"/>
+            <ColumnDefinition Width="0.05*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Column="4" Grid.Row="0">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Bd" Background="Transparent" BorderBrush="Transparent">
+                        <!--<Path x:Name="Pt" Data="M0,0 M0.2,0.2 L 0.8,0.8 M0.2,0.8 L0.8,0.2 M1,1"
+                      Stretch="Uniform" Stroke="#87B6CA" StrokeThickness="2"/>-->
+                        <Image Source="\\Mac\Home\Downloads\krest.png"></Image>
+
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="0">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Bd" Background="Transparent" BorderBrush="Transparent" Padding="3,3,3,3" VerticalAlignment="Center">
+                        <!--<Path Data="F0 M1,1 L0, 1 0 0 1, 0Z" StrokeThickness="2" Stroke="#87B6CA" Stretch="Uniform"/>-->
+                        <Image Source="\\Mac\Home\Downloads\Rectangle 13.png"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            
+        </Button>
+        <Button Grid.Column="2" Grid.Row="0">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Bd" Background="Transparent" BorderBrush="Transparent" Padding="5,5,5,5">
+                        <!--<Path  Data="M0,0 M20.0,0.9 L 100.0,0.9 M120,2" StrokeThickness="2" Stroke="#87B6CA" Stretch="Uniform"/>-->
+                        <Image Source="\\Mac\Home\Downloads\Vector 45.png" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            
+        </Button>
+        <Grid Grid.Column="1" Grid.Row="2">
+            <Grid.Background>
+                <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
+            </Grid.Background>
+            <Border
+            HorizontalAlignment="Right"
+            Grid.Row="2"
+            
+            Grid.Column="1"
+            BorderBrush="#F8C5B4"
+            BorderThickness="0.5"
+            Opacity="0.6"
+            >
+                <Border.Effect>
+                    <DropShadowEffect Direction="1000" ShadowDepth="3"  BlurRadius="3"/>
+                </Border.Effect>
+            </Border>
+
+            <Border
+            HorizontalAlignment="Left"
+            Grid.Row="2"
+            
+            Grid.Column="1"
+            BorderBrush="#F8C5B4"
+            BorderThickness="0.5"
+            Opacity="0.6"
+            >
+                <Border.Effect>
+                    <DropShadowEffect Direction="1310" ShadowDepth="3"  BlurRadius="3"/>
+                </Border.Effect>
+            </Border>
+
+            <Border
+            VerticalAlignment="Bottom"
+            Grid.Row="2"
+            
+            Grid.Column="1"
+            BorderBrush="#F8C5B4"
+            BorderThickness="0.5"
+            Opacity="0.6"
+            >
+                <Border.Effect>
+                    <DropShadowEffect Direction="1287" ShadowDepth="2"  BlurRadius="3"/>
+                </Border.Effect>
+            </Border>
+        </Grid>
+
+    </Grid> 
+</Window>
