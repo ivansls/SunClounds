@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Font\Jura-Regular.ttf" />
     <None Remove="Resources\Picture\Blizzard.png" />
     <None Remove="Resources\Picture\Cloudy.png" />
     <None Remove="Resources\Picture\Day.png" />
@@ -24,6 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\Font\Jura-Regular.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Picture\Blizzard.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
