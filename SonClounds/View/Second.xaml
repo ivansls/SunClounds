@@ -5,18 +5,20 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SonClounds"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="850" d:DesignWidth="1500" MinWidth="438" MinHeight="274"
       Title="Second">
-    
-    
-     
+
+
+
     <Grid >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition  Width="3*"/>
+            <ColumnDefinition Width="438px"/>
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        
 
-
+        
+        
         <Grid Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.4*"/>
@@ -34,59 +36,63 @@
             <Image Grid.Column="1" Grid.Row="2" Grid.RowSpan="5" Source="/Resources/Picture/Line.png" Margin="0,0,0,20"/>
         </Grid>
 
-        <Grid Grid.Column="0">
+        <Grid Grid.Column="0" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.3*"/>
-                <RowDefinition/>
+                <RowDefinition Height="68.5"/>
+                <RowDefinition Height="205.5"/>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Text="Северобайкальск" TextAlignment="Center" Margin="5" FontFamily="/Resources/Font/Jura-Regular.ttf" Foreground="#3D95B9" FontSize="20"/>
-            <Separator VerticalAlignment="Bottom" Background="#3D95B9"/>
+            <TextBlock Text="Северобайкальск" VerticalAlignment="Bottom" TextAlignment="Center" Margin="5" FontFamily="/Resources/Font/#Jura" Foreground="#3D95B9" FontSize="36px" FontWeight="Bold"/>
+            <Separator VerticalAlignment="Bottom" Background="#3D95B9" Width="404.5" Height="3px">
+                <Separator.RenderTransform>
+                    <ScaleTransform ScaleY="3" />
+                </Separator.RenderTransform>
+            </Separator>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.4*"/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="123"/>
+                    <ColumnDefinition Width="212"/>
                 </Grid.ColumnDefinitions>
                 <Image  Source="/Resources/Picture/Sunny.png" Grid.Column="1"/>
-                <TextBlock TextWrapping="Wrap" Grid.Column="2" Text="Ясно.21° Ощущается как 25°" FontFamily="/Resources/Font/Jura-Regular.ttf"  VerticalAlignment="Center" Foreground="#3D95B9" Margin="8,0,5,0" TextAlignment="Right" FontSize="16"/>
+                <TextBlock TextWrapping="Wrap" Grid.Column="2" Text="Ясно.21° Ощущается как 25°" FontFamily="/Resources/Font/#Jura"  VerticalAlignment="Center" Foreground="#3D95B9" Margin="0,0,10,0" TextAlignment="Right" FontSize="26" FontWeight="Bold"/>
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.5*"/>
-                    <ColumnDefinition Width="0.4*"/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="132"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="224"/>
                 </Grid.ColumnDefinitions>
-                <Label Content="16:00" VerticalAlignment="Center"  Foreground="#3D95B9" HorizontalAlignment="Center"/>
+                <Label Content="16:00" VerticalAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="20" Foreground="#3D95B9" HorizontalAlignment="Center" FontWeight="Bold"/>
                 <Image  Source="/Resources/Picture/Sunny.png"  Grid.Column="1" VerticalAlignment="Center"/>
-                <TextBlock TextWrapping="Wrap" Grid.Column="2" Text="Ясно.21° Ощущается как 25°" FontFamily="/Resources/Font/Jura-Regular.ttf" VerticalAlignment="Center" Foreground="#3D95B9" Margin="10,0,0,0"/>
+                <TextBlock TextWrapping="Wrap" Grid.Column="2" Text="Ясно.21° Ощущается как 25°" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Center" Foreground="#3D95B9" FontSize="20px" Margin="10,0,0,0" FontWeight="Bold"/>
             </Grid>
             <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.5*"/>
-                    <ColumnDefinition Width="0.4*"/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="132"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="224"/>
                 </Grid.ColumnDefinitions>
-                <Label Content="17:00"  VerticalAlignment="Center" Foreground="#3D95B9" HorizontalAlignment="Center"/>
+                <Label Content="17:00"  VerticalAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="20px" Foreground="#3D95B9" HorizontalAlignment="Center" FontWeight="Bold"/>
                 <Image  Source="/Resources/Picture/Rainy.png" Grid.Column="1" VerticalAlignment="Center"/>
-                <TextBlock TextWrapping="Wrap" Grid.Column="2" Text="Переменная облачность.20°. Ощущатеся как 19°" FontFamily="/Resources/Font/Jura-Regular.ttf" VerticalAlignment="Center" Foreground="#3D95B9" Margin="10,0,0,0"/>
+                <TextBlock TextWrapping="Wrap" Grid.Column="2" Text="Переменная облачность.20°. Ощущатеся как 19°" FontSize="20px" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Center" Foreground="#3D95B9" Margin="10,0,0,0" FontWeight="Bold"/>
             </Grid>
             <Grid Grid.Row="4">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.5*"/>
-                    <ColumnDefinition Width="0.4*"/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="132"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="224"/>
                 </Grid.ColumnDefinitions>
-                <Label Content="18:00" VerticalAlignment="Center" Foreground="#3D95B9" HorizontalAlignment="Center"/>
+                <Label Content="18:00" VerticalAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="20px" Foreground="#3D95B9" HorizontalAlignment="Center" FontWeight="Bold"/>
                 <Image  Source="/Resources/Picture/Snow.png" Grid.Column="1" VerticalAlignment="Center"/>
-                <TextBlock TextWrapping="Wrap" Grid.Column="2" Text="Дождь.19°.Ощущается как 15°" FontFamily="/Resources/Font/Jura-Regular.ttf" VerticalAlignment="Center" Foreground="#3D95B9" Margin="10,0,0,0"/>
+                <TextBlock TextWrapping="Wrap" Grid.Column="2" Text="Дождь.19°.Ощущается как 15°" FontSize="20px" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Center" Foreground="#3D95B9" Margin="10,0,0,0" FontWeight="Bold"/>
             </Grid>
         </Grid>
-    
 
-        <Grid Grid.Column="2">
+
+        <Grid Grid.Column="2" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition  />
                 <RowDefinition   />
@@ -96,131 +102,149 @@
             </Grid.RowDefinitions>
 
         </Grid>
-
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="0.25*"/>
-                <RowDefinition  Height="0.4*"/>
-                <!--Можно поставить 0.3-->
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
-
-            <!--Верхние кнопки-->
-            <Grid Margin="20,0,20,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Button Content="Погода" HorizontalContentAlignment="Left" Margin="10,0,0,0" FontFamily="/Resources/Font/Jura-Regular.ttf" Background="#0000" BorderThickness="0" FontSize="20" Foreground="White" />
-                <Button Content="Настройки" HorizontalContentAlignment="Right" Grid.Column="1" FontFamily="/Resources/Font/Jura-Regular.ttf" Margin="0,0,10,0" Background="#0000" BorderThickness="0" FontSize="20" Foreground="White"/>
-            </Grid>
-
-
-            <!--Какие-то параметры-->
-            <Grid Grid.Row="1" Margin="20,10,24,10">
-                <!--<Grid.Background>
-                    <SolidColorBrush Color="#FFF8C5B4" Opacity="0.6"/>
-                </Grid.Background>-->
+        <ScrollViewer Grid.Column="1" Grid.Row="1">
+            <Grid >
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="2*"/>
-                    <RowDefinition/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition  Height="120"/>
+                    <!--Можно поставить 0.3-->
+                    <RowDefinition  Height="325"/>
+                    <RowDefinition Height="325"/>
                 </Grid.RowDefinitions>
-                
-
-                <!--Вертикальная черта-->
-                
 
 
-                <!--Параметры-->
-                <TextBlock Text="Ваш oсновной город" Grid.Row="0" FontSize="15px" Grid.Column="2" FontFamily="/Resources/Font/Jura-Regular.ttf" HorizontalAlignment="Center" Foreground="White"/>
-                <TextBlock Text="Северобайкальск" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Center" FontFamily="/Resources/Font/Jura-Regular.ttf" FontSize="10px" Background="#7F3D95B9" Foreground="White"/>
-
-
-                <!--Значение параметров-->
-                
-            </Grid>
-
-
-            <!--Штука с пользовательскими элементами-->
-            <Grid Grid.Row="2" Margin="20,10,20,10">
-                
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition Height="2*"/>
-                </Grid.RowDefinitions>
-                <!--Для просмотра можно расскоментить-->
-                <TextBlock Text="Избранные города:" FontSize="15px" HorizontalAlignment="Center" FontFamily="/Resources/Font/Jura-Regular.ttf" VerticalAlignment="Center" Foreground="White"/>
-                <ListBox x:Name="UserEl" Background="#7FF8C5B4" Grid.Row="1" BorderBrush="#7FF8C5B4" >
-                    <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <VirtualizingStackPanel IsItemsHost="True" Orientation="Horizontal"/>
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                </ListBox>
-
-
-            </Grid>
-
-            <Grid Grid.Row="3" Margin="20,10,20,10">
-                
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <!--Тут хз сколько ставить-->
-                    <RowDefinition Height="8*"/>
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                
-
-                <Grid Grid.Row="0">
+                <!--Верхние кнопки-->
+                <Grid Margin="20,0,20,0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="4*"/>
                         <ColumnDefinition/>
-
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <TextBox Text="Название города" Grid.ColumnSpan="4" FontFamily="/Resources/Font/Jura-Regular.ttf" FontSize="10px" Grid.Column="0" Background="#7F3D95B9" TextAlignment="Center" Foreground="White" BorderBrush="#7F3D95B9"/>
-                    <Button  Grid.Column="4" FontSize="10px" Background="#87B6CA" Foreground="White" VerticalAlignment="Center">
-                        <TextBlock Text="Добавить город" FontFamily="/Resources/Font/Jura-Regular.ttf" VerticalAlignment="Center"/>
-                    </Button>
-                </Grid>
-                <!--Кнопки-->
-                
-                <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="0,20,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition />
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+                    <Button Content="Погода" HorizontalContentAlignment="Left" VerticalAlignment="Bottom" FontFamily="/Resources/Font/#Jura" Background="#0000" BorderThickness="0" FontSize="36px" Foreground="White" />
+                    <Button Content="Настройки" HorizontalContentAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1" FontFamily="/Resources/Font/#Jura" Background="#0000" BorderThickness="0" FontSize="36px" Foreground="White"/>
+                    
+                    <Separator VerticalAlignment="Top" Grid.Row="1" HorizontalAlignment="Left" Width="465.5" Height="3px" Background="White">
+                        <Separator.RenderTransform>
+                            <ScaleTransform ScaleY="3" />
+                        </Separator.RenderTransform>
+                    </Separator>
+                    <Separator VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Width="465.5" Height="3px" Background="White">
+                        <Separator.RenderTransform>
+                            <ScaleTransform ScaleY="3" />
+                        </Separator.RenderTransform>
+                    </Separator>
+                    
+                </Grid>
+
+
+                <!--Какие-то параметры-->
+                <Grid Grid.Row="1" Margin="20,10,24,10">
+                    <!--<Grid.Background>
+                            <SolidColorBrush Color="#FFF8C5B4" Opacity="0.6"/>
+                        </Grid.Background>-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="52"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+
+
+                    <!--Вертикальная черта-->
+
+
+
+                    <!--Параметры-->
+                    <TextBlock Text="Ваш oсновной город" Grid.Row="0" FontSize="28px" Grid.Column="2" FontFamily="/Resources/Font/#Jura" HorizontalAlignment="Center" Foreground="White"/>
+                    <TextBlock Text="Северобайкальск" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="15px" Background="#7F3D95B9" Foreground="White"/>
+
+
+                    <!--Значение параметров-->
+
+                </Grid>
+
+
+                <!--Штука с пользовательскими элементами-->
+
+                <Grid Grid.Row="2" Margin="20,10,20,10">
+
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
                         <RowDefinition Height="2*"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Text="Исчисление градусов:" Grid.ColumnSpan="2" FontFamily="/Resources/Font/Jura-Regular.ttf" FontSize="15px" TextAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
-                    <Grid Grid.Row="1" Margin="0,10,0,0" VerticalAlignment="Top">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="1.5*"/>
-                            <ColumnDefinition Width="0.5*"/>
-                            <ColumnDefinition Width="1.5*"/>
-                            <ColumnDefinition Width="2*"/>
-                        </Grid.ColumnDefinitions>
-                        <Rectangle Fill="#7F3D95B9" Grid.Column="1" />
-                        <Rectangle Fill="#7F3D95B9" Grid.Column="3" />
-                        <RadioButton Content="Цельсий С" Grid.Column="1" Grid.Row="1" FontFamily="/Resources/Font/Jura-Regular.ttf" VerticalAlignment="Top"  Foreground="White" />
-                        <RadioButton Content="Фарингейт F" Grid.Column="3" Grid.Row="1" FontFamily="/Resources/Font/Jura-Regular.ttf" VerticalAlignment="Top" Foreground="White" />
-                        
-                    </Grid>
-                    
+                    <TextBlock Text="Избранные города:" FontSize="28px" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Center" Foreground="White"/>
+
+
+
+                    <WrapPanel x:Name="UserEl" Background="#7FF8C5B4" Grid.Row="1"  />
+
+
+
+
+
 
                 </Grid>
 
-                <Button  Grid.Row="2" Background="#7F3D95B9" FontSize="10px" Foreground="#7FFFFFFF" BorderBrush="#7F3D95B9">
-                    <TextBlock Text="Сохранить" VerticalAlignment="Center" FontFamily="/Resources/Font/Jura-Regular.ttf" Foreground="#FFFFFFFF"/>
-                </Button>
+                <Grid Grid.Row="3" Margin="20,10,20,10">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <!--Тут хз сколько ставить-->
+                        <RowDefinition Height="8*"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition/>
+
+                        </Grid.ColumnDefinitions>
+                        <TextBox Text="Название города" Grid.ColumnSpan="4" FontFamily="/Resources/Font/#Jura" FontSize="15px" Grid.Column="0" VerticalAlignment="Center" Background="#7F3D95B9" TextAlignment="Center" Foreground="White" BorderBrush="#7F3D95B9"/>
+                        <Button  Grid.Column="4" FontSize="15px" Background="#87B6CA" Foreground="White" VerticalAlignment="Center" BorderBrush="{x:Null}">
+                            <TextBlock Text="Добавить город" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Center"/>
+                        </Button>
+                    </Grid>
+                    <!--Кнопки-->
+
+                    <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="0,20,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Исчисление градусов:" Grid.ColumnSpan="2" FontFamily="/Resources/Font/#Jura" FontSize="28px" TextAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
+                        <Grid Grid.Row="1" Margin="0,10,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="1.5*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="1.5*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Rectangle Fill="#7F3D95B9" Grid.Column="1" />
+                            <Rectangle Fill="#7F3D95B9" Grid.Column="3" />
+                            <RadioButton Content="Цельсий С" Grid.Column="1" FontSize="15px" Grid.Row="1" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Top"  Foreground="White" />
+                            <RadioButton Content="Фарингейт F" Grid.Column="3" FontSize="15px" Grid.Row="1" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Top" Foreground="White" />
+
+                        </Grid>
+
+
+                    </Grid>
+
+                    <Button  Grid.Row="2" Content="Сохранить" VerticalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#FFFFFFFF" Background="#7F3D95B9" FontSize="15px"  BorderBrush="#7F3D95B9"/>
+
+                </Grid>
+       
             </Grid>
-            
-            
-        </Grid>
+        </ScrollViewer>
 
 
     </Grid>
-    
-    
+
+
 </Page>

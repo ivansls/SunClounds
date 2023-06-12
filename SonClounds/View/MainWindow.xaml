@@ -5,11 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SonClounds"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="" WindowStyle="None" Height="850" Width="1500" MinWidth="438" MinHeight="274">
     <Window.Background>
         <ImageBrush ImageSource="/Resources/Picture/Day.png"/>
     </Window.Background>
     <Grid>
-        <Frame Content="{Binding framePage}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="38"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+            
+        <Grid Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,14,0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="15"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="4" Source="/Resources/Picture/krest.png" VerticalAlignment="Center"/>
+            <Image Grid.Column="0" Source="/Resources/Picture/minus.png" VerticalAlignment="Center" />
+            <Image Grid.Column="2" Source="/Resources/Picture/Rectangle.png" VerticalAlignment="Center" />
+        </Grid>
+        <Frame Grid.Row="1" Content="{Binding framePage}"/>
     </Grid>
 </Window>
