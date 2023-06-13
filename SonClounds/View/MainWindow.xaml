@@ -18,9 +18,91 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        
+        
+        
+        
+        
+         <Grid Grid.Column="0" Grid.Row="0" Grid.RowSpan="3">
+            <Grid.Effect>
+                <DropShadowEffect ShadowDepth="4" Opacity="0.2"/>
+            </Grid.Effect>
+            <Grid.Background>
+                <SolidColorBrush Color="#FFF8C5B4" Opacity="0.3"/>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*"/>
+                <ColumnDefinition Width="0.24*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Image Grid.Column="1" Grid.Row="2" Grid.RowSpan="5" Source="/Resources/Picture/Line.png" Margin="0,0,0,20"/>
+        </Grid>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="68.5"/>
+                <RowDefinition Height="205.5"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="{Binding City}" TextAlignment="Center" Margin="5" FontFamily="/Resources/Font/#Jura" Foreground="#3D95B9" FontSize="36"/>
+            <!--Не уверен с цветами-->
+            <Separator VerticalAlignment="Bottom" Background="#3D95B9"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.43*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Icon1}" Grid.Column="1" Width="123" Height="123" />
+                <TextBlock TextWrapping="Wrap" Grid.Column="2" Text="{Binding Text1}" FontFamily="/Resources/Font/#Jura"  VerticalAlignment="Center" Foreground="#3D95B9" Margin="10,0,30,0" TextAlignment="Right" FontSize="26"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*"/>
+                    <ColumnDefinition Width="0.24*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Content="{Binding Time1}" VerticalAlignment="Center"  Foreground="#3D95B9" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="20" Margin="10,0,0,0"/>
+                <Image  Source="{Binding Icon2}"  Grid.Column="1" VerticalAlignment="Center" Width="60" Height="60"/>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Left" Grid.Column="2" Text="{Binding Text2}" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Center" Foreground="#3D95B9" Margin="10,0,45,0" FontSize="20"/>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*"/>
+                    <ColumnDefinition Width="0.24*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Content="{Binding Time2}"  VerticalAlignment="Center" Foreground="#3D95B9" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="20"/>
+                <Image  Source="{Binding Icon3}" Grid.Column="1" VerticalAlignment="Center" Width="60" Height="60"/>
+                <TextBlock TextWrapping="Wrap" Grid.Column="2" Text="{Binding Text3}" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Center" Foreground="#3D95B9"  Margin="10,0,45,0" FontSize="20"/>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*"/>
+                    <ColumnDefinition Width="0.24*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Content="{Binding Time3}" VerticalAlignment="Center" Foreground="#3D95B9" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="20"/>
+                <Image  Source="{Binding Icon4}" Grid.Column="1" VerticalAlignment="Center" Width="60"  Height="60"/>
+                <TextBlock TextWrapping="Wrap" Grid.Column="2" Text="{Binding Text4}" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Center" Foreground="#3D95B9"  Margin="10,0,45,0" FontSize="20"/>
+            </Grid>
+        </Grid>
+        
+        
+        
+        
 
         <Grid Grid.Row="1" Grid.Column="1" Margin="20,0,20,0">
             <Grid.ColumnDefinitions>

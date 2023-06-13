@@ -38,7 +38,7 @@ namespace SonClounds.ViewModel
             }
         }
 
-
+       
 
         public SecondViewModel()
         {
@@ -69,6 +69,7 @@ namespace SonClounds.ViewModel
         private void Add_City()
         {
             MessageBox.Show("add");
+            
         }
 
 

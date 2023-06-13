@@ -1,4 +1,5 @@
 ﻿using SonClounds;
+using SonClounds.View;
 using SonClounds.ViewModel.Helpers;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -9,7 +10,7 @@ namespace SunClounds.ViewModel
     internal class MainViewModel : BindingHelper
     {
         
-        private static Page Frame_Page = new Second();
+        private static Page Frame_Page = new First();
 
        
 
