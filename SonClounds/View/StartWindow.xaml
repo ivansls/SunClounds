@@ -19,59 +19,67 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.1*" MinHeight="20"/>
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition />
             <RowDefinition Height="158"/>
-            <RowDefinition Height="0.6*"/>
+            <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.09*"/>
+            <ColumnDefinition/>
             <ColumnDefinition Width="206"/>
-            <ColumnDefinition Width="0.03*"/>
-            <ColumnDefinition Width="0.03*"/>
-            <ColumnDefinition Width="0.03*"/>
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Column="4" Grid.Row="0">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border x:Name="Bd" Background="Transparent" BorderBrush="Transparent">
-                        <!--<Path x:Name="Pt" Data="M0,0 M0.2,0.2 L 0.8,0.8 M0.2,0.8 L0.8,0.2 M1,0"
-                      Stretch="Uniform" Stroke="#87B6CA" StrokeThickness="4"/>-->
-                        <Image Source="\\Mac\Home\Downloads\krest.png" Stretch="Uniform" Width="25" Height="15"></Image>
+        <Grid Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,14,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="22"/>
+                <ColumnDefinition Width="13"/>
+                <ColumnDefinition Width="18"/>
+                <ColumnDefinition Width="13"/>
+                <ColumnDefinition Width="15"/>
+            </Grid.ColumnDefinitions>
+        
+            <Button Grid.Column="4" Grid.Row="0" Command="{Binding CloseCommand}">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd" Background="Transparent" BorderBrush="Transparent">
+                            <!--<Path x:Name="Pt" Data="M0,0 M0.2,0.2 L 0.8,0.8 M0.2,0.8 L0.8,0.2 M1,0"
+                          Stretch="Uniform" Stroke="#87B6CA" StrokeThickness="4"/>-->
+                            <Image Source="\\Mac\Home\Downloads\krest.png" Stretch="Uniform" VerticalAlignment="Center" Width="12" Height="12"></Image>
 
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-        <Button Grid.Column="3" Grid.Row="0">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border x:Name="Bd" Background="Transparent" BorderBrush="Transparent" Padding="3,3,3,3" VerticalAlignment="Center">
-                        <!--<Path Data="F0 M1,1 L0, 1 0 0 1, 0Z" StrokeThickness="2" Stroke="#87B6CA" Stretch="Uniform"/>-->
-                        <Image Source="\\Mac\Home\Downloads\Rectangle 13.png" Stretch="Uniform" Width="25" Height="15"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Grid.Column="2" Grid.Row="0" Command="{Binding AllScreenCommand}">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd" Background="Transparent" BorderBrush="Transparent" Padding="3,3,3,3" VerticalAlignment="Center">
+                            <!--<Path Data="F0 M1,1 L0, 1 0 0 1, 0Z" StrokeThickness="2" Stroke="#87B6CA" Stretch="Uniform"/>-->
+                            <Image Source="\\Mac\Home\Downloads\Rectangle 13.png" Stretch="Uniform" VerticalAlignment="Center" Width="12" Height="12"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
 
-        </Button>
-        <Button Grid.Column="2" Grid.Row="0">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border x:Name="Bd" Background="Transparent" BorderBrush="Transparent" Padding="5,5,5,5">
-                        <!--<Path  Data="M0,0 M50.0,0.9 L 90.0,0.9 M120,2" StrokeThickness="3" Stroke="#87B6CA" Stretch="Uniform"/>-->
-                        <Image Source="\\Mac\Home\Downloads\Vector 45.png" Stretch="Uniform" Width="25"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
+            </Button>
+            <Button Grid.Column="0" Grid.Row="0" Command="{Binding LessCommand}">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd" Background="Transparent" BorderBrush="Transparent" Padding="5,5,5,5">
+                            <!--<Path  Data="M0,0 M50.0,0.9 L 90.0,0.9 M120,2" StrokeThickness="3" Stroke="#87B6CA" Stretch="Uniform"/>-->
+                            <Image Source="\\Mac\Home\Downloads\Vector 45.png" Stretch="Uniform" VerticalAlignment="Center" Width="12" Height="12"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
 
+            </Button>
+        </Grid>
         <Border Grid.Column="1" Grid.Row="2" BorderBrush="#F8C5B4" Opacity="0.5" BorderThickness="1">
             <Border.Effect>
                 <DropShadowEffect Color="Black"/>
             </Border.Effect>
         </Border>
-        <Grid Grid.Column="1" Grid.Row="2" Width="206" Height="158">
+        <Grid Grid.Column="1" Grid.Row="2">
             <Grid.Background>
                 <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
             </Grid.Background>
@@ -91,7 +99,7 @@
                     <SolidColorBrush Color="#87B6CA" Opacity="0.5"/>
                 </TextBox.Background>
             </TextBox>
-            <Button Grid.Column="2" Content="X" Grid.Row="2" BorderBrush="Transparent" Visibility="Hidden">
+            <Button Grid.Column="2" Content="X" Grid.Row="2" BorderBrush="Transparent" Visibility="Visible">
                 <Button.Background>
                     <SolidColorBrush Color="#87B6CA" Opacity="0"/>
                 </Button.Background>
