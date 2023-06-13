@@ -86,13 +86,13 @@
                 <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
             </Grid.Background>
 
-            <TextBlock Text="SunClouds" Grid.Column="0" Grid.Row="0" TextAlignment="Center" VerticalAlignment="Center" FontSize="20px" Grid.ColumnSpan="4" Foreground="White"/>
+            <TextBlock Text="SunClouds" Grid.Column="0" Grid.Row="0" TextAlignment="Center" VerticalAlignment="Center" FontSize="{Binding TitleFontSize}" Grid.ColumnSpan="4" Foreground="White"/>
             <Separator HorizontalAlignment="Stretch" VerticalAlignment="Top" Foreground="White" Background="White" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Opacity="0.5">
                 <Separator.RenderTransform>
                     <ScaleTransform ScaleY="1"/>
                 </Separator.RenderTransform>
             </Separator>
-            <Button Grid.Column="1" Content="Узнать погоду" Grid.Row="4" Grid.ColumnSpan="2" BorderBrush="#87B6CA" FontSize="15px" FontWeight="Normal" Command="{Binding NowWeatherCommand}">
+            <Button Grid.Column="1" Content="Узнать погоду" Grid.Row="4" Grid.ColumnSpan="2" BorderBrush="#87B6CA" FontSize="{Binding BaseFontSize}" FontWeight="Normal" Command="{Binding NowWeatherCommand}">
                 <Button.Background>
                     <SolidColorBrush Color="#87B6CA"/>
                 </Button.Background>
@@ -100,7 +100,7 @@
                     <SolidColorBrush Color="White"/>
                 </Button.Foreground>
             </Button>
-            <TextBox x:Name="CityTxb" Grid.Column="1" Grid.Row="2" Text="{Binding City}"  TextAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="15px" FontWeight="Normal" HorizontalAlignment="Stretch">
+            <TextBox x:Name="CityTxb" Grid.Column="1" Grid.Row="2" Text="{Binding City}" FlowDirection="RightToLeft" TextAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="{Binding BaseFontSize}" FontWeight="Normal" HorizontalAlignment="Stretch">
                 <TextBox.Background>
                     <SolidColorBrush Color="#87B6CA" Opacity="0.5"/>
                 </TextBox.Background>
@@ -118,7 +118,7 @@
                     <SolidColorBrush Color="#87B6CA"/>
                 </Border.Background>
             </Border>
-            <Button Grid.Column="2" Grid.Row="2" Command="{Binding ClearAllTextCommand}" Visibility="{Binding Visibility}" Content="X">
+            <Button Grid.Column="2" Grid.Row="2" Command="{Binding ClearAllTextCommand}" Visibility="{Binding Visibility}" Content="X" FontSize="{Binding BaseFontSize}">
                 <Button.Background>
                     <SolidColorBrush Color="#87B6CA" Opacity="0"/>
                 </Button.Background>

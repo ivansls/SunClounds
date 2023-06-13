@@ -58,6 +58,32 @@ namespace SonClounds.ViewModel
                 OnPropertyChenged();
             }
         }
+        private int titlefontsize { get; set; } = 20;
+        public int TitleFontSize
+        {
+            get
+            {
+                return titlefontsize;
+            }
+            set
+            {
+                titlefontsize = value;
+                OnPropertyChenged();
+            }
+        }
+        private int basefontsize { get; set; } = 15;
+        public int BaseFontSize
+        {
+            get
+            {
+                return basefontsize;
+            }
+            set
+            {
+                basefontsize = value;
+                OnPropertyChenged();
+            }
+        }
         
         #endregion
         public StartWindowViewModel() 
@@ -84,7 +110,6 @@ namespace SonClounds.ViewModel
         public void NowWeather()
         {
             //переход на второе окно с погодой, возможно, передача каких-то параметров
-            MessageBox.Show("ghghgh");
         }
         public void CloseWindow()
         {
@@ -94,6 +119,8 @@ namespace SonClounds.ViewModel
         {
             W_S = WindowState.Maximized;
             flag = false;
+            TitleFontSize = 40;
+            BaseFontSize = 30;
         }
         public void OpenLessWindow()
         {
@@ -101,6 +128,8 @@ namespace SonClounds.ViewModel
             {
                 W_S = WindowState.Normal;
                 flag = true;
+                TitleFontSize = 20;
+                BaseFontSize = 15;
             }
             else
             {
