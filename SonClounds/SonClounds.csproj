@@ -14,10 +14,13 @@
     <None Remove="Resources\Picture\Day.png" />
     <None Remove="Resources\Picture\Downpour.png" />
     <None Remove="Resources\Picture\Icon.png" />
+    <None Remove="Resources\Picture\krest.png" />
     <None Remove="Resources\Picture\Line.png" />
+    <None Remove="Resources\Picture\minus.png" />
     <None Remove="Resources\Picture\MorningEvening.png" />
     <None Remove="Resources\Picture\Night.png" />
     <None Remove="Resources\Picture\Rainy.png" />
+    <None Remove="Resources\Picture\Rectangle.png" />
     <None Remove="Resources\Picture\Snow.png" />
     <None Remove="Resources\Picture\Sunny.png" />
     <None Remove="Resources\Picture\Thunderstorm.png" />
@@ -43,7 +46,13 @@
     <Resource Include="Resources\Picture\Icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Picture\krest.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Picture\Line.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Picture\minus.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Picture\MorningEvening.png">
@@ -53,6 +62,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Picture\Rainy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Picture\Rectangle.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Picture\Snow.png">

@@ -24,7 +24,7 @@ namespace SonClounds
         public MainWindow()
         {
             InitializeComponent();
-            PageFrame.Content = new First();
+            
         }
     }
 }
