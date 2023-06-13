@@ -18,6 +18,7 @@ namespace SonClounds.ViewModel
         public BindableCommand AllScreenCommand { get; set; }
         public BindableCommand TextStartedChangingCommand { get; set; }
         public BindableCommand ClearAllTextCommand { get; set; }
+        public BindableCommand NowWeatherCommand { get; set; }
         #endregion
         #region Svoystava
         private WindowState Window_State = new WindowState();
@@ -31,26 +32,60 @@ namespace SonClounds.ViewModel
                 OnPropertyChenged();
             }
         }
+        private string city { get; set; }
+        public string City
+        {
+            get
+            {
+                return city;
+            }
+            set
+            {
+                city = value;
+                OnPropertyChenged();
+            }
+        }
+        private Visibility visibility { get; set; }
+        public Visibility Visibility
+        {
+            get
+            {
+                return visibility;
+            }
+            set
+            {
+                visibility = value;
+                OnPropertyChenged();
+            }
+        }
+        
         #endregion
         public StartWindowViewModel() 
-        { 
+        {
+            Visibility = Visibility.Hidden;
+            City = "Ваш город";
             CloseCommand= new BindableCommand(_ => CloseWindow());
             AllScreenCommand = new BindableCommand(_ => OpenWideWindow());
             LessCommand = new BindableCommand(_ => OpenLessWindow());
             TextStartedChangingCommand = new BindableCommand(_ => TextChanging());
             ClearAllTextCommand = new BindableCommand(_ => ClearText());
+            NowWeatherCommand = new BindableCommand(_ => NowWeather());
 
         }
 
         public void TextChanging()
         {
-            //
+            Visibility = Visibility.Visible;
         }
         public void ClearText() 
-        { 
-            //
+        {
+            City = "";
         }
-
+        public void NowWeather()
+        {
+            //переход на второе окно с погодой, возможно, передача каких-то параметров
+            MessageBox.Show("ghghgh");
+        }
         public void CloseWindow()
         {
             Application.Current.Shutdown();
