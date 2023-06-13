@@ -85,7 +85,7 @@
                         </Grid.ColumnDefinitions>
 
 
-                        <TextBox MouseDoubleClick="{Binding Clear}" Text="{Binding TextCity}" Grid.ColumnSpan="0"   FontFamily="/Resources/Font/#Jura" FontSize="15px" Grid.Column="0" Background="#7F3D95B9" TextAlignment="Center" Foreground="White" BorderBrush="#7F3D95B9" VerticalAlignment="Center"/>
+                        <TextBox Text="{Binding TextCity}" FontFamily="/Resources/Font/#Jura" FontSize="15px" Grid.Column="0" Background="#7F3D95B9" TextAlignment="Center" Foreground="White" BorderBrush="#7F3D95B9" VerticalAlignment="Center"/>
 
                         <Button Style="{DynamicResource ButtonST}" Content="X" Command="{Binding Clear}"  Grid.Column="1" FontSize="15px" Background="#7F3D95B9" Foreground="White" VerticalAlignment="Center" BorderBrush="{x:Null}" Padding="0,0,0,0"/>
 
