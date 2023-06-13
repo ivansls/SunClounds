@@ -8,12 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Recources\Font\Jura-Regular.ttf" />
     <None Remove="Recources\Picture\krest.png" />
     <None Remove="Recources\Picture\minus.png" />
     <None Remove="Recources\Picture\Rectangle.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Recources\Font\Jura-Regular.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Recources\Picture\Day.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -26,10 +30,6 @@
     <Resource Include="Recources\Picture\Rectangle.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Recources\Font\" />
   </ItemGroup>
 
   <ItemGroup>

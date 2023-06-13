@@ -46,8 +46,6 @@
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="Bd" Background="Transparent" BorderBrush="Transparent">
-                            <!--<Path x:Name="Pt" Data="M0,0 M0.2,0.2 L 0.8,0.8 M0.2,0.8 L0.8,0.2 M1,0"
-                          Stretch="Uniform" Stroke="#87B6CA" StrokeThickness="4"/>-->
                             <Image Source="/Recources/Picture/krest.png" Stretch="Uniform" VerticalAlignment="Center" MinHeight="1" MinWidth="1" MaxHeight="20" MaxWidth="20"/>
                         </Border>
                     </ControlTemplate>
@@ -57,7 +55,6 @@
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="Bd" Background="Transparent" BorderBrush="Transparent" Padding="3,3,3,3" VerticalAlignment="Center">
-                            <!--<Path Data="F0 M1,1 L0, 1 0 0 1, 0Z" StrokeThickness="2" Stroke="#87B6CA" Stretch="Uniform"/>-->
                             <Image Source="/Recources/Picture/Rectangle.png" Stretch="Uniform" VerticalAlignment="Center" MinHeight="1" MinWidth="1" MaxHeight="20" MaxWidth="20"/>
                         </Border>
                     </ControlTemplate>
@@ -68,7 +65,6 @@
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="Bd" Background="Transparent" BorderBrush="Transparent" Padding="5,5,5,5">
-                            <!--<Path  Data="M0,0 M50.0,0.9 L 90.0,0.9 M120,2" StrokeThickness="3" Stroke="#87B6CA" Stretch="Uniform"/>-->
                             <Image Source="/Recources/Picture/minus.png" Stretch="Uniform" VerticalAlignment="Center" MinHeight="1" MinWidth="1" MaxHeight="20" MaxWidth="20"/>
                         </Border>
                     </ControlTemplate>
@@ -78,7 +74,7 @@
         </Grid>
         <Border Grid.Column="1" Grid.Row="2" BorderBrush="#F8C5B4" Opacity="0.5" BorderThickness="1">
             <Border.Effect>
-                <DropShadowEffect Color="Black"/>
+                <DropShadowEffect Color="Black" Direction="315" ShadowDepth="3" BlurRadius="4" />
             </Border.Effect>
         </Border>
         <Grid Grid.Column="1" Grid.Row="2">
@@ -86,13 +82,13 @@
                 <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
             </Grid.Background>
 
-            <TextBlock Text="SunClouds" Grid.Column="0" Grid.Row="0" TextAlignment="Center" VerticalAlignment="Center" FontSize="{Binding TitleFontSize}" Grid.ColumnSpan="4" Foreground="White"/>
+            <TextBlock Text="SunClouds" Grid.Column="0" Grid.Row="0" TextAlignment="Center" VerticalAlignment="Center" FontSize="{Binding TitleFontSize}" Grid.ColumnSpan="4" Foreground="White" FontFamily="/Recources/Font/#Jura"/>
             <Separator HorizontalAlignment="Stretch" VerticalAlignment="Top" Foreground="White" Background="White" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Opacity="0.5">
                 <Separator.RenderTransform>
                     <ScaleTransform ScaleY="1"/>
                 </Separator.RenderTransform>
             </Separator>
-            <Button Grid.Column="1" Content="Узнать погоду" Grid.Row="4" Grid.ColumnSpan="2" BorderBrush="#87B6CA" FontSize="{Binding BaseFontSize}" FontWeight="Normal" Command="{Binding NowWeatherCommand}">
+            <Button Grid.Column="1" Content="Узнать погоду" Grid.Row="4" FontFamily="/Recources/Font/#Jura" Grid.ColumnSpan="2" BorderBrush="#87B6CA" FontSize="{Binding BaseFontSize}" FontWeight="Normal" Command="{Binding NowWeatherCommand}">
                 <Button.Background>
                     <SolidColorBrush Color="#87B6CA"/>
                 </Button.Background>
@@ -100,7 +96,7 @@
                     <SolidColorBrush Color="White"/>
                 </Button.Foreground>
             </Button>
-            <TextBox x:Name="CityTxb" Grid.Column="1" Grid.Row="2" Text="{Binding City}" FlowDirection="RightToLeft" TextAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="{Binding BaseFontSize}" FontWeight="Normal" HorizontalAlignment="Stretch">
+            <TextBox x:Name="CityTxb" Grid.Column="1" Grid.Row="2" Text="{Binding City}" FontFamily="/Recources/Font/#Jura" FlowDirection="RightToLeft" TextAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="{Binding BaseFontSize}" FontWeight="Normal" HorizontalAlignment="Stretch">
                 <TextBox.Background>
                     <SolidColorBrush Color="#87B6CA" Opacity="0.5"/>
                 </TextBox.Background>
@@ -118,7 +114,7 @@
                     <SolidColorBrush Color="#87B6CA"/>
                 </Border.Background>
             </Border>
-            <Button Grid.Column="2" Grid.Row="2" Command="{Binding ClearAllTextCommand}" Visibility="{Binding Visibility}" Content="X" FontSize="{Binding BaseFontSize}">
+            <Button Grid.Column="2" Grid.Row="2" Command="{Binding ClearAllTextCommand}" FontFamily="/Recources/Font/#Jura" Visibility="{Binding Visibility}" Content="X" FontSize="{Binding BaseFontSize}">
                 <Button.Background>
                     <SolidColorBrush Color="#87B6CA" Opacity="0"/>
                 </Button.Background>
