@@ -5,6 +5,5 @@
              StartupUri="View/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary Source="/Resources/Theme/ButtonST.xaml"/>
-        
     </Application.Resources>
 </Application>
