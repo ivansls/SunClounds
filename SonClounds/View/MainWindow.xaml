@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SonClounds"
         mc:Ignorable="d"
-        WindowStyle="None" Height="850" Width="1500" MinWidth="438" MinHeight="274">
+        WindowStyle="None" Height="850" Width="1500" MinWidth="440" MinHeight="280">
     <Window.Background>
         <ImageBrush ImageSource="/Resources/Picture/Day.png" TileMode="Tile" Stretch="UniformToFill"/>
     </Window.Background>
@@ -50,16 +50,22 @@
         </Grid>
         <Grid Grid.Column="0" Grid.RowSpan="3">
             <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
                 <RowDefinition Height="68.5"/>
                 <RowDefinition Height="205.5"/>
+                
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Text="{Binding CityName}" TextAlignment="Center" Margin="5" FontFamily="/Resources/Font/#Jura" Foreground="#3D95B9" FontSize="36"/>
+            <TextBlock Text="{Binding CityName}" TextAlignment="Center" Margin="5" FontFamily="/Resources/Font/#Jura" Foreground="#3D95B9" FontSize="36" Grid.Row="1"/>
             <!--Не уверен с цветами-->
-            <Separator VerticalAlignment="Bottom" Background="#3D95B9"/>
-            <Grid Grid.Row="1">
+            <Separator VerticalAlignment="Bottom"  Background="#3D95B9" Width="404.5" Grid.Row="1" Margin="0,2,0,5" HorizontalAlignment="Center">
+                <Separator.RenderTransform>
+                    <ScaleTransform ScaleY="3" />
+                </Separator.RenderTransform>
+            </Separator>
+            <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.43*"/>
                     <ColumnDefinition Width="1*"/>
@@ -68,7 +74,7 @@
                 <Image Source="{Binding PutFirst}" Grid.Column="1" Width="123" Height="123" />
                 <TextBlock TextWrapping="Wrap" Grid.Column="2" Text="{Binding Text1}" FontFamily="/Resources/Font/#Jura"  VerticalAlignment="Center" Foreground="#3D95B9" Margin="10,0,30,0" TextAlignment="Right" FontSize="26"/>
             </Grid>
-            <Grid Grid.Row="2">
+            <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.3*"/>
                     <ColumnDefinition Width="0.24*"/>
@@ -78,7 +84,7 @@
                 <Image  Source="{Binding PutSecond}"  Grid.Column="1" VerticalAlignment="Center" Width="60" Height="60"/>
                 <TextBlock TextWrapping="Wrap" TextAlignment="Left" Grid.Column="2" Text="{Binding Text2}" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Center" Foreground="#3D95B9" Margin="10,0,45,0" FontSize="20"/>
             </Grid>
-            <Grid Grid.Row="3">
+            <Grid Grid.Row="4">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.3*"/>
                     <ColumnDefinition Width="0.24*"/>
@@ -88,7 +94,7 @@
                 <Image  Source="{Binding PutThird}" Grid.Column="1" VerticalAlignment="Center" Width="60" Height="60"/>
                 <TextBlock TextWrapping="Wrap" Grid.Column="2" Text="{Binding Text3}" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Center" Foreground="#3D95B9"  Margin="10,0,45,0" FontSize="20"/>
             </Grid>
-            <Grid Grid.Row="4">
+            <Grid Grid.Row="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.3*"/>
                     <ColumnDefinition Width="0.24*"/>

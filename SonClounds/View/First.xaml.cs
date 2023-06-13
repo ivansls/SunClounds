@@ -26,8 +26,7 @@ namespace SonClounds.View
         {
             InitializeComponent();
             DataContext = new FirstViewModel();
-            FirstViewModel mv = new FirstViewModel();
-            mv.for_test();
+            
         }
     }
 }
