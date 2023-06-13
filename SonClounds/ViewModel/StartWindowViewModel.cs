@@ -17,6 +17,9 @@ namespace SonClounds.ViewModel
         public BindableCommand LessCommand { get; set; }
         public BindableCommand AllScreenCommand { get; set; }
         public BindableCommand TextStartedChangingCommand { get; set; }
+        public BindableCommand ClearAllTextCommand { get; set; }
+        #endregion
+        #region Svoystava
         private WindowState Window_State = new WindowState();
         private bool flag = false;
         public WindowState W_S
@@ -34,12 +37,18 @@ namespace SonClounds.ViewModel
             CloseCommand= new BindableCommand(_ => CloseWindow());
             AllScreenCommand = new BindableCommand(_ => OpenWideWindow());
             LessCommand = new BindableCommand(_ => OpenLessWindow());
+            TextStartedChangingCommand = new BindableCommand(_ => TextChanging());
+            ClearAllTextCommand = new BindableCommand(_ => ClearText());
 
         }
 
         public void TextChanging()
         {
-            
+            //
+        }
+        public void ClearText() 
+        { 
+            //
         }
 
         public void CloseWindow()

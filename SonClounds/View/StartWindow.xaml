@@ -1,6 +1,7 @@
 ﻿<Window x:Class="SonClounds.View.StartWindow"
         xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         DataContext="{Binding RelativeSource={RelativeSource Self}}"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -11,9 +12,10 @@
         Title="" WindowStyle="None"
         MinHeight="158"
         MinWidth="206"
+        d:Height="400px"
+        d:Width="666px"
         WindowState="{Binding W_S, Mode=TwoWay}">
-    <!--d:Height="400px"
-        d:Width="666px"-->
+    
     <Window.Background>
         <ImageBrush ImageSource="/Recources/Picture/Day.png"/>
     </Window.Background>
@@ -98,16 +100,21 @@
                     <SolidColorBrush Color="White"/>
                 </Button.Foreground>
             </Button>
-            <TextBox Grid.Column="1" Grid.Row="2" Text="Ваш город" TextAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="15px" FontWeight="Normal" HorizontalAlignment="Stretch">
+            <TextBox Grid.Column="1" Grid.Row="2" Text="Ваш город"  TextAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="15px" FontWeight="Normal" HorizontalAlignment="Stretch">
                 <TextBox.Background>
                     <SolidColorBrush Color="#87B6CA" Opacity="0.5"/>
                 </TextBox.Background>
                 <TextBox.BorderBrush>
                     <SolidColorBrush Color="#87B6CA" Opacity="0.5"/>
                 </TextBox.BorderBrush>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="TextChanged">
+                        <i:InvokeCommandAction Command="{Binding TextStartedChangingCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
             </TextBox>
-            <Button Grid.Column="2" Content="X" Grid.Row="2" Visibility="Visible">
-                <Button.Background>
+            <Button Grid.Column="2" Content="{Binding}" Grid.Row="2" Command="{Binding ClearAllTextCommand}">
+                <Button.Background> 
                     <SolidColorBrush Color="#87B6CA" Opacity="0.5"/>
                 </Button.Background>
                 <Button.Foreground>
