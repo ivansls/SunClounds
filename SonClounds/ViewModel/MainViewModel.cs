@@ -23,35 +23,31 @@ namespace SunClounds.ViewModel
             }
         }
 
+
+
+
+
         public MainViewModel()
         {
-            ToGame = new BindableCommand(_ => Create_());
+            ToSettings = new BindableCommand(_ => to_settings());
+            ToWeather = new BindableCommand(_ => to_weather());
         }
 
-        public ICommand ToGame { get; }
+        public ICommand ToSettings { get; }
+        public ICommand ToWeather { get; }
 
-        private void Create_()
+        private void to_settings()
         {
-            /*if (_userName == null)
-            {
-                MessageBox.Show("Веди имя");
-            }
-            else
-            {
-               
-                GameViewModel.user = UserName;
-                Game game = new Game();
-                game.Show();
-                MainWindow win = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
-                if (win != null)
-                {
-                    win.Close();
-                }
-
-            }*/
+            
         }
 
 
-        
+        private void to_weather()
+        {
+
+        }
+
+
+
     }
 }

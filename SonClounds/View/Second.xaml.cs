@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SonClounds.ViewModel;
+using SunClounds.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,9 @@ namespace SonClounds
         public Second()
         {
             InitializeComponent();
+            DataContext = new SecondViewModel();
         }
+
+       
     }
 }
