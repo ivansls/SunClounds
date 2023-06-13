@@ -26,6 +26,8 @@ namespace SonClounds
         {
             InitializeComponent();
             DataContext = new MainViewModel();
+            MainViewModel mb = new MainViewModel();
+            mb.default_values();
         }
     }
 }
