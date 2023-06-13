@@ -31,6 +31,8 @@
     <Resource Include="Resources\Font\Jura-Regular.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Picture\Blizzard.png" />
+    <Resource Include="Resources\Picture\Cloudy.png" />
     <Resource Include="Resources\Picture\Blizzard.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

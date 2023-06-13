@@ -1,4 +1,5 @@
-﻿using SonClounds.View;
+﻿using SonClounds.ViewModel;
+using SunClounds.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,19 +14,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SunClounds.ViewModel;
 
 namespace SonClounds
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для Second.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Second : Page
     {
-        public MainWindow()
+        public Second()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
+            DataContext = new SecondViewModel();
         }
+
+       
     }
 }

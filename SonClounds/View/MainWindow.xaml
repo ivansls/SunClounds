@@ -28,7 +28,6 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="6*"/>
                 <RowDefinition />
-
             </Grid.RowDefinitions>
             <Button Style="{DynamicResource ButtonST}" Content="Погода" HorizontalContentAlignment="Left" VerticalAlignment="Bottom" FontFamily="/Resources/Font/#Jura" Background="#0000" BorderThickness="0" FontSize="36px" Foreground="White" />
             <Button Style="{DynamicResource ButtonST}" Content="Настройки" HorizontalContentAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1" FontFamily="/Resources/Font/#Jura" Background="#0000" BorderThickness="0" FontSize="36px" Foreground="White"/>
@@ -62,7 +61,6 @@
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
-
             </Button>
             <Button Grid.Column="0"  Style="{DynamicResource ButtonST}">
                 <Button.Template>
@@ -72,7 +70,6 @@
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
-
             </Button>
             <Button Grid.Column="2" Style="{DynamicResource ButtonST}">
                 <Button.Template>
@@ -82,9 +79,7 @@
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
-
             </Button>
-
         </Grid>
         <Frame Grid.Row="2" Grid.Column="1" Content="{Binding framePage}"/>
     </Grid>
