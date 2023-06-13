@@ -11,32 +11,33 @@
         Title="" WindowStyle="None"
         MinHeight="158"
         MinWidth="206"
-        d:Height="400px"
-        d:Width="666px">
+        WindowState="{Binding W_S, Mode=TwoWay}">
+    <!--d:Height="400px"
+        d:Width="666px"-->
     <Window.Background>
-        <ImageBrush ImageSource="/Day.png"/>
+        <ImageBrush ImageSource="/Recources/Picture/Day.png"/>
     </Window.Background>
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.25*"/>
             <RowDefinition />
-            <RowDefinition Height="158"/>
+            <RowDefinition MinHeight="158"/>
             <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="206"/>
+            <ColumnDefinition MinWidth="206"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,14,0">
+        <Grid Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,14,0" MinWidth="78">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="22"/>
+                <ColumnDefinition MinWidth="22"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition MinWidth="18"/>
                 <ColumnDefinition Width="13"/>
-                <ColumnDefinition Width="18"/>
-                <ColumnDefinition Width="13"/>
-                <ColumnDefinition Width="15"/>
+                <ColumnDefinition MinWidth="15"/>
             </Grid.ColumnDefinitions>
         
             <Button Grid.Column="4" Grid.Row="0" Command="{Binding CloseCommand}">
@@ -45,8 +46,7 @@
                         <Border x:Name="Bd" Background="Transparent" BorderBrush="Transparent">
                             <!--<Path x:Name="Pt" Data="M0,0 M0.2,0.2 L 0.8,0.8 M0.2,0.8 L0.8,0.2 M1,0"
                           Stretch="Uniform" Stroke="#87B6CA" StrokeThickness="4"/>-->
-                            <Image Source="\\Mac\Home\Downloads\krest.png" Stretch="Uniform" VerticalAlignment="Center" Width="12" Height="12"></Image>
-
+                            <Image Source="/Recources/Picture/krest.png" Stretch="Uniform" VerticalAlignment="Center" MinHeight="1" MinWidth="1" MaxHeight="20" MaxWidth="20"/>
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
@@ -56,7 +56,7 @@
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="Bd" Background="Transparent" BorderBrush="Transparent" Padding="3,3,3,3" VerticalAlignment="Center">
                             <!--<Path Data="F0 M1,1 L0, 1 0 0 1, 0Z" StrokeThickness="2" Stroke="#87B6CA" Stretch="Uniform"/>-->
-                            <Image Source="\\Mac\Home\Downloads\Rectangle 13.png" Stretch="Uniform" VerticalAlignment="Center" Width="12" Height="12"/>
+                            <Image Source="/Recources/Picture/Rectangle.png" Stretch="Uniform" VerticalAlignment="Center" MinHeight="1" MinWidth="1" MaxHeight="20" MaxWidth="20"/>
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
@@ -67,7 +67,7 @@
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="Bd" Background="Transparent" BorderBrush="Transparent" Padding="5,5,5,5">
                             <!--<Path  Data="M0,0 M50.0,0.9 L 90.0,0.9 M120,2" StrokeThickness="3" Stroke="#87B6CA" Stretch="Uniform"/>-->
-                            <Image Source="\\Mac\Home\Downloads\Vector 45.png" Stretch="Uniform" VerticalAlignment="Center" Width="12" Height="12"/>
+                            <Image Source="/Recources/Picture/minus.png" Stretch="Uniform" VerticalAlignment="Center" MinHeight="1" MinWidth="1" MaxHeight="20" MaxWidth="20"/>
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
@@ -85,8 +85,12 @@
             </Grid.Background>
 
             <TextBlock Text="SunClouds" Grid.Column="0" Grid.Row="0" TextAlignment="Center" VerticalAlignment="Center" FontSize="20px" Grid.ColumnSpan="4" Foreground="White"/>
-            <GridSplitter HorizontalAlignment="Stretch" VerticalAlignment="Top" Foreground="White" Height="1" Background="White" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Opacity="0.5"/>
-            <Button Grid.Column="1" Content="Узнать погоду" Grid.Row="4" Grid.ColumnSpan="2" BorderBrush="Transparent" FontSize="15px" FontWeight="Normal">
+            <Separator HorizontalAlignment="Stretch" VerticalAlignment="Top" Foreground="White" Background="White" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Opacity="0.5">
+                <Separator.RenderTransform>
+                    <ScaleTransform ScaleY="1"/>
+                </Separator.RenderTransform>
+            </Separator>
+            <Button Grid.Column="1" Content="Узнать погоду" Grid.Row="4" Grid.ColumnSpan="2" BorderBrush="#87B6CA" FontSize="15px" FontWeight="Normal">
                 <Button.Background>
                     <SolidColorBrush Color="#87B6CA"/>
                 </Button.Background>
@@ -94,18 +98,24 @@
                     <SolidColorBrush Color="White"/>
                 </Button.Foreground>
             </Button>
-            <TextBox Grid.Column="1" Grid.ColumnSpan="2"  Grid.Row="2" Text="Ваш город" TextAlignment="Center" VerticalContentAlignment="Center" Foreground="White" BorderBrush="Transparent" FontSize="15px" FontWeight="Normal">
+            <TextBox Grid.Column="1" Grid.Row="2" Text="Ваш город" TextAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="15px" FontWeight="Normal" HorizontalAlignment="Stretch">
                 <TextBox.Background>
                     <SolidColorBrush Color="#87B6CA" Opacity="0.5"/>
                 </TextBox.Background>
+                <TextBox.BorderBrush>
+                    <SolidColorBrush Color="#87B6CA" Opacity="0.5"/>
+                </TextBox.BorderBrush>
             </TextBox>
-            <Button Grid.Column="2" Content="X" Grid.Row="2" BorderBrush="Transparent" Visibility="Visible">
+            <Button Grid.Column="2" Content="X" Grid.Row="2" Visibility="Visible">
                 <Button.Background>
-                    <SolidColorBrush Color="#87B6CA" Opacity="0"/>
+                    <SolidColorBrush Color="#87B6CA" Opacity="0.5"/>
                 </Button.Background>
                 <Button.Foreground>
                     <SolidColorBrush Color="White"/>
                 </Button.Foreground>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#87B6CA" Opacity="0.5"/>
+                </Button.BorderBrush>
             </Button>
 
             <Grid.RowDefinitions>

@@ -8,13 +8,28 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Day.png" />
+    <None Remove="Recources\Picture\krest.png" />
+    <None Remove="Recources\Picture\minus.png" />
+    <None Remove="Recources\Picture\Rectangle.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Day.png">
+    <Resource Include="Recources\Picture\Day.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Recources\Picture\krest.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Recources\Picture\minus.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Recources\Picture\Rectangle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Recources\Font\" />
   </ItemGroup>
 
 </Project>
