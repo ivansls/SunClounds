@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SonClounds.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace SonClounds.View
         public StartWindow()
         {
             InitializeComponent();
+            DataContext = new StartWindowViewModel();
         }
     }
 }
