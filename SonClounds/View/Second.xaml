@@ -9,33 +9,19 @@
       Title="Second">
     <Grid >
        
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition  />
-                <RowDefinition   />
-                <RowDefinition />
-                <RowDefinition  />
-                <RowDefinition  />
-            </Grid.RowDefinitions>
-
-        </Grid>
-        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+        
+        <ScrollViewer Grid.Row="0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" >
             <Grid >
                 <Grid.RowDefinitions>
                     
-                    <RowDefinition  Height="120*"/>
-                    <RowDefinition  Height="325*"/>
-                    <RowDefinition Height="325*"/>
+                    <RowDefinition  Height="120"/>
+                    <RowDefinition  Height="325"/>
+                    <RowDefinition Height="300*"/>
+                    <RowDefinition Height="100*"/>
                 </Grid.RowDefinitions>
 
-                
-
-
-                <!--Какие-то параметры-->
+               
                 <Grid Grid.Row="0" Margin="20,10,24,10">
-                    <!--<Grid.Background>
-                            <SolidColorBrush Color="#FFF8C5B4" Opacity="0.6"/>
-                        </Grid.Background>-->
                     <Grid.RowDefinitions>
                         <RowDefinition Height="52*"/>
                         <RowDefinition Height="25*"/>
@@ -45,12 +31,13 @@
 
                 </Grid>
 
-                <Grid Grid.Row="1" Margin="20,10,20,10">
+                <Grid Grid.Row="1" Margin="20,10,20,10" >
 
 
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
+                        <RowDefinition Height="50"/>
                         <RowDefinition Height="2*"/>
+                        <RowDefinition Height="50"/>
                     </Grid.RowDefinitions>
 
                     <TextBlock Text="Избранные города:" FontSize="28px" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Center" Foreground="White"/>
@@ -59,24 +46,7 @@
 
                     <WrapPanel x:Name="UserEl" Background="#7FF8C5B4" Grid.Row="1"  />
 
-
-
-
-
-
-                </Grid>
-
-                <Grid Grid.Row="2" Margin="20,10,20,10">
-
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <!--Тут хз сколько ставить-->
-                        <RowDefinition Height="8*"/>
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-
-
-                    <Grid Grid.Row="0">
+                    <Grid Grid.Row="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="8*"/>
                             <ColumnDefinition Width="0.2*"/>
@@ -92,9 +62,24 @@
 
                         <Button Style="{DynamicResource ButtonST}" Command="{Binding AddCity}"  Grid.Column="2" FontSize="15px" Content="Добавить город" Background="#87B6CA" Foreground="White" VerticalAlignment="Center" BorderBrush="{x:Null}" Padding="1,0,1,0"/>
                     </Grid>
+
+
+
+
+                </Grid>
+
+                <Grid Grid.Row="2" Margin="20,10,20,10">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="6*"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+
+                    
                     <!--Кнопки-->
 
-                    <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="0,20,0,0">
+                    <Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="0,20,0,0">
                         <Grid.RowDefinitions>
                             <RowDefinition />
                             <RowDefinition Height="2*"/>
@@ -119,9 +104,9 @@
 
                     </Grid>
 
-                    <Button Style="{DynamicResource ButtonST}" Command="{Binding Save}"  Grid.Row="2" Content="Сохранить" VerticalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#FFFFFFFF" Background="#7F3D95B9" FontSize="15px"  BorderBrush="#7F3D95B9"/>
-
+                    
                 </Grid>
+                <Button Style="{DynamicResource ButtonST}" Command="{Binding Save}"  Grid.Row="3" Content="Сохранить" VerticalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#FFFFFFFF" Background="#7F3D95B9" FontSize="15px"  BorderBrush="#7F3D95B9"/>
 
             </Grid>
         </ScrollViewer>

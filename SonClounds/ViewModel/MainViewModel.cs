@@ -129,13 +129,13 @@ namespace SunClounds.ViewModel
 
         private void to_settings()
         {
-            
+            framePage = new Second();
         }
 
 
         public void to_weather()
         {
-
+            framePage = new First();
         }
         
         public void default_values() //Метод, который будет ставить дефолтные картинки

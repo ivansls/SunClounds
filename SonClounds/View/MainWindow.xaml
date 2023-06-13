@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStyle="None" Height="850" Width="1500" MinWidth="438" MinHeight="274">
     <Window.Background>
-        <ImageBrush ImageSource="/Resources/Picture/Day.png"/>
+        <ImageBrush ImageSource="/Resources/Picture/Day.png" TileMode="Tile" Stretch="UniformToFill"/>
     </Window.Background>
 
 
@@ -113,8 +113,8 @@
                 <RowDefinition Height="6*"/>
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Button Style="{DynamicResource ButtonST}" Content="Погода" HorizontalContentAlignment="Left" VerticalAlignment="Bottom" FontFamily="/Resources/Font/#Jura" Background="#0000" BorderThickness="0" FontSize="36px" Foreground="White" />
-            <Button Style="{DynamicResource ButtonST}" Content="Настройки" HorizontalContentAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1" FontFamily="/Resources/Font/#Jura" Background="#0000" BorderThickness="0" FontSize="36px" Foreground="White"/>
+            <Button Command="{Binding ToWeather}" Style="{DynamicResource ButtonST}" Content="Погода" HorizontalContentAlignment="Left" VerticalAlignment="Bottom" FontFamily="/Resources/Font/#Jura" Background="#0000" BorderThickness="0" FontSize="36px" Foreground="White" />
+            <Button Command="{Binding ToSettings}" Style="{DynamicResource ButtonST}" Content="Настройки" HorizontalContentAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1" FontFamily="/Resources/Font/#Jura" Background="#0000" BorderThickness="0" FontSize="36px" Foreground="White"/>
 
             <Separator VerticalAlignment="Top" Grid.Row="1" HorizontalAlignment="Left" Width="465.5" Height="3px" Background="White">
                 <Separator.RenderTransform>
@@ -165,6 +165,6 @@
                 </Button.Template>
             </Button>
         </Grid>
-        <Frame Grid.Row="2" Grid.Column="1" Content="{Binding framePage}"/>
+        <Frame NavigationUIVisibility="Hidden" Grid.Row="2" Grid.Column="1" Content="{Binding framePage}"/>
     </Grid>
 </Window>
