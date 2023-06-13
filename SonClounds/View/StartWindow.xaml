@@ -63,47 +63,6 @@
             </Button.Template>
         </Button>
 
-        <!--<Border
-            HorizontalAlignment="Right"
-            Grid.Row="2"
-            
-            Grid.Column="1"
-            BorderBrush="#F8C5B4"
-            BorderThickness="0.5"
-            Opacity="0.6"
-            >
-            <Border.Effect>
-                <DropShadowEffect Direction="1000" ShadowDepth="3"  BlurRadius="3" Color="Black"/>
-            </Border.Effect>
-        </Border>
-
-        <Border
-            HorizontalAlignment="Left"
-            Grid.Row="2"
-            
-            Grid.Column="1"
-            BorderBrush="#F8C5B4"
-            BorderThickness="0.5"
-            Opacity="0.5"
-            >
-            <Border.Effect>
-                <DropShadowEffect Direction="1310" ShadowDepth="3"  BlurRadius="3" Color="Black"/>
-            </Border.Effect>
-        </Border>
-
-        <Border
-            VerticalAlignment="Bottom"
-            Grid.Row="2"
-            
-            Grid.Column="1"
-            BorderBrush="#F8C5B4"
-            BorderThickness="0.5"
-            Opacity="0.5"
-            >
-            <Border.Effect>
-                <DropShadowEffect Direction="1287" ShadowDepth="2"  BlurRadius="3" Color="Black"/>
-            </Border.Effect>
-        </Border>-->
         <Border Grid.Column="1" Grid.Row="2" BorderBrush="#F8C5B4" Opacity="0.5" BorderThickness="1">
             <Border.Effect>
                 <DropShadowEffect Color="Black"/>
