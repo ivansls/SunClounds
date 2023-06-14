@@ -98,7 +98,7 @@
             <TextBlock Text="SunClouds" Grid.Column="0" Grid.Row="0" TextAlignment="Center" VerticalAlignment="Center" FontSize="{Binding TitleFontSize}" Grid.ColumnSpan="4" Foreground="White" FontFamily="/Resources/Font/#Jura"/>
             <Separator HorizontalAlignment="Stretch" VerticalAlignment="Top" Foreground="White" Background="White" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Opacity="0.5">
                 <Separator.RenderTransform>
-                    <ScaleTransform ScaleY="3"/>
+                    <ScaleTransform ScaleY="2"/>
                 </Separator.RenderTransform>
             </Separator>
             <Button Grid.Column="1" Content="Узнать погоду" Grid.Row="4" FontFamily="/Resources/Font/#Jura" Grid.ColumnSpan="2" BorderBrush="#87B6CA" FontSize="{Binding BaseFontSize}" FontWeight="Normal" Command="{Binding NowWeatherCommand}">
