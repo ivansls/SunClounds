@@ -72,11 +72,24 @@
 
             </Button>
         </Grid>
-        <Border Grid.Column="1" Grid.Row="2" BorderBrush="#F8C5B4" Opacity="0.5" BorderThickness="1">
-            <Border.Effect>
-                <DropShadowEffect Color="Black" Direction="315" ShadowDepth="3" BlurRadius="4" />
-            </Border.Effect>
-        </Border>
+        <!--нижняя тень-->
+        <Rectangle Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" Height="2">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
+            </Rectangle.Fill>
+            <Rectangle.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="5" ShadowDepth="2" Direction="260"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <!--правая тень-->
+        <Rectangle Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Width="1">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
+            </Rectangle.Fill>
+            <Rectangle.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="2"/>
+            </Rectangle.Effect>
+        </Rectangle>
         <Grid Grid.Column="1" Grid.Row="2">
             <Grid.Background>
                 <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
