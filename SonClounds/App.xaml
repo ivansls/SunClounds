@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:SonClounds"
              StartupUri="View/MainWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary Source="/Resources/Theme/ButtonST.xaml"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/Theme/ButtonST.xaml"/>
+                <ResourceDictionary Source="/Resources/Theme/ToolBarST.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
