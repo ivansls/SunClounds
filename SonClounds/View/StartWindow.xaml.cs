@@ -1,4 +1,4 @@
-﻿using SonClounds.View;
+﻿using SonClounds.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,21 +12,18 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using SunClounds.ViewModel;
 
 namespace SonClounds.View
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для StartWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StartWindow : Window
     {
-        public MainWindow()
+        public StartWindow()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
-            MainViewModel mb = new MainViewModel();
-            mb.default_values();
+            DataContext = new StartWindowViewModel();
         }
     }
 }

@@ -31,6 +31,35 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Recources\Font\Jura-Regular.ttf" />
+    <None Remove="Recources\Picture\krest.png" />
+    <None Remove="Recources\Picture\minus.png" />
+    <None Remove="Recources\Picture\Rectangle.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Recources\Font\Jura-Regular.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Recources\Picture\Day.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Recources\Picture\krest.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Recources\Picture\minus.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Recources\Picture\Rectangle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+  </ItemGroup>
+
+</Project>
     <Resource Include="Resources\Font\Jura-Regular.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
