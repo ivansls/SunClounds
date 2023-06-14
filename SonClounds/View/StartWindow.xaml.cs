@@ -1,4 +1,5 @@
 ﻿using SonClounds.ViewModel;
+using SunClounds.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,10 @@ namespace SonClounds.View
         public StartWindow()
         {
             InitializeComponent();
-            DataContext = new StartWindowViewModel();
+            
+            DataContext = new MainViewModel();
+            MainViewModel mb = new MainViewModel();
+            mb.default_values();
         }
     }
 }

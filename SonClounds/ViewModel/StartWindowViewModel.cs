@@ -1,4 +1,5 @@
-﻿using SonClounds.ViewModel.Helpers;
+﻿using SonClounds.View;
+using SonClounds.ViewModel.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace SonClounds.ViewModel
 {
@@ -18,7 +20,7 @@ namespace SonClounds.ViewModel
         public BindableCommand AllScreenCommand { get; set; }
         public BindableCommand TextStartedChangingCommand { get; set; }
         public BindableCommand ClearAllTextCommand { get; set; }
-        public BindableCommand NowWeatherCommand { get; set; }
+        public ICommand NowWeatherCommand { get; }
         #endregion
         #region Svoystava
         private WindowState Window_State = new WindowState();
@@ -109,7 +111,13 @@ namespace SonClounds.ViewModel
         }
         public void NowWeather()
         {
-            //переход на второе окно с погодой, возможно, передача каких-то параметров
+            StartWindow st = new StartWindow();
+            st.Show();
+            MainWindow win = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            if (win != null)
+            {
+                win.Close();
+            }
         }
         public void CloseWindow()
         {

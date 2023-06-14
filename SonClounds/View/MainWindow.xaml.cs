@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using SunClounds.ViewModel;
+using SonClounds.ViewModel;
 
 namespace SonClounds.View
 {
@@ -24,9 +25,7 @@ namespace SonClounds.View
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
-            MainViewModel mb = new MainViewModel();
-            mb.default_values();
+            DataContext = new StartWindowViewModel();
         }
     }
 }
