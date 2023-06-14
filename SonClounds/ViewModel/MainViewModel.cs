@@ -135,7 +135,9 @@ namespace SunClounds.ViewModel
 
         public void to_weather()
         {
-            framePage = new First();
+
+            App.Theme = "DayTheme";
+            //framePage = new First();
         }
         
         public void default_values() //Метод, который будет ставить дефолтные картинки

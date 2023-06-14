@@ -30,13 +30,7 @@ namespace SonClounds
             mb.default_values();
         }
 
-        //private void Button_Click(object sender, RoutedEventArgs e) !!!ЗАГОТОВКА ДЛЯ КНОПОК СО СМЕНОЙ ТЕМЫ!!!
-        //{
-        //    App.Theme = "PurpleTheme"; ЭТО НАЗВАНИЕ СЛОВАРЯ в Resources/Theme
-        //}
-        //private void Button_Click_1(object sender, RoutedEventArgs e)
-        //{
-        //    App.Theme = "OrangeTheme"; ЭТО НАЗВАНИЕ СЛОВАРЯ в Resources/Theme
-        //}
+       
+
     }
 }

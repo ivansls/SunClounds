@@ -28,5 +28,7 @@ namespace SonClounds.View
             DataContext = new FirstViewModel();
             
         }
+
+   
     }
 }

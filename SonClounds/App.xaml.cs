@@ -33,8 +33,8 @@ namespace SonClounds
                 Current.Resources.MergedDictionaries.Insert(0, dict); // Добавляем новый
 
 
-                var desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                File.WriteAllText($"{desktop}\\theme.txt", value); // Сохранение названия нашего словаря на рабочий стол 
+                /*var desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                File.WriteAllText($"{desktop}\\theme.txt", value); // Сохранение названия нашего словаря на рабочий стол */
                
             }
         }
@@ -42,11 +42,11 @@ namespace SonClounds
         {
             InitializeComponent();
 
-            var desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); // При открытии подгрузка из текстового файла названия нашей темы
+           /* var desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); // При открытии подгрузка из текстового файла названия нашей темы
             if (File.Exists($"{desktop}\\theme.txt"))
             {
                 Theme = File.ReadAllText($"{desktop}\\theme.txt");
-            }
+            }*/
         }
     }
 }
