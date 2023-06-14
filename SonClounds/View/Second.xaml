@@ -1,0 +1,118 @@
+﻿<Page x:Class="SonClounds.Second"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SonClounds"
+      mc:Ignorable="d" 
+      d:DesignHeight="850" d:DesignWidth="1500"
+      Title="Second">
+    <Grid >
+       
+        
+        <ScrollViewer Grid.Row="0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" >
+            <Grid >
+                <Grid.RowDefinitions>
+                    
+                    <RowDefinition  Height="120"/>
+                    <RowDefinition  Height="325"/>
+                    <RowDefinition Height="300*"/>
+                    <RowDefinition Height="100*"/>
+                </Grid.RowDefinitions>
+
+               
+                <Grid Grid.Row="0" Margin="20,10,24,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="52*"/>
+                        <RowDefinition Height="25*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Ваш oсновной город" Grid.Row="0" FontSize="28px" Grid.Column="2" FontFamily="/Resources/Font/#Jura" HorizontalAlignment="Center" Foreground="White"/>
+                    <TextBlock Text="{Binding CoreCity}" Grid.Row="1" VerticalAlignment="Top" TextAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="15px" Background="#7F3D95B9" Foreground="White" />
+
+                </Grid>
+
+                <Grid Grid.Row="1" Margin="20,10,20,10" >
+
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Избранные города:" FontSize="28px" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Center" Foreground="White"/>
+
+
+
+                    <WrapPanel x:Name="UserEl" Background="#7FF8C5B4" Grid.Row="1"  />
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="8*"/>
+                            <ColumnDefinition Width="0.2*"/>
+                            <ColumnDefinition Width="1*"/>
+
+                        </Grid.ColumnDefinitions>
+
+
+                        <TextBox Text="{Binding TextCity}" FontFamily="/Resources/Font/#Jura" FontSize="15px" Grid.Column="0" Background="#7F3D95B9" TextAlignment="Center" Foreground="White" BorderBrush="#7F3D95B9" VerticalAlignment="Center"/>
+
+                        <Button Style="{DynamicResource ButtonST}" Content="X" Command="{Binding Clear}"  Grid.Column="1" FontSize="15px" Background="#7F3D95B9" Foreground="White" VerticalAlignment="Center" BorderBrush="{x:Null}" Padding="0,0,0,0"/>
+
+
+                        <Button Style="{DynamicResource ButtonST}" Command="{Binding AddCity}"  Grid.Column="2" FontSize="15px" Content="Добавить город" Background="#87B6CA" Foreground="White" VerticalAlignment="Center" BorderBrush="{x:Null}" Padding="1,0,1,0"/>
+                    </Grid>
+
+
+
+
+                </Grid>
+
+                <Grid Grid.Row="2" Margin="20,10,20,10">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="6*"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+
+                    
+                    <!--Кнопки-->
+
+                    <Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="0,20,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Исчисление градусов:" Grid.ColumnSpan="2" FontFamily="/Resources/Font/#Jura" FontSize="28px" TextAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
+                        <Grid Grid.Row="1" Margin="0,10,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="1.5*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="1.5*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Rectangle Fill="#7F3D95B9" Grid.Column="1" />
+                            <Rectangle Fill="#7F3D95B9" Grid.Column="3" />
+                            <RadioButton Command="{Binding Celisiy}" Content="Цельсий С" Grid.Column="1" FontSize="15px" Grid.Row="1" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Top"  Foreground="White" IsChecked="True" />
+                            <RadioButton Command="{Binding Faringate}" Content="Фарингейт F" Grid.Column="3" FontSize="15px" Grid.Row="1" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Top" Foreground="White" />
+
+                        </Grid>
+
+
+                    </Grid>
+
+                    
+                </Grid>
+                <Button Style="{DynamicResource ButtonST}" Command="{Binding Save}"  Grid.Row="3" Content="Сохранить" VerticalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#FFFFFFFF" Background="#7F3D95B9" FontSize="15px"  BorderBrush="#7F3D95B9"/>
+
+            </Grid>
+        </ScrollViewer>
+
+
+    </Grid>
+
+
+</Page>
