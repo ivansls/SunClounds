@@ -136,7 +136,7 @@ namespace SunClounds.ViewModel
         public void to_weather()
         {
 
-            App.Theme = "DayTheme";
+            App.Theme = "NightTheme";
             //framePage = new First();
         }
         
