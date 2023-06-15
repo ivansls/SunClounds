@@ -7,6 +7,42 @@
              mc:Ignorable="d" 
              d:DesignHeight="170" d:DesignWidth="110">
     <Grid>
+        
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+        <Image  HorizontalAlignment="Center"  Grid.Row="0"  Source="/Resources/Picture/Sunny.png" Height="50" />
+
+
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="TextUpCen" Grid.Row="0" Text="{Binding Timegod}"/>
+            <TextBlock x:Name="TextDownCen" Grid.Row="1" Text="{Binding Bebra}"/>
+
+
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
             
+            
+            
+            
+            
+        </Grid>
+
     </Grid>
 </UserControl>

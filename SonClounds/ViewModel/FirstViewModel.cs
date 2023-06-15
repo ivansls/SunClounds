@@ -89,5 +89,36 @@ namespace SonClounds.ViewModel
                 OnPropertyChenged();
             }
         }
+
+
+
+
+
+
+        private static string TimeGod = "21:00";
+
+        public string Timegod //Время
+        {
+            get { return TimeGod; }
+            set
+            {
+                TimeGod = value;
+                OnPropertyChenged();
+            }
+        }
+
+
+        private static string Bebra = "21º";
+
+        public string bebra //Температура
+        {
+            get { return Bebra; }
+            set
+            {
+                Bebra = value;
+                OnPropertyChenged();
+            }
+        }
+
     }
 }
