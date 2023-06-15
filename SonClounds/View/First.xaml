@@ -177,7 +177,7 @@
                     <Button Content="Ощущается как" Grid.Column="1" Margin="7" Background="#87B6CA" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
                     <Button  Content="Давление" Grid.Column="2" Margin="7" Background="#87B6CA" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
 
-                    <Image  HorizontalAlignment="Center"  Grid.Row="1" Grid.ColumnSpan="3"  Source="/Resources/Picture/Sunny.png" Height="232" />
+                    <!--<Image  HorizontalAlignment="Center"  Grid.Row="1" Grid.ColumnSpan="3"  Source="/Resources/Picture/Sunny.png" Height="232" />-->
 
                 </WrapPanel>
               
