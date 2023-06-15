@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       xmlns:local="clr-namespace:SonClounds.View"
       mc:Ignorable="d" 
       d:DesignHeight="850" d:DesignWidth="1500"
@@ -151,9 +152,18 @@
                 <Grid.Background>
                     <SolidColorBrush Color="#FFF8C5B4" Opacity="0.5"/>
                 </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.15*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
 
                 <!--нижняя тень-->
-                <Rectangle VerticalAlignment="Bottom" Height="2">
+                <Rectangle VerticalAlignment="Bottom" Height="2" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1">
                     <Rectangle.Fill>
                         <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
                     </Rectangle.Fill>
@@ -162,7 +172,7 @@
                     </Rectangle.Effect>
                 </Rectangle>
                 <!--правая тень-->
-                <Rectangle HorizontalAlignment="Right" Width="1">
+                <Rectangle HorizontalAlignment="Right" Width="1" Grid.Column="2" Grid.RowSpan="2">
                     <Rectangle.Fill>
                         <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
                     </Rectangle.Fill>
@@ -172,14 +182,22 @@
                 </Rectangle>
 
                 <!--Кнопки-->
-                <WrapPanel HorizontalAlignment="Center">
-                    <Button  Content="Температура" Grid.Column="0" Margin="7" Background="#3D95B9" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="23.66" Width="300" Height="40"/>
-                    <Button Content="Ощущается как" Grid.Column="1" Margin="7" Background="#87B6CA" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
-                    <Button  Content="Давление" Grid.Column="2" Margin="7" Background="#87B6CA" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
+                <!--Зачем здесь врап панель?-->
+                <!--<WrapPanel HorizontalAlignment="Center">-->
+                <Button  Content="Температура" Grid.Column="0" Margin="7" Background="#3D95B9" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="23.66" Width="300" Height="40"/>
+                <Button Content="Ощущается как" Grid.Column="1" Margin="7" Background="#87B6CA" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
+                <Button  Content="Давление" Grid.Column="2" Margin="7" Background="#87B6CA" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
 
-                    <!--<Image  HorizontalAlignment="Center"  Grid.Row="1" Grid.ColumnSpan="3"  Source="/Resources/Picture/Sunny.png" Height="232" />-->
-
-                </WrapPanel>
+                <!--<Image  HorizontalAlignment="Center"  Grid.Row="1" Grid.ColumnSpan="3"  Source="/Resources/Picture/Sunny.png" Height="232" />-->
+                <lvc:CartesianChart Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Margin="20, 0, 20, 20" Series="{Binding SeriesCollection}">
+                    <lvc:CartesianChart.AxisX>
+                        <lvc:Axis Labels="{Binding BarLabels}"/>
+                    </lvc:CartesianChart.AxisX>
+                    <lvc:CartesianChart.AxisY>
+                        <lvc:Axis LabelFormatter="{Binding Formatter}"/>
+                    </lvc:CartesianChart.AxisY>
+                </lvc:CartesianChart>
+                <!--</WrapPanel>-->
               
 
                 <!--Сам график-->
