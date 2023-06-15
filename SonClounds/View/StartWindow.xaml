@@ -6,6 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SonClounds.View"
         mc:Ignorable="d"
+        WindowState="{Binding W_S}"
         WindowStyle="None" Height="850" Width="1500" MinWidth="440" MinHeight="280">
     <Window.Background>
         <ImageBrush ImageSource="/Resources/Picture/Day.png" TileMode="Tile" Stretch="UniformToFill"/>
@@ -164,7 +165,7 @@
                 <ColumnDefinition Width="15"/>
                 <ColumnDefinition Width="15"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="4" Background="Transparent" BorderBrush="Transparent" >
+            <Button Grid.Column="4" Background="Transparent" BorderBrush="Transparent" Command="{Binding CloseCommand}">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Background="Transparent" BorderBrush="Transparent" >
@@ -173,7 +174,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Grid.Column="0"  Style="{DynamicResource ButtonST}">
+            <Button Grid.Column="0"  Style="{DynamicResource ButtonST}" Command="{Binding LessCommand}">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Background="Transparent" BorderBrush="Transparent">
@@ -182,7 +183,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Grid.Column="2" Style="{DynamicResource ButtonST}">
+            <Button Grid.Column="2" Style="{DynamicResource ButtonST}" Command="{Binding AllScreenCommand}">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Background="Transparent" BorderBrush="Transparent">
