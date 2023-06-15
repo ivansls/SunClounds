@@ -28,11 +28,11 @@
 
 
         <Grid Grid.Column="0" Grid.Row="0" Grid.RowSpan="3">
-            <Grid.Effect>
+            <!--<Grid.Effect>
                 <DropShadowEffect ShadowDepth="4" Opacity="0.2"/>
-            </Grid.Effect>
+            </Grid.Effect>-->
             <Grid.Background>
-                <SolidColorBrush Color="#FFF8C5B4" Opacity="0.3"/>
+                <SolidColorBrush Color="#FFF8C5B4" Opacity="0.5"/>
             </Grid.Background>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.43*"/>
@@ -47,7 +47,15 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            
+            <Rectangle Grid.Column="2" Grid.Row="0" Grid.RowSpan="6" HorizontalAlignment="Right" Width="1">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
+                </Rectangle.Fill>
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="2"/>
+                </Rectangle.Effect>
+            </Rectangle>
+
         </Grid>
         <Grid Grid.Column="0" Grid.RowSpan="3">
             <Grid.RowDefinitions>

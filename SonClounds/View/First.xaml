@@ -25,17 +25,37 @@
 
             <!--Какие-то параметры-->
             <Grid Grid.Row="0" Margin="10">
-                <Grid.Effect>
+                <!--удалила эту тень - она неправильная-->
+                
+                <!--<Grid.Effect>
                     <DropShadowEffect ShadowDepth="4" Opacity="0.2"/>
-                </Grid.Effect>
+                </Grid.Effect>-->
                 <Grid.Background>
-                    <SolidColorBrush Color="#FFF8C5B4" Opacity="0.3"/>
+                    <SolidColorBrush Color="#FFF8C5B4" Opacity="0.5"/>
                 </Grid.Background>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="98"/>
                     <ColumnDefinition Width="0.05*"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                <!--нижняя тень-->
+                <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Height="2">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
+                    </Rectangle.Fill>
+                    <Rectangle.Effect>
+                        <DropShadowEffect Color="Black" BlurRadius="5" ShadowDepth="2" Direction="260"/>
+                    </Rectangle.Effect>
+                </Rectangle>
+                <!--правая тень-->
+                <Rectangle Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Width="1">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
+                    </Rectangle.Fill>
+                    <Rectangle.Effect>
+                        <DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="2"/>
+                    </Rectangle.Effect>
+                </Rectangle>
                 <TextBlock Text="{Binding Degrees}" Grid.RowSpan="2"  VerticalAlignment="Center" FontSize="64" FontFamily="/Resources/Font/#Jura" Foreground="#3D95B9" HorizontalAlignment="Center"  Margin="5,0,0,0"/>
 
                 <!--Вертикальная черта-->
@@ -80,12 +100,33 @@
 
             <!--Штука с пользовательскими элементами-->
             <Grid Grid.Row="1" Margin="10">
-                <Grid.Effect>
+                <!--Эта тень неправильная - удалила-->
+                <!--<Grid.Effect>
                     <DropShadowEffect ShadowDepth="4" Opacity="0.2"/>
-                </Grid.Effect>
+                </Grid.Effect>-->
                 <Grid.Background>
-                    <SolidColorBrush Color="#FFF8C5B4" Opacity="0.3"/>
+                    <SolidColorBrush Color="#FFF8C5B4" Opacity="0.5"/>
                 </Grid.Background>
+
+                <!--нижняя тень-->
+                <Rectangle VerticalAlignment="Bottom" Height="2">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
+                    </Rectangle.Fill>
+                    <Rectangle.Effect>
+                        <DropShadowEffect Color="Black" BlurRadius="5" ShadowDepth="2" Direction="260"/>
+                    </Rectangle.Effect>
+                </Rectangle>
+                <!--правая тень-->
+                <Rectangle HorizontalAlignment="Right" Width="1">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
+                    </Rectangle.Fill>
+                    <Rectangle.Effect>
+                        <DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="2"/>
+                    </Rectangle.Effect>
+                </Rectangle>
+
                 <!--Для просмотра можно расскоментить-->
                 <ListBox x:Name="UserEl" Background="#0000">
                     <ListBox.ItemsPanel>
@@ -93,22 +134,46 @@
                             <VirtualizingStackPanel IsItemsHost="True" Orientation="Horizontal"/>
                         </ItemsPanelTemplate>
                     </ListBox.ItemsPanel>
+                    <!--Убираю видимую границу-->
+                    <ListBox.BorderBrush>
+                        <SolidColorBrush Color="Transparent"/>
+                    </ListBox.BorderBrush>
                 </ListBox>
 
 
             </Grid>
             <!--Для графика-->
             <Grid Grid.Row="2" Margin="10">
-                <Grid.Effect>
+                <!--Неправильная тень - удаляю-->
+                <!--<Grid.Effect>
                     <DropShadowEffect ShadowDepth="4" Opacity="0.2"/>
-                </Grid.Effect>
+                </Grid.Effect>-->
                 <Grid.Background>
-                    <SolidColorBrush Color="#FFF8C5B4" Opacity="0.3"/>
+                    <SolidColorBrush Color="#FFF8C5B4" Opacity="0.5"/>
                 </Grid.Background>
+
+                <!--нижняя тень-->
+                <Rectangle VerticalAlignment="Bottom" Height="2">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
+                    </Rectangle.Fill>
+                    <Rectangle.Effect>
+                        <DropShadowEffect Color="Black" BlurRadius="5" ShadowDepth="2" Direction="260"/>
+                    </Rectangle.Effect>
+                </Rectangle>
+                <!--правая тень-->
+                <Rectangle HorizontalAlignment="Right" Width="1">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
+                    </Rectangle.Fill>
+                    <Rectangle.Effect>
+                        <DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="2"/>
+                    </Rectangle.Effect>
+                </Rectangle>
 
                 <!--Кнопки-->
                 <WrapPanel HorizontalAlignment="Center">
-                    <Button  Content="Температура" Grid.Column="0" Margin="7" Background="#87B6CA" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="23.66" Width="300" Height="40"/>
+                    <Button  Content="Температура" Grid.Column="0" Margin="7" Background="#3D95B9" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="23.66" Width="300" Height="40"/>
                     <Button Content="Ощущается как" Grid.Column="1" Margin="7" Background="#87B6CA" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
                     <Button  Content="Давление" Grid.Column="2" Margin="7" Background="#87B6CA" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
 
