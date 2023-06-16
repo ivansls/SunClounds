@@ -1,9 +1,12 @@
 ﻿using SonClounds;
 using SonClounds.View;
 using SonClounds.ViewModel.Helpers;
+using System.Diagnostics;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Media3D;
 
 namespace SunClounds.ViewModel
 {
@@ -137,6 +140,7 @@ namespace SunClounds.ViewModel
             CloseCommand = new BindableCommand(_ => CloseWindow());
             AllScreenCommand = new BindableCommand(_ => OpenWideWindow());
             LessCommand = new BindableCommand(_ => OpenLessWindow());
+
         }
 
         public ICommand ToSettings { get; }
@@ -144,6 +148,7 @@ namespace SunClounds.ViewModel
         public BindableCommand CloseCommand { get; set; }
         public BindableCommand LessCommand { get; set; }
         public BindableCommand AllScreenCommand { get; set; }
+
 
 
         private void to_settings()
@@ -186,6 +191,8 @@ namespace SunClounds.ViewModel
             }
         }
 
+
+        
 
 
     }

@@ -13,7 +13,7 @@ namespace SonClounds.ViewModel
 {
     internal class SecondViewModel : BindingHelper
     {
-        private static string Core_city = "Северобайкальск";
+        private static string Core_city = "";
 
         private static string text_city = "город";
 
@@ -68,6 +68,7 @@ namespace SonClounds.ViewModel
 
         private void Add_City()
         {
+            
             MessageBox.Show("add");
             
         }

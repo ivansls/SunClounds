@@ -14,7 +14,7 @@
         MinWidth="206"
         d:Height="400px"
         d:Width="666px"
-        WindowState="{Binding W_S, Mode=TwoWay}">
+        WindowState="{Binding W_S, Mode=TwoWay}" MouseLeftButtonDown="Window_MouseLeftButtonDown">
 
 	<Window.Background>
 		<ImageBrush ImageSource="/Resources/Picture/Day.png"/>
