@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Media3D;
+using System.Threading.Tasks;
 
 namespace SunClounds.ViewModel
 {
@@ -26,7 +27,34 @@ namespace SunClounds.ViewModel
         private bool flag = false;
         private WindowState Window_State = new WindowState();
 
+        public int width_window { get; set; } = 1500;
+        public int WidthWindow
+        {
+            get
+            {
+                return width_window;
+            }
+            set
+            {
+                width_window = value;
+                OnPropertyChenged();
+            }
+        }
 
+
+        private async Task Tochki()
+        {
+            bool isWorking = true;
+            while (isWorking)
+            {
+                if (WidthWindow <= 880) 
+                {
+                    MessageBox.Show("yes");
+ 
+                }
+                await Task.Delay(100);
+            }
+        }
 
         public Page framePage
         {
@@ -151,9 +179,10 @@ namespace SunClounds.ViewModel
 
 
 
-        private void to_settings()
+        private async void to_settings()
         {
-            framePage = new Second();
+            //framePage = new Second();
+            await Tochki();
         }
 
 

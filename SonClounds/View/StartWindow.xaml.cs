@@ -30,7 +30,7 @@ namespace SonClounds.View
             mb.default_values();
         }
 
-        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        /*private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
 
             var ah = ActualHeight;
@@ -44,7 +44,7 @@ namespace SonClounds.View
             Trace.WriteLine(aw);
             Console.WriteLine(aw);
             //MessageBox.Show(aw + " " + w);
-        }
+        }*/
 
 
        
