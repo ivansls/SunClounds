@@ -27,6 +27,8 @@ namespace SunClounds.ViewModel
         private bool flag = false;
         private WindowState Window_State = new WindowState();
 
+        public bool isWorking = true;
+
         public int width_window { get; set; } = 1500;
         public int WidthWindow
         {
@@ -41,21 +43,41 @@ namespace SunClounds.ViewModel
             }
         }
 
+        public int height_window { get; set; } = 850;
+        public int HeightWindow
+        {
+            get
+            {
+                return height_window;
+            }
+            set
+            {
+                height_window = value;
+                OnPropertyChenged();
+            }
+        }
+
 
         private async Task Tochki()
         {
-            bool isWorking = true;
+            
             while (isWorking)
             {
-                if (WidthWindow <= 880) 
+                if (WidthWindow <= 915 && WidthWindow != 450) 
                 {
-                    //MessageBox.Show("yes");
-                    WidthWindow = 440;
-                    isWorking = true;
-
+                    WidthWindow = 450;
+                }
+                else if (HeightWindow <= 500 && HeightWindow != 300)
+                {
+                    HeightWindow = 300;
                 }
                 await Task.Delay(50);
             }
+        }
+
+        public async void start_Scale()
+        {
+            await Tochki();
         }
 
         public Page framePage
@@ -170,7 +192,7 @@ namespace SunClounds.ViewModel
             CloseCommand = new BindableCommand(_ => CloseWindow());
             AllScreenCommand = new BindableCommand(_ => OpenWideWindow());
             LessCommand = new BindableCommand(_ => OpenLessWindow());
-            ScaleWindow = new BindableCommand(_ => scaleWindow());
+            ScaleWindow = new BindableCommand(_ => start_Scale());
 
         }
 
@@ -182,15 +204,14 @@ namespace SunClounds.ViewModel
         public BindableCommand LessCommand { get; set; }
         public BindableCommand AllScreenCommand { get; set; }
 
-        private async void scaleWindow()
-        {
-            await Tochki();
-        }
+        
 
         private void to_settings()
         {
             framePage = new Second();
-            
+            start_Scale();
+
+
         }
 
 
