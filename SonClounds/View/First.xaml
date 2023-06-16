@@ -3,8 +3,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       xmlns:local="clr-namespace:SonClounds.View"
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       mc:Ignorable="d" 
       d:DesignHeight="850" d:DesignWidth="1000"
       Title="First">
@@ -192,17 +192,26 @@
                     <Button  Content="Давление"  Margin="7" Background="#87B6CA" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
                 </WrapPanel>
                     <!--<Image  HorizontalAlignment="Center"  Grid.Row="1" Grid.ColumnSpan="3"  Source="/Resources/Picture/Sunny.png" Height="232" />-->
-                
-                
-                <lvc:CartesianChart Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Series="{Binding SeriesCollection}">
+
+
+                <lvc:CartesianChart Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Series="{Binding SeriesCollection_}">
                     <lvc:CartesianChart.AxisX>
-                        <lvc:Axis Labels="{Binding BarLabels}"/>
+                        <lvc:Axis Foreground="White" Labels="{Binding XLabels}" FontSize="{Binding FontSizeX}">
+                            <lvc:Axis.Separator>
+                                <lvc:Separator StrokeThickness="3" Step="1" />
+                            </lvc:Axis.Separator>
+                        </lvc:Axis>
                     </lvc:CartesianChart.AxisX>
                     <lvc:CartesianChart.AxisY>
-                        <lvc:Axis LabelFormatter="{Binding Formatter}"/>
+                        <lvc:Axis Foreground="White" FontSize="{Binding FontSizeY}" Labels="{Binding Ylabels}" LabelFormatter="{Binding Formatter}">
+                            <lvc:Axis.Separator>
+                                <lvc:Separator StrokeThickness="2" Step="10" />
+                            </lvc:Axis.Separator>
+                        </lvc:Axis>
                     </lvc:CartesianChart.AxisY>
+                    
+
                 </lvc:CartesianChart>
-                
 
 
                 <!--Сам график-->
