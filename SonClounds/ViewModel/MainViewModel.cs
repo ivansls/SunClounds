@@ -49,10 +49,12 @@ namespace SunClounds.ViewModel
             {
                 if (WidthWindow <= 880) 
                 {
-                    MessageBox.Show("yes");
- 
+                    //MessageBox.Show("yes");
+                    WidthWindow = 440;
+                    isWorking = true;
+
                 }
-                await Task.Delay(100);
+                await Task.Delay(50);
             }
         }
 
@@ -168,21 +170,27 @@ namespace SunClounds.ViewModel
             CloseCommand = new BindableCommand(_ => CloseWindow());
             AllScreenCommand = new BindableCommand(_ => OpenWideWindow());
             LessCommand = new BindableCommand(_ => OpenLessWindow());
+            ScaleWindow = new BindableCommand(_ => scaleWindow());
 
         }
 
         public ICommand ToSettings { get; }
         public ICommand ToWeather { get; }
+
+        public BindableCommand ScaleWindow { get; }
         public BindableCommand CloseCommand { get; set; }
         public BindableCommand LessCommand { get; set; }
         public BindableCommand AllScreenCommand { get; set; }
 
-
-
-        private async void to_settings()
+        private async void scaleWindow()
         {
-            //framePage = new Second();
             await Tochki();
+        }
+
+        private void to_settings()
+        {
+            framePage = new Second();
+            
         }
 
 
