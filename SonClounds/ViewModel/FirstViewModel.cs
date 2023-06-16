@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace SonClounds.ViewModel
 {
-    internal class FirstViewModel :  BindingHelper
+    internal class FirstViewModel : BindingHelper
     {
         private static string degr;
         private static string feel_ing;
@@ -17,6 +18,20 @@ namespace SonClounds.ViewModel
         private static string humid_ity;
         private static string w_ind;
         private static string w_ind2;
+
+
+
+        public FirstViewModel()
+        {
+            Temperature = new BindableCommand(_ => temperature());
+            FeelsLike = new BindableCommand(_ => feelsLike());
+            Pressure1 = new BindableCommand(_ => pressure());
+        }
+
+
+        public ICommand Temperature { get; }
+        public ICommand FeelsLike { get; }
+        public ICommand Pressure1 { get; }
         public string Degrees //Температура
         {
             get { return degr; }
@@ -88,6 +103,32 @@ namespace SonClounds.ViewModel
                 w_ind2 = value;
                 OnPropertyChenged();
             }
+        }
+
+
+
+
+
+
+
+
+        public void temperature()
+        {
+        
+            App.Theme = "NightTheme";
+            //framePage = new First();
+        }
+        public void feelsLike()
+        {
+
+            App.Theme = "DayTheme";
+            //framePage = new First();
+        }
+        public void pressure()
+        {
+
+            App.Theme = "MorningTheme";
+            //framePage = new First();
         }
     }
 }

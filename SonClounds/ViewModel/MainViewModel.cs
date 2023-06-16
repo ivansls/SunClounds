@@ -122,10 +122,12 @@ namespace SunClounds.ViewModel
         {
             ToSettings = new BindableCommand(_ => to_settings());
             ToWeather = new BindableCommand(_ => to_weather());
+            
         }
 
         public ICommand ToSettings { get; }
         public ICommand ToWeather { get; }
+        
 
         private void to_settings()
         {
@@ -135,11 +137,10 @@ namespace SunClounds.ViewModel
 
         public void to_weather()
         {
-
-            App.Theme = "NightTheme";
-            //framePage = new First();
+            framePage = new First();
         }
         
+
         public void default_values() //Метод, который будет ставить дефолтные картинки
         {
             PutFirst = "/Resources/Picture/Sunny.png";

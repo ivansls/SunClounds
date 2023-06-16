@@ -3,7 +3,7 @@
     <Brush x:Key="Button">#3D95B9</Brush>
     <Brush x:Key="SecondaryColour">#87B6CA</Brush>
     <Style x:Key="BackG" TargetType="Image">
-        <Setter Property="Source" Value="\Resources\Picture\Day.png"/>
+        <Setter Property="Source" Value="\Resources\Picture\MorningEvening.png"/>
         <Setter Property="Stretch" Value="Fill"/>
     </Style>
-</ResourceDictionary> 
+</ResourceDictionary>
