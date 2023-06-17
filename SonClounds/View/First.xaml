@@ -8,7 +8,6 @@
       mc:Ignorable="d" 
       d:DesignHeight="850" d:DesignWidth="1000"
       Title="First"
-
     >
     
     <Grid>
@@ -155,7 +154,7 @@
                 </Grid.Background>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition />
+                    <RowDefinition MinHeight="330"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.5*"/>
