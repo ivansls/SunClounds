@@ -100,7 +100,7 @@ namespace SonClounds.ViewModel
                 OnPropertyChenged();
             }
         }
-        private int fsx = 20;
+        private int fsx = 15;
         public int FontSizeX
         {
             get
@@ -110,7 +110,7 @@ namespace SonClounds.ViewModel
             set { fsx = value;
             OnPropertyChenged();}
         }
-        private int fsy = 20;
+        private int fsy = 15;
         public int FontSizeY
         {
             get
@@ -123,6 +123,17 @@ namespace SonClounds.ViewModel
                 OnPropertyChenged();
             }
         }
+        private int window_w = 1000;
+        public int Width_w
+        {
+            get { return window_w; }
+            set
+            {
+                window_w = value;
+                OnPropertyChenged();
+            }
+        }
+        private bool Width_is_listening = true;
         public SeriesCollection SeriesCollection_ { get; set; }
         public string[] XLabels { get; set; }
         public int[] Ylabels { get; set; }
@@ -134,8 +145,6 @@ namespace SonClounds.ViewModel
 
         public FirstViewModel()
         {
-
-
             ChartValues<double> ints;
             if(DateTime.Now.Hour < 11)
             {
@@ -170,7 +179,48 @@ namespace SonClounds.ViewModel
             //возможно дэйблы для игрика стоит хранить в числовом формате и просто настроить формат
             Ylabels = new[] { 10, 20, 30, 40, 50};
             Formatter = value => value.ToString("N0") + "°";
+            start_tracking_width();
         }
 
+        private async Task Width_Listening()
+        {
+            while(Width_is_listening)
+            {
+                //if (Width_w < 800 && Width_w > 400 && Width_w > 200)
+                //{
+                //    FontSizeX = 15;
+                //    FontSizeY = 15;
+                //}
+                //if (Width_w < 400 && Width_w > 200)
+                //{
+                //    FontSizeX = 10;
+                //    FontSizeY = 10;
+                //}
+                //if (Width_w < 200)
+                //{
+                //    FontSizeX = 5;
+                //    FontSizeY = 5;
+                //}
+                //if (Width_w > 800)
+                //{
+                //    FontSizeX = 20;
+                //    FontSizeY = 20;
+                //}
+                //double a = SystemParameters.PrimaryScreenWidth;
+                //if(SystemParameters.WorkArea.Width < 600 && SystemParameters.WorkArea.Width > 400)
+                //{
+                //    MessageBox.Show("343434");
+                //}
+                //if(SystemParameters.PrimaryScreenWidth < 400)
+                //{
+                //    MessageBox.Show("aaaaaaa");
+                //}
+                await Task.Delay(50);
+            }
+        }
+        private async void start_tracking_width()
+        {
+            await Width_Listening();
+        }
     }
 }
