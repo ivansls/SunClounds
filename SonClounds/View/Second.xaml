@@ -27,11 +27,8 @@
                         <RowDefinition Height="25*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Text="Ваш oсновной город" Grid.Row="0" FontSize="28px" Grid.Column="2" FontFamily="/Resources/Font/#Jura" HorizontalAlignment="Center" Foreground="White"/>
-                    <TextBlock Text="{Binding CoreCity}" Grid.Row="1" VerticalAlignment="Top" TextAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="15px" Foreground="White">
-                        <TextBlock.Background>
-                            <SolidColorBrush Color="#3D95B9" Opacity="0.5"/>
-                        </TextBlock.Background>
-                    </TextBlock>
+                    <TextBox Text="{Binding CoreCity}"  Background="#3D95B9" Opacity="0.5" Grid.Row="1" VerticalAlignment="Top" TextAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="15px" Foreground="White"/>
+
 
                 </Grid>
 
