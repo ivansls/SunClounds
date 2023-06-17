@@ -149,8 +149,6 @@ namespace SunClounds.ViewModel
         public BindableCommand LessCommand { get; set; }
         public BindableCommand AllScreenCommand { get; set; }
 
-
-
         private void to_settings()
         {
             framePage = new Second();
@@ -176,6 +174,7 @@ namespace SunClounds.ViewModel
         public void OpenWideWindow()
         {
             W_S = WindowState.Maximized;
+            
             flag = false;
         }
         public void OpenLessWindow()

@@ -1,13 +1,13 @@
-﻿<Page x:Class="SonClounds.View.First"
+<Page x:Class="SonClounds.View.First"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SonClounds.View"
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       mc:Ignorable="d" 
-      
-      d:DesignHeight="850" d:DesignWidth="1500"
-      Title="First">
+      d:DesignHeight="850" d:DesignWidth="1000"
+      Title="First"
     <Grid>
 
 
@@ -20,8 +20,6 @@
                 <RowDefinition Height="216"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-
-
 
 
             <!--Какие-то параметры-->
@@ -152,9 +150,18 @@
                 <Grid.Background>
                     <SolidColorBrush Color="#FFF8C5B4" Opacity="0.5"/>
                 </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition MinHeight="330"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
 
                 <!--нижняя тень-->
-                <Rectangle VerticalAlignment="Bottom" Height="2">
+                <Rectangle VerticalAlignment="Bottom" Height="2" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4">
                     <Rectangle.Fill>
                         <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
                     </Rectangle.Fill>
@@ -163,7 +170,7 @@
                     </Rectangle.Effect>
                 </Rectangle>
                 <!--правая тень-->
-                <Rectangle HorizontalAlignment="Right" Width="1">
+                <Rectangle HorizontalAlignment="Right" Width="1" Grid.Column="2" Grid.RowSpan="5">
                     <Rectangle.Fill>
                         <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
                     </Rectangle.Fill>
@@ -173,15 +180,34 @@
                 </Rectangle>
 
                 <!--Кнопки-->
-                <WrapPanel HorizontalAlignment="Center">
-                    <Button  Content="Температура" Grid.Column="0" Margin="7" Background="#3D95B9" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="23.66" Width="300" Height="40"/>
-                    <Button Content="Ощущается как" Grid.Column="1" Margin="7" Background="#87B6CA" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
-                    <Button  Content="Давление" Grid.Column="2" Margin="7" Background="#87B6CA" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
 
+                <WrapPanel HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" >
+                <Button  Content="Температура" Margin="7" Background="#3D95B9" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="23.66" Width="300" Height="40"/>
+                <Button Content="Ощущается как"  Margin="7" Background="#87B6CA" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
+                    <Button  Content="Давление"  Margin="7" Background="#87B6CA" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
+                </WrapPanel>
                     <!--<Image  HorizontalAlignment="Center"  Grid.Row="1" Grid.ColumnSpan="3"  Source="/Resources/Picture/Sunny.png" Height="232" />-->
 
-                </WrapPanel>
-              
+
+                <lvc:CartesianChart Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Series="{Binding SeriesCollection_}">
+                    <lvc:CartesianChart.AxisX>
+                        <lvc:Axis Foreground="White" Labels="{Binding XLabels}" FontSize="{Binding FontSizeX}">
+                            <lvc:Axis.Separator>
+                                <lvc:Separator StrokeThickness="3" Step="1" />
+                            </lvc:Axis.Separator>
+                        </lvc:Axis>
+                    </lvc:CartesianChart.AxisX>
+                    <lvc:CartesianChart.AxisY>
+                        <lvc:Axis Foreground="White" FontSize="{Binding FontSizeY}" Labels="{Binding Ylabels}" LabelFormatter="{Binding Formatter}">
+                            <lvc:Axis.Separator>
+                                <lvc:Separator StrokeThickness="2" Step="10" />
+                            </lvc:Axis.Separator>
+                        </lvc:Axis>
+                    </lvc:CartesianChart.AxisY>
+                    
+
+                </lvc:CartesianChart>
+
 
                 <!--Сам график-->
                 <!--Я пока хз какую библу будем юзать поэтому пока фотка-->
