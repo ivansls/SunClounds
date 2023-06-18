@@ -27,7 +27,7 @@ namespace SonClounds
                 theme = value;
                 var dict = new ResourceDictionary() // Создание словаря кодом 
                 {
-                    Source = new Uri($"/CustomLibrary/Themes/{value}.xaml", UriKind.Relative) // Название словаря хранится в переменной value
+                    Source = new Uri($"/Resources/Themes/{value}.xaml", UriKind.Relative) // Название словаря хранится в переменной value
                 };
 
                 //$"pack://application:,,,/CustomLibrary;component/Themes/{value}.xaml"
