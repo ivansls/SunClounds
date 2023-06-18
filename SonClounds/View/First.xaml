@@ -160,6 +160,11 @@
                     <ColumnDefinition Width="0.5*"/>
                 </Grid.ColumnDefinitions>
 
+                <WrapPanel HorizontalAlignment="Center">
+                    <Button  Command="{Binding Temperature}" Content="Температура" Grid.Column="0" Margin="7" Background="{DynamicResource Button}" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="23.66" Width="300" Height="40"/>
+                    <Button  Command="{Binding FeelsLike}" Content="Ощущается как" Grid.Column="1" Margin="7" Background="{DynamicResource SecondaryColour}" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
+                    <Button  Command="{Binding Pressure1}" Content="Давление" Grid.Column="2" Margin="7" Background="{DynamicResource SecondaryColour}" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
+
                 <!--нижняя тень-->
                 <Rectangle VerticalAlignment="Bottom" Height="2" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4">
                     <Rectangle.Fill>

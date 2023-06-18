@@ -203,11 +203,11 @@ namespace SunClounds.ViewModel
             ScaleWindow = new BindableCommand(_ => start_Scale());
             start_Scale();
             CityName = SonClounds.Properties.Settings.Default.CurrentCity;
-
         }
 
         public ICommand ToSettings { get; }
         public ICommand ToWeather { get; }
+        
 
         public BindableCommand ScaleWindow { get; }
         public BindableCommand CloseCommand { get; set; }
@@ -227,6 +227,7 @@ namespace SunClounds.ViewModel
             framePage = new First();
         }
         
+
         public void default_values() //Метод, который будет ставить дефолтные картинки
         {
             PutFirst = "/Resources/Picture/Sunny.png";

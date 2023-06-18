@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using System.Windows.Input;
+
 using LiveCharts;
 using LiveCharts.Wpf;
 using System.Collections.ObjectModel;
@@ -28,7 +31,17 @@ namespace SonClounds.ViewModel
         private static string humid_ity;
         private static string w_ind;
         private static string w_ind2;
+
+
+
+
+
+        public ICommand Temperature { get; }
+        public ICommand FeelsLike { get; }
+        public ICommand Pressure1 { get; }
+
         #region Svoystva
+
         public string Degrees //Температура
         {
             get { return degr; }
@@ -101,6 +114,34 @@ namespace SonClounds.ViewModel
                 OnPropertyChenged();
             }
         }
+
+
+
+
+
+
+
+
+
+        public void temperature()
+        {
+        
+            App.Theme = "NightTheme";
+            //framePage = new First();
+        }
+        public void feelsLike()
+        {
+
+            App.Theme = "DayTheme";
+            //framePage = new First();
+        }
+        public void pressure()
+        {
+
+            App.Theme = "MorningTheme";
+            //framePage = new First();
+        }
+        
         private int fsx = 20;
         public int FontSizeX
         {
