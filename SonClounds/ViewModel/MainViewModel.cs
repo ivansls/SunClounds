@@ -1,6 +1,8 @@
 ﻿using SonClounds;
 using SonClounds.View;
+using SonClounds.ViewModel;
 using SonClounds.ViewModel.Helpers;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -9,7 +11,7 @@ namespace SunClounds.ViewModel
 
     internal class MainViewModel : BindingHelper
     {
-        
+        public SecondViewModel second = new SecondViewModel();
         private static Page Frame_Page = new First();
         private static string city_name;
         private static string put1;
@@ -34,11 +36,13 @@ namespace SunClounds.ViewModel
 
         public string CityName //Название города
         {
-            get { return city_name; }
+            get { return city_name = second.main; }
             set
             {
-                city_name = value;
+                MessageBox.Show(second.main);
+                city_name = second.main;
                 OnPropertyChenged();
+
             }
         }
 
