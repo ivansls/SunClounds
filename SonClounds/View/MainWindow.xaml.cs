@@ -11,23 +11,32 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SunClounds.ViewModel;
+using SonClounds.ViewModel;
 
-namespace SonClounds
+namespace SonClounds.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
-            MainViewModel mb = new MainViewModel();
-            mb.default_values();
+            DataContext = new StartWindowViewModel();
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                DragMove();
+            }
+            catch
+            {
+            }
         }
 
        

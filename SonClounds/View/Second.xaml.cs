@@ -28,6 +28,5 @@ namespace SonClounds
             DataContext = new SecondViewModel();
         }
 
-       
     }
 }
