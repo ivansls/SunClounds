@@ -25,6 +25,9 @@
     <None Remove="Resources\Picture\Wind.png" />
     <None Remove="View\Day.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomLibrary\CustomLibrary.csproj" />
+  </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Resources\Font\Jura-Regular.ttf">
