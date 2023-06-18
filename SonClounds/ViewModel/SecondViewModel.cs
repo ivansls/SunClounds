@@ -14,11 +14,10 @@ namespace SonClounds.ViewModel
 {
     internal class SecondViewModel : BindingHelper
     {
-        private static string Core_city = SonClounds.Properties.Settings.Default.CurrentCity;
+        
 
-        public string main = Core_city;
 
-        private static string Core_city = "";
+        private static string Core_city;
 
         private static string text_city = "город";
       
@@ -54,8 +53,9 @@ namespace SonClounds.ViewModel
             Celisiy = new BindableCommand(_ => Cel());
             Faringate = new BindableCommand(_ => Far());
             Clear = new BindableCommand(_ => clear());
+            Core_city = SonClounds.Properties.Settings.Default.CurrentCity;
 
-        }
+    }
 
         public ICommand Save { get; }
 
@@ -71,8 +71,8 @@ namespace SonClounds.ViewModel
 
         private void Save_()
         {
-            main = CoreCity;
-            MessageBox.Show(main);
+            SonClounds.Properties.Settings.Default.CurrentCity = CoreCity;
+            MessageBox.Show(CoreCity);
             SonClounds.Properties.Settings.Default.Save();
         }
 

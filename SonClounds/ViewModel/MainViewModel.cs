@@ -50,11 +50,11 @@ namespace SunClounds.ViewModel
 
         public string CityName //Название города
         {
-            get { return city_name = second.main; }
+            get { return city_name; }
             set
             {
-                MessageBox.Show(second.main);
-                city_name = second.main;
+                
+                city_name = value;
                 OnPropertyChenged();
 
             }
@@ -143,6 +143,7 @@ namespace SunClounds.ViewModel
             CloseCommand = new BindableCommand(_ => CloseWindow());
             AllScreenCommand = new BindableCommand(_ => OpenWideWindow());
             LessCommand = new BindableCommand(_ => OpenLessWindow());
+            CityName = SonClounds.Properties.Settings.Default.CurrentCity;
 
         }
 
