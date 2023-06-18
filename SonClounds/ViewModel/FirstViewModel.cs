@@ -14,6 +14,7 @@ using System.Windows.Media.Effects;
 using System.Configuration;
 using System.Windows;
 using Microsoft.VisualBasic;
+using System.Threading;
 
 namespace SonClounds.ViewModel
 {
@@ -123,6 +124,30 @@ namespace SonClounds.ViewModel
                 OnPropertyChenged();
             }
         }
+        private Visibility visible_prbar_1;
+        public Visibility Visible_PrBar_1
+        {
+            get
+            {
+                return visible_prbar_1;
+            }
+            set
+            {
+                visible_prbar_1 = value;
+                OnPropertyChenged();
+            }
+        }
+        private Visibility visible_prbar_2;
+        public Visibility Visible_PrBar_2
+        {
+            get { return visible_prbar_2;}
+            set
+            {
+                visible_prbar_2 = value;
+                OnPropertyChenged();
+            }
+        }
+        private ChartValues<double> ints = new ChartValues<double>();
         public SeriesCollection SeriesCollection_ { get; set; }
         public string[] XLabels { get; set; }
         public int[] Ylabels { get; set; }
@@ -134,7 +159,6 @@ namespace SonClounds.ViewModel
 
         public FirstViewModel()
         {
-            ChartValues<double> ints;
             //if(DateTime.Now.Hour < 11)
             //{
             //    ints = new ChartValues<double> {5, 10, 45, 20, 30, 40, 38, 10, -5, 23,
@@ -149,7 +173,9 @@ namespace SonClounds.ViewModel
             //    XLabels = new[] {"12:00", "13:00",
             //"14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"};
             //}
-            ints = new ChartValues<double> {5, 10, 45, 20, 30, 40, 38, 10};
+            
+            //ints = new ChartValues<double> {5, 10, 45, 20, 30, 40, 38, 10};
+            Load_Info();
             XLabels = new string[] { "00:00", "03:00", "06:00", "09:00", "12:00", "15:00", "18:00", "21:00" };
             SeriesCollection_ = new SeriesCollection()
             {
@@ -173,6 +199,23 @@ namespace SonClounds.ViewModel
             Formatter = value => value.ToString("N0") + "°";
             
         }
+        private async Task Loading_Info_Into_FirstPage()
+        {
+            for(int i = 0; i < 28; i++)
+            {
+                ints.Add(i);
+                await Task.Delay(100);
+            }
+        }
+        private async void Load_Info()
+        {
+            Visible_PrBar_1 = Visibility.Visible;
+            Visible_PrBar_2 = Visibility.Visible;
+            await Loading_Info_Into_FirstPage();
+            Visible_PrBar_1 = Visibility.Hidden;
+            Visible_PrBar_2 = Visibility.Hidden;
+        }
+
 
        
     }

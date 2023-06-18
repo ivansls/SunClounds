@@ -124,7 +124,7 @@
                         <DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="2"/>
                     </Rectangle.Effect>
                 </Rectangle>
-                <ProgressBar IsIndeterminate="True" VerticalAlignment="Center" Background="#87B6CA" Foreground="#3D95B9" MinHeight="45" BorderBrush="#F8C5B4" BorderThickness="2"/>
+                <ProgressBar IsIndeterminate="True" VerticalAlignment="Center" Background="#87B6CA" Foreground="#3D95B9" MinHeight="45" BorderBrush="#F8C5B4" BorderThickness="2" Visibility="{Binding Visible_PrBar_1}"/>
                 <!--Для просмотра можно расскоментить-->
                 <ListBox x:Name="UserEl" Background="#0000">
                     <ListBox.ItemsPanel>
@@ -207,7 +207,7 @@
 
 
                 </lvc:CartesianChart>
-                <ProgressBar IsIndeterminate="True" VerticalAlignment="Center" Background="#87B6CA" Foreground="#3D95B9" MinHeight="45" BorderBrush="#F8C5B4" BorderThickness="2" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"/>
+                <ProgressBar IsIndeterminate="True" VerticalAlignment="Center" Background="#87B6CA" Foreground="#3D95B9" MinHeight="45" BorderBrush="#F8C5B4" BorderThickness="2" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Visibility="{Binding Visible_PrBar_2}"/>
                 <!--Сам график-->
                 <!--Я пока хз какую библу будем юзать поэтому пока фотка-->
                 
