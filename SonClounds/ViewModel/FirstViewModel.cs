@@ -147,7 +147,6 @@ namespace SonClounds.ViewModel
                 OnPropertyChenged();
             }
         }
-        public static bool Tracking_time { get; set; } = true;
         private ChartValues<double> ints = new ChartValues<double>();
         public SeriesCollection SeriesCollection_ { get; set; }
         public string[] XLabels { get; set; }
