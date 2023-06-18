@@ -89,10 +89,12 @@ namespace SonClounds.ViewModel
                 OnPropertyChenged();
             }
         }
+        private bool Tracking_time = true;
         
         #endregion
         public StartWindowViewModel() 
         {
+            Time_Track();
             Visibility = Visibility.Hidden;
             City = "Ваш город             ";
             CloseCommand= new BindableCommand(_ => CloseWindow());
@@ -122,6 +124,7 @@ namespace SonClounds.ViewModel
             MainViewModel mainViewModel = new MainViewModel();
             mainViewModel.start_Scale();
             MainWindow win = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            Tracking_time = false;
             if (win != null)
             {
                 win.Close();
@@ -154,6 +157,19 @@ namespace SonClounds.ViewModel
             {
                 W_S = WindowState.Minimized;
             }
+        }
+        private async Task time()
+        {
+            while (Tracking_time)
+            {
+                int hour_now = DateTime.Now.Hour;
+                //Проверки на время и смена темы
+                await Task.Delay(600000);
+            }
+        }
+        private async void Time_Track()
+        {
+            await time();
         }
 
     }

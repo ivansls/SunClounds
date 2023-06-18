@@ -147,6 +147,7 @@ namespace SonClounds.ViewModel
                 OnPropertyChenged();
             }
         }
+        public static bool Tracking_time { get; set; } = true;
         private ChartValues<double> ints = new ChartValues<double>();
         public SeriesCollection SeriesCollection_ { get; set; }
         public string[] XLabels { get; set; }
@@ -173,7 +174,7 @@ namespace SonClounds.ViewModel
             //    XLabels = new[] {"12:00", "13:00",
             //"14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"};
             //}
-            
+
             //ints = new ChartValues<double> {5, 10, 45, 20, 30, 40, 38, 10};
             Load_Info();
             XLabels = new string[] { "00:00", "03:00", "06:00", "09:00", "12:00", "15:00", "18:00", "21:00" };
@@ -189,19 +190,22 @@ namespace SonClounds.ViewModel
                     PointForeground = new SolidColorBrush(Color.FromRgb(135,182,202)),
                     PointGeometrySize = 10,
                     
-                   
-                    
+                  
                 }
                 
             };
             //возможно дэйблы для игрика стоит хранить в числовом формате и просто настроить формат
             Ylabels = new[] { 10, 20, 30, 40, 50};
-            Formatter = value => value.ToString("N0") + "°";
-            
+            //если цельсии то:
+            Formatter = value => value.ToString("N0") + "°C";
+            //если фаренгейты то:
+            //Formatter = value => value.ToString("N0") + "°F";
+
+
         }
         private async Task Loading_Info_Into_FirstPage()
         {
-            for(int i = 0; i < 28; i++)
+            for(int i = 0; i < 8; i++)
             {
                 ints.Add(i);
                 await Task.Delay(100);
@@ -217,6 +221,5 @@ namespace SonClounds.ViewModel
         }
 
 
-       
     }
 }
