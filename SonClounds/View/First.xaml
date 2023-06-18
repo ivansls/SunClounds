@@ -157,14 +157,11 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.5*"/>
                     <ColumnDefinition Width="0.5*"/>
+
                     <ColumnDefinition Width="0.5*"/>
                 </Grid.ColumnDefinitions>
 
-                <WrapPanel HorizontalAlignment="Center">
-                    <Button  Command="{Binding Temperature}" Content="Температура" Grid.Column="0" Margin="7" Background="{DynamicResource Button}" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="23.66" Width="300" Height="40"/>
-                    <Button  Command="{Binding FeelsLike}" Content="Ощущается как" Grid.Column="1" Margin="7" Background="{DynamicResource SecondaryColour}" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
-                    <Button  Command="{Binding Pressure1}" Content="Давление" Grid.Column="2" Margin="7" Background="{DynamicResource SecondaryColour}" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
-
+                
                 <!--нижняя тень-->
                 <Rectangle VerticalAlignment="Bottom" Height="2" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4">
                     <Rectangle.Fill>
@@ -186,9 +183,9 @@
 
                 <!--Кнопки-->
 
-                <WrapPanel HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" >
-                <Button  Content="Температура" Margin="7" Background="#3D95B9" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="23.66" Width="300" Height="40"/>
-                <Button Content="Ощущается как"  Margin="7" Background="#87B6CA" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
+                <WrapPanel HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3">
+                    <Button  Content="Температура" Margin="7" Background="#3D95B9" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="23.66" Width="300" Height="40"/>
+                    <Button Content="Ощущается как"  Margin="7" Background="#87B6CA" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
                     <Button  Content="Давление"  Margin="7" Background="#87B6CA" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
                 </WrapPanel>
                     <!--<Image  HorizontalAlignment="Center"  Grid.Row="1" Grid.ColumnSpan="3"  Source="/Resources/Picture/Sunny.png" Height="232" />-->

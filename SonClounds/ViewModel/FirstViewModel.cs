@@ -200,6 +200,10 @@ namespace SonClounds.ViewModel
 
         public FirstViewModel()
         {
+            Temperature = new BindableCommand(_ => temperature());
+            FeelsLike = new BindableCommand(_ => feelsLike());
+            Pressure1 = new BindableCommand(_ => pressure());
+
             //if(DateTime.Now.Hour < 11)
             //{
             //    ints = new ChartValues<double> {5, 10, 45, 20, 30, 40, 38, 10, -5, 23,

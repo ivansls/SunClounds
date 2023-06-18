@@ -8,9 +8,6 @@
         mc:Ignorable="d"
         WindowState="{Binding W_S}"
         WindowStyle="None" Height="{Binding HeightWindow, Mode=TwoWay}" Width="{Binding WidthWindow, Mode=TwoWay}" MinWidth="440" MinHeight="280" MouseLeftButtonDown="Window_MouseLeftButtonDown" >
-    <Window.Background>
-        <ImageBrush ImageSource="/Resources/Picture/Day.png" TileMode="Tile" Stretch="UniformToFill" />
-    </Window.Background>
     
     
 
@@ -25,7 +22,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
+        <Image Style="{DynamicResource BackG}" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
 
 
 
@@ -70,8 +67,8 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-           
-            <TextBlock Text="{Binding CityName}" TextAlignment="Center" Margin="5" FontFamily="/Resources/Font/#Jura" Foreground="#3D95B9" FontSize="36" Grid.Row="1"/>
+
+            <TextBlock Text="{Binding CityName}" TextAlignment="Center" Margin="5" FontFamily="/Resources/Font/#Jura" Foreground="{DynamicResource Button}" FontSize="36" Grid.Row="1"/>
             <!--Не уверен с цветами-->
             <Separator VerticalAlignment="Bottom"  Background="#3D95B9" Width="404.5" Grid.Row="1" Margin="0,2,0,5" HorizontalAlignment="Center">
                 <Separator.RenderTransform>
