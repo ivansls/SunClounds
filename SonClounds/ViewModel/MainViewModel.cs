@@ -72,7 +72,9 @@ namespace SunClounds.ViewModel
                 {
                     HeightWindow = 300;
                 }
+                CityName = SonClounds.Properties.Settings.Default.CurrentCity;
                 await Task.Delay(50);
+               
             }
         }
 
