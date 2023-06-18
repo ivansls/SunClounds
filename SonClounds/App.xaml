@@ -7,8 +7,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Resources/Theme/DayTheme.xaml"/>
-                <ResourceDictionary Source="/Resources/Theme/ButtonST.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/CustomLibrary;component/FullDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
