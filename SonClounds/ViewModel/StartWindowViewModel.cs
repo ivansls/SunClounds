@@ -162,7 +162,10 @@ namespace SonClounds.ViewModel
             while (Tracking_time)
             {
                 int hour_now = DateTime.Now.Hour;
-                //Проверки на время и смена темы
+                if(hour_now >= 0 && hour_now <= 3)
+                {
+
+                }
                 await Task.Delay(600000);
             }
         }
