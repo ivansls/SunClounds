@@ -133,6 +133,9 @@ namespace SonClounds.ViewModel
         }
         public void OpenWideWindow()
         {
+            SonClounds.Properties.Settings.Default.CurrentCity = city;
+            SonClounds.Properties.Settings.Default.Save();
+            MessageBox.Show(city);
             W_S = WindowState.Maximized;
             flag = false;
             TitleFontSize = 40;

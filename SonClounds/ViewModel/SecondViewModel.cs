@@ -19,7 +19,7 @@ namespace SonClounds.ViewModel
         
 
 
-        private static string Core_city;
+        private static string Core_city = SonClounds.Properties.Settings.Default.CurrentCity;
 
         private static string text_city = "город";
       
@@ -30,7 +30,6 @@ namespace SonClounds.ViewModel
             set
             {
                 Core_city = value;
-                SonClounds.Properties.Settings.Default.CurrentCity = CoreCity;
                 OnPropertyChenged();
             }
         }
