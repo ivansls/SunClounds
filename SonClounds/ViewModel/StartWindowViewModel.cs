@@ -144,5 +144,6 @@ namespace SonClounds.ViewModel
                 W_S = WindowState.Minimized;
             }
         }
+
     }
 }
