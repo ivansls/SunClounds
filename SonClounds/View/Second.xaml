@@ -27,8 +27,7 @@
                         <RowDefinition Height="25*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Text="Ваш oсновной город" Grid.Row="0" FontSize="28px" Grid.Column="2" FontFamily="/Resources/Font/#Jura" HorizontalAlignment="Center" Foreground="White"/>
-                    <TextBox Text="{Binding CoreCity}"  Background="#3D95B9" Opacity="0.5" Grid.Row="1" VerticalAlignment="Top" TextAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="15px" Foreground="White"/>
-
+                    <TextBox Text="{Binding CoreCity, Mode=TwoWay}" Grid.Row="1" VerticalAlignment="Top" TextAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="15px" Background="#7F3D95B9" Foreground="White" />
 
                 </Grid>
 
@@ -82,7 +81,6 @@
                                 <SolidColorBrush Color="#3D95B9" Opacity="0.5"/> 
                             </TextBox.BorderBrush>
                         </TextBox>
-
                         <Button Style="{DynamicResource ButtonST}" Content="X" Command="{Binding Clear}"  Grid.Column="1" FontSize="15px" Foreground="White" VerticalAlignment="Center" BorderBrush="{x:Null}" Padding="0,0,0,0">
                             <Button.Background>
                                 <SolidColorBrush Color="#3D95B9" Opacity="0.5"/>
