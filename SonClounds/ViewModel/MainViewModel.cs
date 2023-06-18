@@ -193,6 +193,7 @@ namespace SunClounds.ViewModel
             AllScreenCommand = new BindableCommand(_ => OpenWideWindow());
             LessCommand = new BindableCommand(_ => OpenLessWindow());
             ScaleWindow = new BindableCommand(_ => start_Scale());
+            start_Scale();
 
         }
 
@@ -209,7 +210,7 @@ namespace SunClounds.ViewModel
         private void to_settings()
         {
             framePage = new Second();
-            start_Scale();
+            
 
 
         }
