@@ -18,6 +18,8 @@ namespace SonClounds.ViewModel
 
         public string main = Core_city;
 
+        private static string Core_city = "";
+
         private static string text_city = "город";
       
 
@@ -77,6 +79,7 @@ namespace SonClounds.ViewModel
 
         private void Add_City()
         {
+            
             MessageBox.Show("add");
         }
 

@@ -2,9 +2,12 @@
 using SonClounds.View;
 using SonClounds.ViewModel;
 using SonClounds.ViewModel.Helpers;
+using System.Diagnostics;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Media3D;
 
 namespace SunClounds.ViewModel
 {
@@ -21,8 +24,10 @@ namespace SunClounds.ViewModel
         private static string timeFirst;
         private static string timeSecond;
         private static string timeThird;
+        private bool flag = false;
+        private WindowState Window_State = new WindowState();
 
-       
+
 
         public Page framePage
         {
@@ -30,6 +35,15 @@ namespace SunClounds.ViewModel
             set
             {
                 Frame_Page = value;
+                OnPropertyChenged();
+            }
+        }
+        public WindowState W_S
+        {
+            get { return Window_State; }
+            set
+            {
+                Window_State = value;
                 OnPropertyChenged();
             }
         }
@@ -126,10 +140,17 @@ namespace SunClounds.ViewModel
         {
             ToSettings = new BindableCommand(_ => to_settings());
             ToWeather = new BindableCommand(_ => to_weather());
+            CloseCommand = new BindableCommand(_ => CloseWindow());
+            AllScreenCommand = new BindableCommand(_ => OpenWideWindow());
+            LessCommand = new BindableCommand(_ => OpenLessWindow());
+
         }
 
         public ICommand ToSettings { get; }
         public ICommand ToWeather { get; }
+        public BindableCommand CloseCommand { get; set; }
+        public BindableCommand LessCommand { get; set; }
+        public BindableCommand AllScreenCommand { get; set; }
 
         private void to_settings()
         {
@@ -149,7 +170,31 @@ namespace SunClounds.ViewModel
             PutThird = "/Resources/Picture/Cloudy.png";
             PutFourth = "/Resources/Picture/Rainy.png";
         }
+        public void CloseWindow()
+        {
+            Application.Current.Shutdown();
+        }
+        public void OpenWideWindow()
+        {
+            W_S = WindowState.Maximized;
+            
+            flag = false;
+        }
+        public void OpenLessWindow()
+        {
+            if (!flag)
+            {
+                W_S = WindowState.Normal;
+                flag = true;
+            }
+            else
+            {
+                W_S = WindowState.Minimized;
+            }
+        }
 
+
+        
 
 
     }
