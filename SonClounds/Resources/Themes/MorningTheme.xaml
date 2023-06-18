@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Brush x:Key="Button">#3D95B9</Brush>
+    <Brush x:Key="SecondaryColour">#87B6CA</Brush>
+    <Style x:Key="BackG" TargetType="Image">
+        <Setter Property="Source" Value="\Resources\Picture\MorningEvening.png"/>
+        <Setter Property="Stretch" Value="Fill"/>
+    </Style>
+</ResourceDictionary>

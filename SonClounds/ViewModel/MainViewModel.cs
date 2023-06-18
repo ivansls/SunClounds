@@ -1,5 +1,6 @@
 ﻿using SonClounds;
 using SonClounds.View;
+using SonClounds.ViewModel;
 using SonClounds.ViewModel.Helpers;
 using System.Diagnostics;
 using System;
@@ -14,7 +15,7 @@ namespace SunClounds.ViewModel
 
     internal class MainViewModel : BindingHelper
     {
-        
+        public SecondViewModel second = new SecondViewModel();
         private static Page Frame_Page = new First();
         private static string city_name;
         private static string put1;
@@ -104,8 +105,10 @@ namespace SunClounds.ViewModel
             get { return city_name; }
             set
             {
+                
                 city_name = value;
                 OnPropertyChenged();
+
             }
         }
 
@@ -194,6 +197,7 @@ namespace SunClounds.ViewModel
             LessCommand = new BindableCommand(_ => OpenLessWindow());
             ScaleWindow = new BindableCommand(_ => start_Scale());
             start_Scale();
+            CityName = SonClounds.Properties.Settings.Default.CurrentCity;
 
         }
 
@@ -204,9 +208,6 @@ namespace SunClounds.ViewModel
         public BindableCommand CloseCommand { get; set; }
         public BindableCommand LessCommand { get; set; }
         public BindableCommand AllScreenCommand { get; set; }
-
-        
-
         private void to_settings()
         {
             framePage = new Second();
@@ -235,6 +236,7 @@ namespace SunClounds.ViewModel
         public void OpenWideWindow()
         {
             W_S = WindowState.Maximized;
+            
             flag = false;
         }
         public void OpenLessWindow()
