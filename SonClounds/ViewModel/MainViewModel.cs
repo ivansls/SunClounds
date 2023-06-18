@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Media3D;
+using SonClounds.ViewModel;
 using System.Threading.Tasks;
 
 namespace SunClounds.ViewModel
@@ -183,6 +184,7 @@ namespace SunClounds.ViewModel
                 OnPropertyChenged();
             }
         }
+        private bool Tracking_time = true;
 
 
 
@@ -192,6 +194,7 @@ namespace SunClounds.ViewModel
 
         public MainViewModel()
         {
+            Time_Track();
             ToSettings = new BindableCommand(_ => to_settings());
             ToWeather = new BindableCommand(_ => to_weather());
             CloseCommand = new BindableCommand(_ => CloseWindow());
@@ -253,9 +256,22 @@ namespace SunClounds.ViewModel
                 W_S = WindowState.Minimized;
             }
         }
+        private async Task time()
+        {
+            while (Tracking_time)
+            {
+                int hour_now = DateTime.Now.Hour;
+                //Проверки на время и смена темы
+                await Task.Delay(600000);
+            }
+        }
+        private async void Time_Track()
+        {
+            await time();
+        }
 
 
-        
+
 
 
     }
