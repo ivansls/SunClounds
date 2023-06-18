@@ -1,4 +1,6 @@
-﻿using SonClounds.ViewModel.Helpers;
+
+﻿using SonClounds.Model;
+using SonClounds.ViewModel.Helpers;
 using SunClounds.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -79,7 +81,7 @@ namespace SonClounds.ViewModel
 
         private void Add_City()
         {
-            
+
             MessageBox.Show("add");
         }
 

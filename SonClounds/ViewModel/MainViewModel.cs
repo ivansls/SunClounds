@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Media3D;
+using System.Threading.Tasks;
 
 namespace SunClounds.ViewModel
 {
@@ -27,7 +28,58 @@ namespace SunClounds.ViewModel
         private bool flag = false;
         private WindowState Window_State = new WindowState();
 
+        public bool isWorking = true;
 
+        public int width_window { get; set; } = 1500;
+        public int WidthWindow
+        {
+            get
+            {
+                return width_window;
+            }
+            set
+            {
+                width_window = value;
+                OnPropertyChenged();
+            }
+        }
+
+        public int height_window { get; set; } = 850;
+        public int HeightWindow
+        {
+            get
+            {
+                return height_window;
+            }
+            set
+            {
+                height_window = value;
+                OnPropertyChenged();
+            }
+        }
+
+
+        private async Task Tochki()
+        {
+            
+            while (isWorking)
+            {
+                if (WidthWindow <= 915 && WidthWindow != 450) 
+                {
+                    WidthWindow = 450;
+                }
+                else if (HeightWindow <= 500 && HeightWindow != 300)
+                {
+                    HeightWindow = 300;
+                }
+                await Task.Delay(50);
+            }
+        }
+
+        public async void start_Scale()
+        {
+            await Tochki();
+        }
 
         public Page framePage
         {
@@ -143,19 +195,25 @@ namespace SunClounds.ViewModel
             CloseCommand = new BindableCommand(_ => CloseWindow());
             AllScreenCommand = new BindableCommand(_ => OpenWideWindow());
             LessCommand = new BindableCommand(_ => OpenLessWindow());
+            ScaleWindow = new BindableCommand(_ => start_Scale());
+            start_Scale();
             CityName = SonClounds.Properties.Settings.Default.CurrentCity;
 
         }
 
         public ICommand ToSettings { get; }
         public ICommand ToWeather { get; }
+
+        public BindableCommand ScaleWindow { get; }
         public BindableCommand CloseCommand { get; set; }
         public BindableCommand LessCommand { get; set; }
         public BindableCommand AllScreenCommand { get; set; }
-
         private void to_settings()
         {
             framePage = new Second();
+            
+
+
         }
 
 

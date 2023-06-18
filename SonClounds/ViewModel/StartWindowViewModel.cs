@@ -1,10 +1,12 @@
 ﻿using SonClounds.View;
 using SonClounds.ViewModel.Helpers;
+using SunClounds.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -13,6 +15,7 @@ namespace SonClounds.ViewModel
 {
     internal class StartWindowViewModel:BindingHelper
     {
+        
 
         #region Commands
         public BindableCommand CloseCommand { get; set; }
@@ -101,6 +104,8 @@ namespace SonClounds.ViewModel
 
         }
 
+        
+
         public void TextChanging()
         {
             Visibility = Visibility.Visible;
@@ -111,8 +116,11 @@ namespace SonClounds.ViewModel
         }
         public void NowWeather()
         {
+            
             StartWindow st = new StartWindow();
             st.Show();
+            MainViewModel mainViewModel = new MainViewModel();
+            mainViewModel.start_Scale();
             MainWindow win = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
             if (win != null)
             {

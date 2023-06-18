@@ -7,10 +7,12 @@
         xmlns:local="clr-namespace:SonClounds.View"
         mc:Ignorable="d"
         WindowState="{Binding W_S}"
-        WindowStyle="None" Height="850" Width="1500" MinWidth="440" MinHeight="280" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+        WindowStyle="None" Height="{Binding HeightWindow, Mode=TwoWay}" Width="{Binding WidthWindow, Mode=TwoWay}" MinWidth="440" MinHeight="280" MouseLeftButtonDown="Window_MouseLeftButtonDown" >
     <Window.Background>
         <ImageBrush ImageSource="/Resources/Picture/Day.png" TileMode="Tile" Stretch="UniformToFill" />
     </Window.Background>
+    
+    
 
     
     <Grid>
@@ -23,7 +25,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-
+        
 
 
 
@@ -193,7 +195,9 @@
                 </Button.Template>
             </Button>
         </Grid>
-        <Frame NavigationUIVisibility="Hidden" Grid.Row="2" Grid.Column="1" Content="{Binding framePage}"/>
+        <ScrollViewer  Grid.Row="2" Grid.Column="1">
+            <Frame NavigationUIVisibility="Hidden" Content="{Binding framePage}"/>
+        </ScrollViewer>
     </Grid>
     
 </Window>
