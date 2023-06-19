@@ -162,9 +162,21 @@ namespace SonClounds.ViewModel
             while (Tracking_time)
             {
                 int hour_now = DateTime.Now.Hour;
-                if(hour_now >= 0 && hour_now <= 3)
+                if(hour_now >= 0 && hour_now < 4)
                 {
-
+                    App.Theme = "NightTheme";
+                }
+                else if (hour_now >= 4 && hour_now < 12)
+                {
+                    App.Theme = "MorningTheme";
+                }
+                else if(hour_now >= 12 && hour_now < 17)
+                {
+                    App.Theme = "DayTheme";
+                }
+                else if(hour_now >=17 && hour_now != 0)
+                {
+                    App.Theme = "MorningTheme";
                 }
                 await Task.Delay(600000);
             }
