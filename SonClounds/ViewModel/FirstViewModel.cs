@@ -271,8 +271,6 @@ namespace SonClounds.ViewModel
             {
                 foreach(LineSeries line in SeriesCollection_)
                 {
-                    string a = App.Theme;
-                    MessageBox.Show(a);
                     if(App.Theme == "MorningTheme" || App.Theme == "DayTheme")
                     {
                         line.Stroke = new SolidColorBrush(Color.FromRgb(61, 149, 185));
