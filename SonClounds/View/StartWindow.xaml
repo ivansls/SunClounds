@@ -68,7 +68,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="{Binding CityName}" TextAlignment="Center" Margin="5" FontFamily="/Resources/Font/#Jura" Foreground="{DynamicResource Button}" FontSize="36" Grid.Row="1"/>
+            <TextBlock Text="{Binding CityName}" TextAlignment="Center" Margin="5,5,5,10" VerticalAlignment="Bottom"  FontFamily="/Resources/Font/#Jura" Foreground="{DynamicResource Button}" FontSize="36" Grid.Row="1"/>
             <!--Не уверен с цветами-->
             <Separator VerticalAlignment="Bottom"  Background="#3D95B9" Width="404.5" Grid.Row="1" Margin="0,2,0,5" HorizontalAlignment="Center">
                 <Separator.RenderTransform>
