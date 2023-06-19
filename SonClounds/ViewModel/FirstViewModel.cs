@@ -114,33 +114,6 @@ namespace SonClounds.ViewModel
                 OnPropertyChenged();
             }
         }
-
-
-
-
-
-
-
-
-
-        public void temperature()
-        {
-        
-            App.Theme = "NightTheme";
-            //framePage = new First();
-        }
-        public void feelsLike()
-        {
-
-            App.Theme = "DayTheme";
-            //framePage = new First();
-        }
-        public void pressure()
-        {
-
-            App.Theme = "MorningTheme";
-            //framePage = new First();
-        }
         
         private int fsx = 20;
         public int FontSizeX
@@ -193,6 +166,7 @@ namespace SonClounds.ViewModel
         public string[] XLabels { get; set; }
         public int[] Ylabels { get; set; }
         public Func<double, string> Formatter { get; set; }
+        private LineSeries LineSeries = new LineSeries();
         #endregion
         #region Commands
 
@@ -221,23 +195,31 @@ namespace SonClounds.ViewModel
 
             //ints = new ChartValues<double> {5, 10, 45, 20, 30, 40, 38, 10};
             Load_Info();
-            XLabels = new string[] { "00:00", "03:00", "06:00", "09:00", "12:00", "15:00", "18:00", "21:00" };
-            SeriesCollection_ = new SeriesCollection()
-            {
-                new LineSeries
-                {
 
-                    Values = ints,
-                    Stroke = new SolidColorBrush(Color.FromRgb(61, 149, 185)),
-                    Fill = Brushes.Transparent,
-                    Title = "Градусов:",
-                    PointForeground = new SolidColorBrush(Color.FromRgb(135,182,202)),
-                    PointGeometrySize = 10,
-                    
-                  
-                }
-                
-            };
+            XLabels = new string[] { "00:00", "03:00", "06:00", "09:00", "12:00", "15:00", "18:00", "21:00" };
+            //SeriesCollection_ = new SeriesCollection()
+            //{
+            //    new LineSeries
+            //    {
+
+            //        Values = ints,
+            //        Stroke = new SolidColorBrush(Color.FromRgb(61, 149, 185)),
+            //        Fill = Brushes.Transparent,
+            //        Title = "Градусов:",
+            //        PointForeground = new SolidColorBrush(Color.FromRgb(135,182,202)),
+            //        PointGeometrySize = 10,
+
+
+            //    }
+
+            //};
+            LineSeries.Values = ints;
+            LineSeries.Stroke = new SolidColorBrush(Color.FromRgb(61, 149, 185));
+            LineSeries.Fill = Brushes.Transparent;
+            LineSeries.Title = "Градусов:";
+            LineSeries.PointForeground = new SolidColorBrush(Color.FromRgb(135, 182, 202));
+            LineSeries.PointGeometrySize = 15;
+            SeriesCollection_ = new SeriesCollection() { LineSeries};
             //возможно дэйблы для игрика стоит хранить в числовом формате и просто настроить формат
             Ylabels = new[] { 10, 20, 30, 40, 50};
             //если цельсии то:
@@ -263,7 +245,24 @@ namespace SonClounds.ViewModel
             Visible_PrBar_1 = Visibility.Hidden;
             Visible_PrBar_2 = Visibility.Hidden;
         }
+        public void temperature()
+        {
 
+            App.Theme = "NightTheme";
+            //framePage = new First();
+        }
+        public void feelsLike()
+        {
+
+            App.Theme = "DayTheme";
+            //framePage = new First();
+        }
+        public void pressure()
+        {
+
+            App.Theme = "MorningTheme";
+            //framePage = new First();
+        }
 
     }
 }
