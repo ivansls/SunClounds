@@ -6,4 +6,5 @@
         <Setter Property="Source" Value="\Resources\Picture\Day.png"/>
         <Setter Property="Stretch" Value="Fill"/>
     </Style>
+    <Color x:Key="FirstWButtonsColor">#87B6CA</Color>
 </ResourceDictionary> 

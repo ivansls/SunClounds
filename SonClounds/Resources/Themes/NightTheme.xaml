@@ -6,4 +6,5 @@
         <Setter Property="Source" Value="\Resources\Picture\Night.png"/>
         <Setter Property="Stretch" Value="Fill"/>
     </Style>
+    <Color x:Key="FirstWButtonsColor">#591E6E</Color>
 </ResourceDictionary>
