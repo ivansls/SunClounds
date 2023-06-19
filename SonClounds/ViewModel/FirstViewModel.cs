@@ -167,6 +167,7 @@ namespace SonClounds.ViewModel
         public int[] Ylabels { get; set; }
         public Func<double, string> Formatter { get; set; }
         private LineSeries LineSeries = new LineSeries();
+        private bool Listen_Theme = true;
         #endregion
         #region Commands
 
@@ -220,6 +221,7 @@ namespace SonClounds.ViewModel
             LineSeries.PointForeground = new SolidColorBrush(Color.FromRgb(135, 182, 202));
             LineSeries.PointGeometrySize = 15;
             SeriesCollection_ = new SeriesCollection() { LineSeries};
+            Theme_listening();
             //возможно дэйблы для игрика стоит хранить в числовом формате и просто настроить формат
             Ylabels = new[] { 10, 20, 30, 40, 50};
             //если цельсии то:
@@ -262,6 +264,32 @@ namespace SonClounds.ViewModel
 
             App.Theme = "MorningTheme";
             //framePage = new First();
+        }
+        private async Task Theme_Listener()
+        {
+            while (Listen_Theme)
+            {
+                foreach(LineSeries line in SeriesCollection_)
+                {
+                    string a = App.Theme;
+                    MessageBox.Show(a);
+                    if(App.Theme == "MorningTheme" || App.Theme == "DayTheme")
+                    {
+                        line.Stroke = new SolidColorBrush(Color.FromRgb(61, 149, 185));
+                        line.PointForeground = new SolidColorBrush(Color.FromRgb(135, 182, 202));
+                    }
+                    else
+                    {
+                        line.Stroke = new SolidColorBrush(Color.FromRgb(248, 197, 180));
+                        line.PointForeground = new SolidColorBrush(Color.FromRgb(89, 30, 110));
+                    }
+                }
+                await Task.Delay(600000);
+            }
+        }
+        private async void Theme_listening()
+        {
+            await Theme_Listener();
         }
 
     }
