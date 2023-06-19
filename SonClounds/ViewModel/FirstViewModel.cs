@@ -120,5 +120,30 @@ namespace SonClounds.ViewModel
             }
         }
 
+
+        private static string Vlaj = "15º";
+
+        public string vlaj //Температура
+        {
+            get { return Vlaj; }
+            set
+            {
+                Vlaj = value;
+                OnPropertyChenged();
+            }
+        }
+
+        private static string Ochuc = "15º";
+
+        public string ochuc //Температура
+        {
+            get { return Ochuc; }
+            set
+            {
+                Ochuc = value;
+                OnPropertyChenged();
+            }
+        }
+
     }
 }

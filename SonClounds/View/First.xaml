@@ -87,13 +87,8 @@
                     <SolidColorBrush Color="#FFF8C5B4" Opacity="0.3"/>
                 </Grid.Background>
                 <!--Для просмотра можно расскоментить-->
-                <ListBox x:Name="UserEl" Background="#0000">
-                    <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <VirtualizingStackPanel IsItemsHost="True" Orientation="Horizontal"/>
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                </ListBox>
+                <WrapPanel x:Name="UserEl" Background="#0000"/>
+
 
 
             </Grid>
