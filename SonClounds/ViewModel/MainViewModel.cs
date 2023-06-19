@@ -8,7 +8,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Media3D;
-using SonClounds.ViewModel;
 using System.Threading.Tasks;
 
 namespace SunClounds.ViewModel
@@ -185,10 +184,6 @@ namespace SunClounds.ViewModel
             }
         }
         private bool Tracking_time = true;
-
-
-
-
 
 
 
