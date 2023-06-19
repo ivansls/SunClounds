@@ -27,7 +27,8 @@
                         <RowDefinition Height="25*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Text="Ваш oсновной город" Grid.Row="0" FontSize="28px" Grid.Column="2" FontFamily="/Resources/Font/#Jura" HorizontalAlignment="Center" Foreground="White"/>
-                    <TextBlock Text="{Binding CoreCity}" Grid.Row="1" VerticalAlignment="Top" TextAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="15px" Background="#7F3D95B9" Foreground="White" />
+                    <TextBox Text="{Binding CoreCity}"  Background="#3D95B9" Opacity="0.5" Grid.Row="1" VerticalAlignment="Top" TextAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="15px" Foreground="White"/>
+
 
                 </Grid>
 
@@ -44,7 +45,25 @@
 
 
 
-                    <WrapPanel x:Name="UserEl" Background="#7FF8C5B4" Grid.Row="1"  />
+                    <WrapPanel x:Name="UserEl" Background="#F8C5B4" Grid.Row="1" Opacity="0.5"/>
+                    <!--нижняя тень-->
+                    <Rectangle VerticalAlignment="Bottom" Height="2" Grid.Row="1">
+                        <Rectangle.Fill>
+                            <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
+                        </Rectangle.Fill>
+                        <Rectangle.Effect>
+                            <DropShadowEffect Color="Black" BlurRadius="5" ShadowDepth="2" Direction="260"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <!--правая тень-->
+                    <Rectangle HorizontalAlignment="Right" Width="1" Grid.Row="1">
+                        <Rectangle.Fill>
+                            <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
+                        </Rectangle.Fill>
+                        <Rectangle.Effect>
+                            <DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="2"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
 
                     <Grid Grid.Row="2">
                         <Grid.ColumnDefinitions>
@@ -55,9 +74,20 @@
                         </Grid.ColumnDefinitions>
 
 
-                        <TextBox Text="{Binding TextCity}" FontFamily="/Resources/Font/#Jura" FontSize="15px" Grid.Column="0" Background="#7F3D95B9" TextAlignment="Center" Foreground="White" BorderBrush="#7F3D95B9" VerticalAlignment="Center"/>
+                        <TextBox Text="{Binding TextCity}" FontFamily="/Resources/Font/#Jura" FontSize="15px" Grid.Column="0" TextAlignment="Center" Foreground="White" VerticalAlignment="Center">
+                            <TextBox.Background>
+                                <SolidColorBrush Color="#3D95B9" Opacity="0.5"/>
+                            </TextBox.Background>
+                            <TextBox.BorderBrush>
+                                <SolidColorBrush Color="#3D95B9" Opacity="0.5"/> 
+                            </TextBox.BorderBrush>
+                        </TextBox>
 
-                        <Button Style="{DynamicResource ButtonST}" Content="X" Command="{Binding Clear}"  Grid.Column="1" FontSize="15px" Background="#7F3D95B9" Foreground="White" VerticalAlignment="Center" BorderBrush="{x:Null}" Padding="0,0,0,0"/>
+                        <Button Style="{DynamicResource ButtonST}" Content="X" Command="{Binding Clear}"  Grid.Column="1" FontSize="15px" Foreground="White" VerticalAlignment="Center" BorderBrush="{x:Null}" Padding="0,0,0,0">
+                            <Button.Background>
+                                <SolidColorBrush Color="#3D95B9" Opacity="0.5"/>
+                            </Button.Background>
+                        </Button>
 
 
                         <Button Style="{DynamicResource ButtonST}" Command="{Binding AddCity}"  Grid.Column="2" FontSize="15px" Content="Добавить город" Background="#87B6CA" Foreground="White" VerticalAlignment="Center" BorderBrush="{x:Null}" Padding="1,0,1,0"/>
@@ -94,8 +124,8 @@
                                 <ColumnDefinition Width="1.5*"/>
                                 <ColumnDefinition Width="2*"/>
                             </Grid.ColumnDefinitions>
-                            <Rectangle Fill="#7F3D95B9" Grid.Column="1" />
-                            <Rectangle Fill="#7F3D95B9" Grid.Column="3" />
+                            <Rectangle Fill="#3D95B9" Grid.Column="1" Opacity="0.5"/>
+                            <Rectangle Fill="#3D95B9" Grid.Column="3" Opacity="0.5"/>
                             <RadioButton Command="{Binding Celisiy}" Content="Цельсий С" Grid.Column="1" FontSize="15px" Grid.Row="1" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Top"  Foreground="White" IsChecked="True" />
                             <RadioButton Command="{Binding Faringate}" Content="Фарингейт F" Grid.Column="3" FontSize="15px" Grid.Row="1" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Top" Foreground="White" />
 
@@ -106,7 +136,7 @@
 
                     
                 </Grid>
-                <Button Style="{DynamicResource ButtonST}" Command="{Binding Save}"  Grid.Row="3" Content="Сохранить" VerticalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#FFFFFFFF" Background="#7F3D95B9" FontSize="15px"  BorderBrush="#7F3D95B9"/>
+                <Button Style="{DynamicResource ButtonST}" Command="{Binding Save}"  Grid.Row="3" Content="Сохранить" VerticalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#FFFFFFFF" Background="#87B6CA" FontSize="15px"  BorderBrush="#87B6CA"/>
 
             </Grid>
         </ScrollViewer>

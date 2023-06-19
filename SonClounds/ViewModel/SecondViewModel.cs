@@ -1,4 +1,5 @@
-﻿using SonClounds.ViewModel.Helpers;
+﻿using SonClounds.Model;
+using SonClounds.ViewModel.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,11 @@ namespace SonClounds.ViewModel
 {
     internal class SecondViewModel : BindingHelper
     {
-        private static string Core_city = "Северобайкальск";
+        private static string Core_city = "";
 
         private static string text_city = "город";
+
+        List<WeatherClass> cityList = new List<WeatherClass>();
 
         public string CoreCity
         {
@@ -65,12 +68,19 @@ namespace SonClounds.ViewModel
             MessageBox.Show("save");
         }
 
-
         private void Add_City()
+ 
         {
+            WeatherClass weatherClass = new WeatherClass();
+            weatherClass.NameCity = "gfgh";
+            weatherClass.latitude = 56;
+            weatherClass.longitude = 76;
+            cityList.Add(weatherClass);
             MessageBox.Show("add");
             
         }
+
+
 
 
 
