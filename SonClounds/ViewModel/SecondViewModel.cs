@@ -20,6 +20,8 @@ namespace SonClounds.ViewModel
         private static string Core_city;
 
         private static string text_city = "город";
+
+       
       
 
         public string CoreCity
@@ -99,5 +101,7 @@ namespace SonClounds.ViewModel
             TextCity = "";
 
         }
+
+      
     }
 }

@@ -26,8 +26,8 @@ namespace SonClounds.View
         {
             InitializeComponent();
             DataContext = new MainViewModel();
-            MainViewModel mb = new MainViewModel();
-            mb.default_values();
+            //MainViewModel mb = new MainViewModel();
+            //mb.default_values();
         }
 
         /*private void Window_SizeChanged(object sender, SizeChangedEventArgs e)

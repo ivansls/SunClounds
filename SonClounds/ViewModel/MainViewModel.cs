@@ -9,6 +9,8 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Media3D;
 using System.Threading.Tasks;
+using Api_Work;
+using System.Collections.Generic;
 
 namespace SunClounds.ViewModel
 {
@@ -25,6 +27,10 @@ namespace SunClounds.ViewModel
         private static string timeFirst;
         private static string timeSecond;
         private static string timeThird;
+        private static string text_1;
+        private static string text_2;
+        private static string text_3;
+        private static string text_4;
         private bool flag = false;
         private WindowState Window_State = new WindowState();
 
@@ -77,6 +83,8 @@ namespace SunClounds.ViewModel
                
             }
         }
+
+        
 
         public async void start_Scale()
         {
@@ -159,7 +167,7 @@ namespace SunClounds.ViewModel
             get { return timeFirst; }
             set
             {
-                put4 = value;
+                timeFirst = value;
                 OnPropertyChenged();
             }
         }
@@ -169,7 +177,7 @@ namespace SunClounds.ViewModel
             get { return timeSecond; }
             set
             {
-                put4 = value;
+                timeSecond = value;
                 OnPropertyChenged();
             }
         }
@@ -179,7 +187,47 @@ namespace SunClounds.ViewModel
             get { return timeThird; }
             set
             {
-                put4 = value;
+                timeThird = value;
+                OnPropertyChenged();
+            }
+        }
+
+        public string Text1 //Первый текст
+        {
+            get { return text_1; }
+            set
+            {
+                text_1 = value;
+                OnPropertyChenged();
+            }
+        }
+
+        public string Text2 //Второй текст
+        {
+            get { return text_2; }
+            set
+            {
+                text_2 = value;
+                OnPropertyChenged();
+            }
+        }
+
+        public string Text3 //Третий текст
+        {
+            get { return text_3; }
+            set
+            {
+                text_3 = value;
+                OnPropertyChenged();
+            }
+        }
+
+        public string Text4 //Четвертый текст
+        {
+            get { return text_4; }
+            set
+            {
+                text_4 = value;
                 OnPropertyChenged();
             }
         }
@@ -198,6 +246,7 @@ namespace SunClounds.ViewModel
             ScaleWindow = new BindableCommand(_ => start_Scale());
             start_Scale();
             CityName = SonClounds.Properties.Settings.Default.CurrentCity;
+            For_Left_Panel();
         }
 
         public ICommand ToSettings { get; }
@@ -278,6 +327,54 @@ namespace SunClounds.ViewModel
         private async void Time_Track()
         {
             await time();
+        }
+
+        private void For_Left_Panel()
+        {
+            List<NiceList> listik = Working.Left_Panel(SonClounds.Properties.Settings.Default.CurrentCity);
+            //text_1 = listik[0].desc;
+            text_2 = listik[0].desc;
+            text_3 = listik[1].desc;
+            text_4 = listik[2].desc;
+            timeFirst = listik[0].time.Hour.ToString() + ":00";
+            timeSecond = listik[1].time.Hour.ToString() + ":00";
+            timeThird = listik[2].time.Hour.ToString() + ":00";
+            for (int i = 0; i < 3; i++)
+            {
+                switch(listik[i].desc)
+                {
+                    case "облачно с прояснениями":
+                        switch(i)
+                        {
+                            case 0:
+                                put2 = "/Resources/Picture/Cloudy.png";
+                                break;
+                            case 1:
+                                put3 = "/Resources/Picture/Cloudy.png";
+                                break;
+                            case 2:
+                                put4 = "/Resources/Picture/Cloudy.png";
+                                break;
+                        }
+                        break;
+
+                    case "пасмурно": //доделать
+                        switch(i)
+                        {
+                            case 0:
+                                put2 = "/Resources/Picture/Cloudy.png";
+                                break;
+                            case 1:
+                                put3 = "/Resources/Picture/Cloudy.png";
+                                break;
+                            case 2:
+                                put4 = "/Resources/Picture/Cloudy.png";
+                                break;
+                        }
+                        break;
+
+                }
+            }
         }
 
 

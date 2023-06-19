@@ -62,32 +62,32 @@
                 <!--Параметры-->
                 <ToolBar Grid.Column="3" Background="#0000" Style="{DynamicResource ToolBarStyle1}">
                     <StackPanel>
-                        <TextBlock Text="Ощущение" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Center" Margin="0,0,30,0"/>
-                        <TextBlock Text="{Binding Feeling}" Grid.Row="1" Grid.Column="2"  HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Top"/>
+                        <TextBlock Text="Ощущение:" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Center" Margin="0,0,30,0"/>
+                        <TextBlock Text="{Binding Feeling}" Grid.Row="1" Grid.Column="2"  HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Center" Margin="0,0,30,0"/>
                     </StackPanel>
                     <StackPanel>
-                        <TextBlock Text="Мин" Grid.Row="0" Grid.Column="3"   HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Center" Margin="0,0,30,0"/>
-                        <TextBlock Text="{Binding Min}" Grid.Row="1" Grid.Column="3"  HorizontalAlignment="Center"  FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Top"/>
+                        <TextBlock Text="Мин:" Grid.Row="0" Grid.Column="3"   HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Center" Margin="0,0,30,0"/>
+                        <TextBlock Text="{Binding Min}" Grid.Row="1" Grid.Column="3"  HorizontalAlignment="Center"  FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Center" Margin="0,0,30,0"/>
                     </StackPanel>
                     <StackPanel>
-                        <TextBlock Text="Макс" Grid.Row="0" Grid.Column="4"  HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Center" Margin="0,0,30,0"/>
-                        <TextBlock Text="{Binding Max}" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24"  VerticalAlignment="Top"/>
+                        <TextBlock Text="Макс:" Grid.Row="0" Grid.Column="4"  HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Center" Margin="0,0,30,0"/>
+                        <TextBlock Text="{Binding Max}" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24"  VerticalAlignment="Center" Margin="0,0,30,0"/>
                     </StackPanel>
                     <StackPanel>
-                        <TextBlock Text="Давление" Grid.Row="0" Grid.Column="5"  HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Center" Margin="0,0,30,0"/>
-                        <TextBlock Text="{Binding Pressure}" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Top"/>
+                        <TextBlock Text="Давление:" Grid.Row="0" Grid.Column="5"  HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Center" Margin="0,0,30,0"/>
+                        <TextBlock Text="{Binding Pressure}" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Center" Margin="0,0,30,0"/>
                     </StackPanel>
                     <StackPanel>
-                        <TextBlock Text="Влажность" Grid.Row="0" Grid.Column="6"  HorizontalAlignment="Center"  FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Center" Margin="0,0,30,0"/>
-                        <TextBlock Text="{Binding Humidity}" Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24"  VerticalAlignment="Top"/>
+                        <TextBlock Text="Влажность:" Grid.Row="0" Grid.Column="6"  HorizontalAlignment="Center"  FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Center" Margin="0,0,30,0"/>
+                        <TextBlock Text="{Binding Humidity}" Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24"  VerticalAlignment="Center" Margin="0,0,30,0"/>
                     </StackPanel>
                     <StackPanel>
-                        <TextBlock Text="Ветер м/с" Grid.Row="0" Grid.Column="7"  HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Center" Margin="0,0,30,0"/>
-                        <TextBlock Text="{Binding Wind}" Grid.Row="1" Grid.Column="7" HorizontalAlignment="Center"  FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Top"/>
+                        <TextBlock Text="Ветер м/с:" Grid.Row="0" Grid.Column="7"  HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Center" Margin="0,0,30,0"/>
+                        <TextBlock Text="{Binding Wind}" Grid.Row="1" Grid.Column="7" HorizontalAlignment="Center"  FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Center" Margin="0,0,30,0"/>
                     </StackPanel>
                     <StackPanel>
-                        <TextBlock Text="Ветер" Grid.Row="0" Grid.Column="8"  HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Center" Margin="0,0,30,0"/>
-                        <TextBlock Text="{Binding Wind2}" Grid.Row="1" Grid.Column="8" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Top"/>
+                        <TextBlock Text="Ветер°:" Grid.Row="0" Grid.Column="8"  HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Center" Margin="0,0,30,0"/>
+                        <TextBlock Text="{Binding Wind2}" Grid.Row="1" Grid.Column="8" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="24" VerticalAlignment="Center" Margin="0,0,30,0"/>
                     </StackPanel>
                 </ToolBar>
             </Grid>

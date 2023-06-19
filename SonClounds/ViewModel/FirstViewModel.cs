@@ -18,6 +18,7 @@ using System.Configuration;
 using System.Windows;
 using Microsoft.VisualBasic;
 using System.Threading;
+using Api_Work;
 
 namespace SonClounds.ViewModel
 {
@@ -32,6 +33,7 @@ namespace SonClounds.ViewModel
         private static string w_ind;
         private static string w_ind2;
 
+        public bool PogWorking = true;
 
 
 
@@ -229,6 +231,7 @@ namespace SonClounds.ViewModel
             //если фаренгейты то:
             //Formatter = value => value.ToString("N0") + "°F";
 
+            Pogoda();
 
         }
         private async Task Loading_Info_Into_FirstPage()
@@ -289,6 +292,34 @@ namespace SonClounds.ViewModel
         {
             await Theme_Listener();
         }
+
+        private async Task Pogoda()
+        {
+            while (PogWorking)
+            {
+                Cur_Weather w = Working.Main_weather(SonClounds.Properties.Settings.Default.CurrentCity);
+                if(w == null)
+                {
+                    MessageBox.Show("Error"); //или как-то по другому сделать
+                }
+                else
+                {
+                    Degrees = w.temp + "°";
+                    Feeling = w.feels + "°";
+                    Min = w.min_temp + "°";
+                    Max = w.max_temp + "°";
+                    Pressure = w.pressure + " мм рт. ст";
+                    Humidity = w.humidity + "%";
+                    Wind = w.wind + " м/с";
+                    Wind2 = w.wind2;
+                }
+            
+                await Task.Delay(10800000);//Посмотреть мб каждый час или типо того
+
+            }
+            
+        }
+       
 
     }
 }
