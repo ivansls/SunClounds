@@ -1,6 +1,4 @@
-﻿using SonClounds.ViewModel;
-using SunClounds.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,22 +16,13 @@ using System.Windows.Shapes;
 namespace SonClounds.View
 {
     /// <summary>
-    /// Логика взаимодействия для First.xaml
+    /// Логика взаимодействия для IzbranGoroda.xaml
     /// </summary>
-    public partial class First : Page
+    public partial class IzbranGoroda : UserControl
     {
-        public First()
+        public IzbranGoroda()
         {
             InitializeComponent();
-            DataContext = new FirstViewModel();
-            for (int i = 0; i < 5; i++)
-            {
-                WeatherCart izbranGoroda = new WeatherCart();
-                UserEl.Children.Add(izbranGoroda);
-            }
-
         }
-
-       
     }
 }
