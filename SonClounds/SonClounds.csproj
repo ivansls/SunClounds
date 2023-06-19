@@ -30,6 +30,9 @@
 	  <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
 	  <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\Api_Work\Api_Work.csproj" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<Resource Include="Resources\Font\Jura-Regular.ttf">

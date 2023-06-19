@@ -1,5 +1,3 @@
-
-﻿using SonClounds.Model;
 using SonClounds.ViewModel.Helpers;
 using SunClounds.ViewModel;
 using System;
