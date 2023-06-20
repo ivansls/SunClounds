@@ -14,13 +14,16 @@
         MinWidth="206"
         d:Height="400px"
         d:Width="666px"
+
         WindowState="{Binding W_S, Mode=TwoWay}" MouseLeftButtonDown="Window_MouseLeftButtonDown">
 
-	<Window.Background>
-		<ImageBrush ImageSource="/Resources/Picture/Day.png"/>
-	</Window.Background>
+	<!--<Window.Background>
+        <ImageBrush ImageSource="{DynamicResource BackG}"/>
+	</Window.Background>-->
+	
 
 	<Grid>
+        
 		<Grid.RowDefinitions>
 			<RowDefinition Height="0.25*"/>
 			<RowDefinition />
@@ -32,8 +35,8 @@
 			<ColumnDefinition MinWidth="206"/>
 			<ColumnDefinition />
 		</Grid.ColumnDefinitions>
-
-		<Grid Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,14,0" MinWidth="78">
+        <Image Style="{DynamicResource BackG}" Grid.RowSpan="4" Grid.ColumnSpan="3"/>
+        <Grid Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,14,0" MinWidth="78">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition MinWidth="22"/>
 				<ColumnDefinition Width="10"/>
@@ -101,47 +104,46 @@
 					<ScaleTransform ScaleY="2"/>
 				</Separator.RenderTransform>
 			</Separator>
-			<Button Grid.Column="1" Content="Узнать погоду" Grid.Row="4" FontFamily="/Resources/Font/#Jura" Grid.ColumnSpan="2" BorderBrush="#87B6CA" FontSize="{Binding BaseFontSize}" FontWeight="Normal" Command="{Binding NowWeatherCommand}">
-				<Button.Background>
-					<SolidColorBrush Color="#87B6CA"/>
-				</Button.Background>
-				<Button.Foreground>
+            <Button Grid.Column="1" Content="Узнать погоду" Grid.Row="4" FontFamily="/Resources/Font/#Jura" Grid.ColumnSpan="2" Background="{DynamicResource SecondaryColour}" BorderBrush="{DynamicResource SecondaryColour}" FontSize="{Binding BaseFontSize}" FontWeight="Normal" Command="{Binding NowWeatherCommand}">
+                <Button.Foreground>
 					<SolidColorBrush Color="White"/>
 				</Button.Foreground>
 			</Button>
-			<TextBox x:Name="CityTxb" Grid.Column="1" Grid.Row="2" Text="{Binding City}" FontFamily="/Resources/Font/#Jura" FlowDirection="RightToLeft" TextAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="{Binding BaseFontSize}" FontWeight="Normal" HorizontalAlignment="Stretch">
-				<TextBox.Background>
-					<SolidColorBrush Color="#87B6CA" Opacity="0.5"/>
-				</TextBox.Background>
-				<TextBox.BorderBrush>
-					<SolidColorBrush Color="#87B6CA" Opacity="0.5"/>
-				</TextBox.BorderBrush>
-				<i:Interaction.Triggers>
-					<i:EventTrigger EventName="TextChanged">
-						<i:InvokeCommandAction Command="{Binding TextStartedChangingCommand}"/>
-					</i:EventTrigger>
-				</i:Interaction.Triggers>
-			</TextBox>
-			<Border Grid.Column="2" Grid.Row="2" Opacity="0.5">
-				<Border.Background>
-					<SolidColorBrush Color="#87B6CA"/>
-				</Border.Background>
-			</Border>
-			<Button Grid.Column="2" Grid.Row="2" Command="{Binding ClearAllTextCommand}" FontFamily="/Resources/Font/#Jura" Visibility="{Binding Visibility}" Content="X" FontSize="{Binding BaseFontSize}">
-				<Button.Background>
-					<SolidColorBrush Color="#87B6CA" Opacity="0"/>
-				</Button.Background>
-				<Button.Foreground>
-					<SolidColorBrush Color="White" Opacity="1"/>
-				</Button.Foreground>
-				<Button.BorderBrush>
-					<SolidColorBrush Color="#87B6CA" Opacity="0"/>
-				</Button.BorderBrush>
-			</Button>
+            <TextBox x:Name="CityTxb" Grid.Column="1" Grid.Row="2" Text="{Binding City}" FontFamily="/Resources/Font/#Jura" FlowDirection="RightToLeft" TextAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="{Binding BaseFontSize}" FontWeight="Normal" HorizontalAlignment="Stretch">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="TextChanged">
+                        <i:InvokeCommandAction Command="{Binding TextStartedChangingCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <TextBox.Background>
+                    <SolidColorBrush Color="{DynamicResource FirstWButtonsColor}" Opacity="0.5"/>
+                </TextBox.Background>
+                <TextBox.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource FirstWButtonsColor}" Opacity="0.5"/>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <Grid Grid.Column="2" Grid.Row="2">
+                <Grid.Background>
+                    <SolidColorBrush Color="{DynamicResource FirstWButtonsColor}" Opacity="0.5"/>
+                </Grid.Background>
+            </Grid>
+            <Button Grid.Column="2" Grid.Row="2" Command="{Binding ClearAllTextCommand}" FontFamily="/Resources/Font/#Jura" Visibility="{Binding Visibility}" Content="X" FontSize="{Binding BaseFontSize}">
+                <Button.Foreground>
+                    <SolidColorBrush Color="White" Opacity="1"/>
+                </Button.Foreground>
+                <Button.Background>
+                    <SolidColorBrush Color="{DynamicResource FirstWButtonsColor}" Opacity="0"/>
+                </Button.Background>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource FirstWButtonsColor}" Opacity="0"/>
+                </Button.BorderBrush>
+            </Button>
+                
 			<Grid.RowDefinitions>
 				<RowDefinition/>
-				<RowDefinition Height="0.5*"/>
-				<RowDefinition Height="0.8*"/>
+                <RowDefinition Height="0.5*"/>
+
+                <RowDefinition Height="0.8*"/>
 				<RowDefinition Height="0.6*"/>
 				<RowDefinition Height="0.8*"/>
 				<RowDefinition Height="0.3*"/>

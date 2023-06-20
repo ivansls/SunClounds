@@ -1,10 +1,13 @@
-﻿using SonClounds.View;
+﻿using Api_Work;
+using SonClounds.View;
 using SonClounds.ViewModel.Helpers;
+using SunClounds.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -13,6 +16,7 @@ namespace SonClounds.ViewModel
 {
     internal class StartWindowViewModel:BindingHelper
     {
+        
 
         #region Commands
         public BindableCommand CloseCommand { get; set; }
@@ -86,10 +90,12 @@ namespace SonClounds.ViewModel
                 OnPropertyChenged();
             }
         }
+        private bool Tracking_time = true;
         
         #endregion
         public StartWindowViewModel() 
         {
+            Time_Track();
             Visibility = Visibility.Hidden;
             City = "Ваш город             ";
             CloseCommand= new BindableCommand(_ => CloseWindow());
@@ -101,6 +107,8 @@ namespace SonClounds.ViewModel
 
         }
 
+        
+
         public void TextChanging()
         {
             Visibility = Visibility.Visible;
@@ -111,9 +119,15 @@ namespace SonClounds.ViewModel
         }
         public void NowWeather()
         {
+            SonClounds.Properties.Settings.Default.CurrentCity = city;
+            SonClounds.Properties.Settings.Default.Save();
+            MessageBox.Show(city);
             StartWindow st = new StartWindow();
             st.Show();
+            MainViewModel mainViewModel = new MainViewModel();
+            mainViewModel.start_Scale();
             MainWindow win = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            Tracking_time = false;
             if (win != null)
             {
                 win.Close();
@@ -144,5 +158,36 @@ namespace SonClounds.ViewModel
                 W_S = WindowState.Minimized;
             }
         }
+        private async Task time()
+        {
+            while (Tracking_time)
+            {
+                int hour_now = DateTime.Now.Hour;
+                if(hour_now >= 0 && hour_now < 4)
+                {
+                    App.Theme = "NightTheme";
+                }
+                else if (hour_now >= 4 && hour_now < 12)
+                {
+                    App.Theme = "MorningTheme";
+                }
+                else if(hour_now >= 12 && hour_now < 17)
+                {
+                    App.Theme = "DayTheme";
+                }
+                else if(hour_now >=17 && hour_now != 0)
+                {
+                    App.Theme = "MorningTheme";
+                }
+                await Task.Delay(1800000);
+            }
+        }
+        private async void Time_Track()
+        {
+            await time();
+        }
+
+        
+
     }
 }

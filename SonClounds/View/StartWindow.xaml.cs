@@ -26,11 +26,11 @@ namespace SonClounds.View
         {
             InitializeComponent();
             DataContext = new MainViewModel();
-            MainViewModel mb = new MainViewModel();
-            mb.default_values();
+            //MainViewModel mb = new MainViewModel();
+            //mb.default_values();
         }
 
-        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        /*private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
 
             var ah = ActualHeight;
@@ -44,7 +44,7 @@ namespace SonClounds.View
             Trace.WriteLine(aw);
             Console.WriteLine(aw);
             //MessageBox.Show(aw + " " + w);
-        }
+        }*/
 
 
        
