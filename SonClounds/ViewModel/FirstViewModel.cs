@@ -394,7 +394,7 @@ namespace SonClounds.ViewModel
                 bg_third = new SolidColorBrush(Color.FromRgb(248, 197, 180));
             }
         }
-        // здесь будет таск для отслеживания нажатия кнопок, чтобы выводить корректные данные для диаграммы
+        // здесь будет таск для отслеживания нажатия кнопок, чтобы выводить корректные данные для диаграммы (или не будет)
         private async Task Theme_Listener()
         {
             while (Listen_Theme)
