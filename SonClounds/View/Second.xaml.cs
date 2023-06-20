@@ -1,4 +1,5 @@
-﻿using SonClounds.ViewModel;
+﻿using SonClounds.View;
+using SonClounds.ViewModel;
 using SunClounds.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -24,8 +25,17 @@ namespace SonClounds
     {
         public Second()
         {
+            
             InitializeComponent();
             DataContext = new SecondViewModel();
+            for (int i = 0; i < 5; i++)
+            {
+                IzbranGoroda izbranGoroda = new IzbranGoroda();
+                UserEl.Children.Add(izbranGoroda);
+            }
+            
+
+
         }
 
     }

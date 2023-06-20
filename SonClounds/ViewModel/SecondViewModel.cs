@@ -1,3 +1,6 @@
+
+﻿using SonClounds.Model;
+using SonClounds.ViewModel.Helpers;
 using SonClounds.ViewModel.Helpers;
 using SunClounds.ViewModel;
 using System;
@@ -21,8 +24,8 @@ namespace SonClounds.ViewModel
 
         private static string text_city = "город";
 
-       
-      
+        List<WeatherClass> cityList = new List<WeatherClass>();
+
 
         public string CoreCity
         {
@@ -77,12 +80,20 @@ namespace SonClounds.ViewModel
             SonClounds.Properties.Settings.Default.Save();
         }
 
-
         private void Add_City()
+ 
         {
+
+            WeatherClass weatherClass = new WeatherClass();
+            weatherClass.NameCity = "gfgh";
+            weatherClass.latitude = 56;
+            weatherClass.longitude = 76;
+            cityList.Add(weatherClass);
 
             MessageBox.Show("add");
         }
+
+
 
 
 

@@ -13,6 +13,7 @@
 		<None Remove="Resources\Picture\Downpour.png" />
 		<None Remove="Resources\Picture\Icon.png" />
 		<None Remove="Resources\Picture\krest.png" />
+		<None Remove="Resources\Picture\krest_dop.png" />
 		<None Remove="Resources\Picture\Line.png" />
 		<None Remove="Resources\Picture\minus.png" />
 		<None Remove="Resources\Picture\MorningEvening.png" />
@@ -49,6 +50,9 @@
 		</Resource>
 		<Resource Include="Resources\Picture\krest.png">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Picture\krest_dop.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Resource>
 		<Resource Include="Resources\Picture\Line.png">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>

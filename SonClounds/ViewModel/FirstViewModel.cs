@@ -116,6 +116,63 @@ namespace SonClounds.ViewModel
                 OnPropertyChenged();
             }
         }
+
+
+
+
+
+
+
+        private static string TimeGod = "21:00";
+
+        public string Timegod //Время
+        {
+            get { return TimeGod; }
+            set
+            {
+                TimeGod = value;
+                OnPropertyChenged();
+            }
+        }
+
+
+        private static string Bebra = "21º";
+
+        public string bebra //Температура
+        {
+            get { return Bebra; }
+            set
+            {
+                Bebra = value;
+                OnPropertyChenged();
+            }
+        }
+
+
+        private static string Vlaj = "15º";
+
+        public string vlaj //Температура
+        {
+            get { return Vlaj; }
+            set
+            {
+                Vlaj = value;
+                OnPropertyChenged();
+            }
+        }
+
+        private static string Ochuc = "15º";
+
+        public string ochuc //Температура
+        {
+            get { return Ochuc; }
+            set
+            {
+                Ochuc = value;
+                OnPropertyChenged();
+            }
+        }
+
         
         private int fsx = 20;
         public int FontSizeX
@@ -320,6 +377,7 @@ namespace SonClounds.ViewModel
             
         }
        
+
 
     }
 }
