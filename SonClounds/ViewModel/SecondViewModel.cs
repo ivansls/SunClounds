@@ -57,6 +57,7 @@ namespace SonClounds.ViewModel
             Celisiy = new BindableCommand(_ => Cel());
             Faringate = new BindableCommand(_ => Far());
             Clear = new BindableCommand(_ => clear());
+            Clear_Upper_Txb = new BindableCommand(_ => clear_upper());
             Core_city = SonClounds.Properties.Settings.Default.CurrentCity;
 
     }
@@ -70,6 +71,7 @@ namespace SonClounds.ViewModel
         public ICommand Faringate { get; }
 
         public ICommand Clear { get; }
+        public BindableCommand Clear_Upper_Txb { get; }
         
 
 
@@ -111,6 +113,10 @@ namespace SonClounds.ViewModel
         {
             TextCity = "";
 
+        }
+        public void clear_upper()
+        {
+            CoreCity = "";
         }
 
       

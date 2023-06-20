@@ -10,4 +10,5 @@
     </Style>
     <Color x:Key="FirstWButtonsColor">#591E6E</Color>
     <Color x:Key="SecondWButtonsColor">#591E6E</Color>
+    <Color x:Key="ShadowForWetherElem">#591E6E</Color>
 </ResourceDictionary>

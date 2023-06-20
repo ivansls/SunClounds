@@ -36,6 +36,15 @@
                         </TextBox.BorderBrush>
                     </TextBox>
 
+                    <Button Grid.Row="1" Grid.Column="2" Style="{DynamicResource ButtonST}" FontFamily="/Resources/Font/#Jura" Content="   X  " VerticalAlignment="Top" Command="{Binding Clear_Upper_Txb}" HorizontalAlignment="Right" FontSize="14px" Foreground="White">
+                        <Button.Background>
+                            <SolidColorBrush Color="{DynamicResource SecondWButtonsColor}" Opacity="0"/>
+                        </Button.Background>
+                        <Button.BorderBrush>
+                            <SolidColorBrush Color="{DynamicResource SecondWButtonsColor}" Opacity="0"/>
+                        </Button.BorderBrush>
+                    </Button>
+
                 </Grid>
 
                 <Grid Grid.Row="1" Margin="20,10,20,10" >
