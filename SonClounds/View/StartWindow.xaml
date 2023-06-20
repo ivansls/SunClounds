@@ -70,7 +70,7 @@
 
             <TextBlock Text="{Binding CityName}" TextAlignment="Center" Margin="5,5,5,10" VerticalAlignment="Bottom"  FontFamily="/Resources/Font/#Jura" Foreground="{DynamicResource Button}" FontSize="36" Grid.Row="1"/>
             <!--Не уверен с цветами-->
-            <Separator VerticalAlignment="Bottom"  Background="#3D95B9" Width="404.5" Grid.Row="1" Margin="0,2,0,5" HorizontalAlignment="Center">
+            <Separator VerticalAlignment="Bottom"  Background="{DynamicResource Button}" Width="404.5" Grid.Row="1" Margin="0,2,0,5" HorizontalAlignment="Center">
                 <Separator.RenderTransform>
                     <ScaleTransform ScaleY="3" />
                 </Separator.RenderTransform>
@@ -91,8 +91,8 @@
                 </Grid.ColumnDefinitions>
                 
                 <Image Source="{Binding PutFirst}" Grid.Column="1" Width="123" Height="123" />
-                
-                <TextBlock TextWrapping="Wrap" Grid.Column="2" Text="{Binding Text1}" FontFamily="/Resources/Font/#Jura"  VerticalAlignment="Center" Foreground="#3D95B9" Margin="10,0,30,0" TextAlignment="Right" FontSize="26"/>
+
+                <TextBlock TextWrapping="Wrap" Grid.Column="2" Text="{Binding Text1}" FontFamily="/Resources/Font/#Jura"  VerticalAlignment="Center" Foreground="{DynamicResource Button}" Margin="10,0,30,0" TextAlignment="Right" FontSize="26"/>
             </Grid>
             
             <Grid Grid.Row="3">
@@ -101,9 +101,9 @@
                     <ColumnDefinition Width="0.24*"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Label Content="{Binding Time1}" VerticalAlignment="Center"  Foreground="#3D95B9" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="20" Margin="10,0,0,0"/>
+                <Label Content="{Binding Time1}" VerticalAlignment="Center"  Foreground="{DynamicResource Button}" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="20" Margin="10,0,0,0"/>
                 <Image  Source="{Binding PutSecond}"  Grid.Column="1" VerticalAlignment="Center" Width="60" Height="60"/>
-                <TextBlock TextWrapping="Wrap" TextAlignment="Left" Grid.Column="2" Text="{Binding Text2}" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Center" Foreground="#3D95B9" Margin="10,0,45,0" FontSize="20"/>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Left" Grid.Column="2" Text="{Binding Text2}" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Center" Foreground="{DynamicResource Button}" Margin="10,0,45,0" FontSize="20"/>
             </Grid>
             <Grid Grid.Row="4">
                 <Grid.ColumnDefinitions>
@@ -111,9 +111,9 @@
                     <ColumnDefinition Width="0.24*"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Label Content="{Binding Time2}"  VerticalAlignment="Center" Foreground="#3D95B9" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="20"/>
+                <Label Content="{Binding Time2}"  VerticalAlignment="Center" Foreground="{DynamicResource Button}" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="20"/>
                 <Image  Source="{Binding PutThird}" Grid.Column="1" VerticalAlignment="Center" Width="60" Height="60"/>
-                <TextBlock TextWrapping="Wrap" Grid.Column="2" Text="{Binding Text3}" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Center" Foreground="#3D95B9"  Margin="10,0,45,0" FontSize="20"/>
+                <TextBlock TextWrapping="Wrap" Grid.Column="2" Text="{Binding Text3}" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Center" Foreground="{DynamicResource Button}"  Margin="10,0,45,0" FontSize="20"/>
             </Grid>
             <Grid Grid.Row="5">
                 <Grid.ColumnDefinitions>
@@ -121,9 +121,9 @@
                     <ColumnDefinition Width="0.24*"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Label Content="{Binding Time3}" VerticalAlignment="Center" Foreground="#3D95B9" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="20"/>
+                <Label Content="{Binding Time3}" VerticalAlignment="Center" Foreground="{DynamicResource Button}" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="20"/>
                 <Image  Source="{Binding PutFourth}" Grid.Column="1" VerticalAlignment="Center" Width="60"  Height="60"/>
-                <TextBlock TextWrapping="Wrap" Grid.Column="2" Text="{Binding Text4}" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Center" Foreground="#3D95B9"  Margin="10,0,45,0" FontSize="20"/>
+                <TextBlock TextWrapping="Wrap" Grid.Column="2" Text="{Binding Text4}" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Center" Foreground="{DynamicResource Button}"  Margin="10,0,45,0" FontSize="20"/>
             </Grid>
         </Grid>
 

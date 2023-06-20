@@ -97,7 +97,7 @@
             <Grid Grid.Row="1" Margin="10">
 
                 <Grid.Background>
-                    <SolidColorBrush Color="#FFF8C5B4" Opacity="0.5"/>
+                    <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
                 </Grid.Background>
 
                 <!--нижняя тень-->
@@ -139,7 +139,7 @@
             <Grid Grid.Row="2" Margin="10">
 
                 <Grid.Background>
-                    <SolidColorBrush Color="#FFF8C5B4" Opacity="0.5"/>
+                    <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
                 </Grid.Background>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>

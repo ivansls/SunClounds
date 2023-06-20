@@ -27,7 +27,7 @@
                         <RowDefinition Height="25*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Text="Ваш oсновной город" Grid.Row="0" FontSize="28px" Grid.Column="2" FontFamily="/Resources/Font/#Jura" HorizontalAlignment="Center" Foreground="White"/>
-                    <TextBox Text="{Binding CoreCity, Mode=TwoWay}" Grid.Row="1" VerticalAlignment="Top" TextAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="15px" Background="#7F3D95B9" Foreground="White" />
+                    <TextBox Text="{Binding CoreCity, Mode=TwoWay}" Grid.Row="1" VerticalAlignment="Top" TextAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="15px" Background="{DynamicResource Button}" Opacity="0.5" Foreground="White" />
 
                 </Grid>
 
@@ -75,20 +75,20 @@
 
                         <TextBox Text="{Binding TextCity}" FontFamily="/Resources/Font/#Jura" FontSize="15px" Grid.Column="0" TextAlignment="Center" Foreground="White" VerticalAlignment="Center">
                             <TextBox.Background>
-                                <SolidColorBrush Color="#3D95B9" Opacity="0.5"/>
+                                <SolidColorBrush Color="{DynamicResource FirstWButtonsColor}" Opacity="0.5"/>
                             </TextBox.Background>
                             <TextBox.BorderBrush>
-                                <SolidColorBrush Color="#3D95B9" Opacity="0.5"/> 
+                                <SolidColorBrush Color="{DynamicResource FirstWButtonsColor}" Opacity="0.5"/> 
                             </TextBox.BorderBrush>
                         </TextBox>
                         <Button Style="{DynamicResource ButtonST}" Content="X" Command="{Binding Clear}"  Grid.Column="1" FontSize="15px" Foreground="White" VerticalAlignment="Center" BorderBrush="{x:Null}" Padding="0,0,0,0">
                             <Button.Background>
-                                <SolidColorBrush Color="#3D95B9" Opacity="0.5"/>
+                                <SolidColorBrush Color="{DynamicResource FirstWButtonsColor}" Opacity="0.5"/>
                             </Button.Background>
                         </Button>
 
 
-                        <Button Style="{DynamicResource ButtonST}" Command="{Binding AddCity}"  Grid.Column="2" FontSize="15px" Content="Добавить город" Background="#87B6CA" Foreground="White" VerticalAlignment="Center" BorderBrush="{x:Null}" Padding="1,0,1,0"/>
+                        <Button Style="{DynamicResource ButtonST}" Command="{Binding AddCity}"  Grid.Column="2" FontSize="15px" Content="Добавить город" Background="{DynamicResource SecondaryColour}" Foreground="White" VerticalAlignment="Center" BorderBrush="{x:Null}" Padding="1,0,1,0"/>
                     </Grid>
 
 
@@ -122,8 +122,8 @@
                                 <ColumnDefinition Width="1.5*"/>
                                 <ColumnDefinition Width="2*"/>
                             </Grid.ColumnDefinitions>
-                            <Rectangle Fill="#3D95B9" Grid.Column="1" Opacity="0.5"/>
-                            <Rectangle Fill="#3D95B9" Grid.Column="3" Opacity="0.5"/>
+                            <Rectangle Fill="{DynamicResource Button}" Grid.Column="1" Opacity="0.5"/>
+                            <Rectangle Fill="{DynamicResource Button}" Grid.Column="3" Opacity="0.5"/>
                             <RadioButton Command="{Binding Celisiy}" Content="Цельсий С" Grid.Column="1" FontSize="15px" Grid.Row="1" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Top"  Foreground="White" IsChecked="True" />
                             <RadioButton Command="{Binding Faringate}" Content="Фарингейт F" Grid.Column="3" FontSize="15px" Grid.Row="1" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Top" Foreground="White" />
 
@@ -134,7 +134,7 @@
 
                     
                 </Grid>
-                <Button Style="{DynamicResource ButtonST}" Command="{Binding Save}"  Grid.Row="3" Content="Сохранить" VerticalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#FFFFFFFF" Background="#87B6CA" FontSize="15px"  BorderBrush="#87B6CA"/>
+                <Button Style="{DynamicResource ButtonST}" Command="{Binding Save}"  Grid.Row="3" Content="Сохранить" VerticalAlignment="Center" FontFamily="/Resources/Font/#Jura" Foreground="#FFFFFFFF" Background="{DynamicResource SecondaryColour}" FontSize="15px" />
 
             </Grid>
         </ScrollViewer>
