@@ -179,7 +179,7 @@ namespace SonClounds.ViewModel
                 {
                     App.Theme = "MorningTheme";
                 }
-                await Task.Delay(600000);
+                await Task.Delay(1800000);
             }
         }
         private async void Time_Track()
