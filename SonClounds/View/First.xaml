@@ -175,9 +175,9 @@
                 <!--Кнопки-->
 
                 <WrapPanel HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3">
-                    <Button  Content="Температура" Margin="7" Background="#3D95B9" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="23.66" Width="300" Height="40"/>
-                    <Button Content="Ощущается как"  Margin="7" Background="#87B6CA" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
-                    <Button  Content="Давление"  Margin="7" Background="#87B6CA" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
+                    <Button  Content="Температура" Margin="7" Background="{Binding bg_first}" Command="{Binding Temperature}" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura" Foreground="#fff" FontSize="23.66" Width="300" Height="40"/>
+                    <Button Content="Ощущается как"  Margin="7" Background="{Binding bg_second}" Command="{Binding FeelsLike}" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
+                    <Button  Content="Давление"  Margin="7" Background="{Binding bg_third}" Command="{Binding Pressure1}" Padding="7" BorderThickness="0" FontFamily="/Resources/Font/#Jura"  Foreground="#fff"  FontSize="23.66" Width="300" Height="40"/>
                 </WrapPanel>
                     <!--<Image  HorizontalAlignment="Center"  Grid.Row="1" Grid.ColumnSpan="3"  Source="/Resources/Picture/Sunny.png" Height="232" />-->
 

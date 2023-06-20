@@ -29,7 +29,8 @@ namespace SonClounds.View
             for (int i = 0; i < 5; i++)
             {
                 WeatherCart izbranGoroda = new WeatherCart();
-                UserEl.Children.Add(izbranGoroda);
+                //UserEl.Children.Add(izbranGoroda);
+                UserEl.Items.Add(izbranGoroda);
             }
 
         }

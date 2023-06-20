@@ -220,6 +220,47 @@ namespace SonClounds.ViewModel
                 OnPropertyChenged();
             }
         }
+        private Brush bg_f = new SolidColorBrush(Color.FromRgb(61, 149, 185));
+        public Brush bg_first
+        {
+            get
+            {
+                return bg_f;
+            }
+            set
+            {
+                bg_f = value;
+                OnPropertyChenged();
+            }
+        }
+        private Brush bg_s = new SolidColorBrush(Color.FromRgb(135, 182, 202));
+        public Brush bg_second
+        {
+            get
+            {
+                return bg_s;
+            }
+            set
+            {
+                bg_s = value;
+                OnPropertyChenged();
+            }
+        }
+        private Brush bg_t = new SolidColorBrush(Color.FromRgb(135, 182, 202));
+        public Brush bg_third
+        {
+            get
+            {
+                return bg_t;
+            }
+            set
+            {
+                bg_t = value;
+                OnPropertyChenged();
+            }
+        }
+
+
         private ChartValues<double> ints = new ChartValues<double>();
         public SeriesCollection SeriesCollection_ { get; set; }
         public string[] XLabels { get; set; }
@@ -309,22 +350,50 @@ namespace SonClounds.ViewModel
         }
         public void temperature()
         {
-
-            App.Theme = "NightTheme";
-            //framePage = new First();
+            if(App.Theme == "MorningTheme" || App.Theme == "DayTheme")
+            {
+                bg_first = new SolidColorBrush(Color.FromRgb(61, 149, 185));
+                bg_second = new SolidColorBrush(Color.FromRgb(135, 182, 202));
+                bg_third = new SolidColorBrush(Color.FromRgb(135, 182, 202));
+            }
+            else
+            {
+                bg_first = new SolidColorBrush(Color.FromRgb(248, 197, 180));
+                bg_second = new SolidColorBrush(Color.FromRgb(89, 30, 110));
+                bg_third = new SolidColorBrush(Color.FromRgb(89, 30, 110));
+            }
         }
         public void feelsLike()
         {
-
-            App.Theme = "DayTheme";
-            //framePage = new First();
+            if (App.Theme == "MorningTheme" || App.Theme == "DayTheme")
+            {
+                bg_first = new SolidColorBrush(Color.FromRgb(135, 182, 202));
+                bg_second = new SolidColorBrush(Color.FromRgb(61, 149, 185));
+                bg_third = new SolidColorBrush(Color.FromRgb(135, 182, 202));
+            }
+            else
+            {
+                bg_first = new SolidColorBrush(Color.FromRgb(89, 30, 110));
+                bg_second = new SolidColorBrush(Color.FromRgb(248, 197, 180));
+                bg_third = new SolidColorBrush(Color.FromRgb(89, 30, 110));
+            }
         }
         public void pressure()
         {
-
-            App.Theme = "MorningTheme";
-            //framePage = new First();
+            if (App.Theme == "MorningTheme" || App.Theme == "DayTheme")
+            {
+                bg_first = new SolidColorBrush(Color.FromRgb(135, 182, 202));
+                bg_second = new SolidColorBrush(Color.FromRgb(135, 182, 202));
+                bg_third = new SolidColorBrush(Color.FromRgb(61, 149, 185));
+            }
+            else
+            {
+                bg_first = new SolidColorBrush(Color.FromRgb(89, 30, 110));
+                bg_second = new SolidColorBrush(Color.FromRgb(89, 30, 110));
+                bg_third = new SolidColorBrush(Color.FromRgb(248, 197, 180));
+            }
         }
+        // здесь будет таск для отслеживания нажатия кнопок, чтобы выводить корректные данные для диаграммы
         private async Task Theme_Listener()
         {
             while (Listen_Theme)

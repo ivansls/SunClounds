@@ -97,7 +97,7 @@ namespace SonClounds.ViewModel
         {
             Time_Track();
             Visibility = Visibility.Hidden;
-            City = "Ваш город             ";
+            City = "Ваш город";
             CloseCommand= new BindableCommand(_ => CloseWindow());
             AllScreenCommand = new BindableCommand(_ => OpenWideWindow());
             LessCommand = new BindableCommand(_ => OpenLessWindow());

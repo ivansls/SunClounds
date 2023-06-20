@@ -22,7 +22,7 @@ namespace SonClounds.ViewModel
 
         private static string Core_city;
 
-        private static string text_city = "город";
+        private static string text_city = "Название города";
 
         List<WeatherClass> cityList = new List<WeatherClass>();
 

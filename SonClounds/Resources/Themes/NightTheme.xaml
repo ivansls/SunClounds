@@ -2,9 +2,12 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Brush x:Key="Button">#F8C5B480</Brush>
     <Brush x:Key="SecondaryColour">#591E6E</Brush>
+    <Brush x:Key="Button2">#591E6E</Brush>
+    <Brush x:Key="SaveBtn">#591E6E</Brush>
     <Style x:Key="BackG" TargetType="Image">
         <Setter Property="Source" Value="\Resources\Picture\Night.png"/>
         <Setter Property="Stretch" Value="Fill"/>
     </Style>
     <Color x:Key="FirstWButtonsColor">#591E6E</Color>
+    <Color x:Key="SecondWButtonsColor">#591E6E</Color>
 </ResourceDictionary>
