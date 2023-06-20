@@ -220,7 +220,7 @@ namespace SonClounds.ViewModel
                 OnPropertyChenged();
             }
         }
-        private Brush bg_f = new SolidColorBrush(Color.FromRgb(61, 149, 185));
+        private Brush bg_f = new SolidColorBrush();
         public Brush bg_first
         {
             get
@@ -233,7 +233,7 @@ namespace SonClounds.ViewModel
                 OnPropertyChenged();
             }
         }
-        private Brush bg_s = new SolidColorBrush(Color.FromRgb(135, 182, 202));
+        private Brush bg_s = new SolidColorBrush();
         public Brush bg_second
         {
             get
@@ -246,7 +246,7 @@ namespace SonClounds.ViewModel
                 OnPropertyChenged();
             }
         }
-        private Brush bg_t = new SolidColorBrush(Color.FromRgb(135, 182, 202));
+        private Brush bg_t = new SolidColorBrush();
         public Brush bg_third
         {
             get
@@ -278,6 +278,7 @@ namespace SonClounds.ViewModel
             Temperature = new BindableCommand(_ => temperature());
             FeelsLike = new BindableCommand(_ => feelsLike());
             Pressure1 = new BindableCommand(_ => pressure());
+            temperature();
 
             //if(DateTime.Now.Hour < 11)
             //{

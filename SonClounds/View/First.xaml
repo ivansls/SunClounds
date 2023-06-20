@@ -51,7 +51,7 @@
                         <DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="2"/>
                     </Rectangle.Effect>
                 </Rectangle>
-                <TextBlock Text="{Binding Degrees}" Grid.RowSpan="2"  VerticalAlignment="Center" FontSize="64" FontFamily="/Resources/Font/#Jura" Foreground="#3D95B9" HorizontalAlignment="Center"  Margin="5,0,0,0"/>
+                <TextBlock Text="{Binding Degrees}" Grid.RowSpan="2"  VerticalAlignment="Center" FontSize="64" FontFamily="/Resources/Font/#Jura" Foreground="{DynamicResource SaveBtn}" HorizontalAlignment="Center"  Margin="5,0,0,0"/>
 
                 <!--Вертикальная черта-->
                 <StackPanel Grid.Column="1" Grid.RowSpan="2" Orientation="Horizontal">

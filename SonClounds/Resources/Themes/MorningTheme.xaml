@@ -3,12 +3,14 @@
     <Brush x:Key="Button">#3D95B9</Brush>
     <Brush x:Key="SecondaryColour">#87B6CA</Brush>
     <Brush x:Key="Button2">#3D95B9</Brush>
-    <Brush x:Key="SaveBtn">#87B6CA</Brush>
+    <Brush x:Key="SaveBtn">#3D95B9</Brush>
+    <Brush x:Key="Text">#FFFFFF</Brush>
     <Style x:Key="BackG" TargetType="Image">
         <Setter Property="Source" Value="\Resources\Picture\MorningEvening.png"/>
         <Setter Property="Stretch" Value="Fill"/>
     </Style>
     <Color x:Key="FirstWButtonsColor">#87B6CA</Color>
     <Color x:Key="SecondWButtonsColor">#3D95B9</Color>
-    <Color x:Key="ShadowForWetherElem">#87B6CA</Color>
+    <Color x:Key="ShadowForWetherElem">#3D95B9</Color>
+    <Color x:Key="DeepBlue_Blue_Purple">#3D95B9</Color>
 </ResourceDictionary>

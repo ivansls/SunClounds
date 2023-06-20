@@ -77,7 +77,7 @@ namespace SonClounds.ViewModel
                 OnPropertyChenged();
             }
         }
-        private int basefontsize { get; set; } = 15;
+        private int basefontsize { get; set; } = 14;
         public int BaseFontSize
         {
             get
