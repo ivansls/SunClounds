@@ -264,11 +264,40 @@ namespace SonClounds.ViewModel
 
         private ChartValues<double> ints = new ChartValues<double>();
         public SeriesCollection SeriesCollection_ { get; set; }
-        public string[] XLabels { get; set; }
+        private List<string> xlabels = new List<string>();
+        public List<string> XLabels
+        {
+            get
+            {
+                return xlabels;
+            }
+            set {
+                xlabels = value;
+                OnPropertyChenged() ;
+            }
+        }
         public int[] Ylabels { get; set; }
-        public Func<double, string> Formatter { get; set; }
+        //public Func<double, string> Formatter { get; set; }
+        private Func<double, string> formatter;
+        public Func<double, string> Formatter
+        {
+            get
+            {
+                return formatter;
+            }
+            set
+            {
+                formatter = value;
+                OnPropertyChenged() ;
+            }
+        }
         private LineSeries LineSeries = new LineSeries();
         private bool Listen_Theme = true;
+        private bool temp_pressed = true;
+        private bool feels_pressed = false;
+        private bool pressure_pressed = false;
+        private List<NiceList> listik = Working.Left_Panel(Properties.Settings.Default.CurrentCity);
+        private bool get_data = true;
         #endregion
         #region Commands
 
@@ -279,11 +308,6 @@ namespace SonClounds.ViewModel
             Temperature = new BindableCommand(_ => temperature());
             FeelsLike = new BindableCommand(_ => feelsLike());
             Pressure1 = new BindableCommand(_ => pressure());
-            temperature();
-            //Load_Info();
-
-            XLabels = new string[] { "00:00", "03:00", "06:00", "09:00", "12:00", "15:00", "18:00", "21:00" };
-
             LineSeries.Values = ints;
             LineSeries.Stroke = new SolidColorBrush(Color.FromRgb(61, 149, 185));
             LineSeries.Fill = Brushes.Transparent;
@@ -291,31 +315,60 @@ namespace SonClounds.ViewModel
             LineSeries.PointForeground = new SolidColorBrush(Color.FromRgb(135, 182, 202));
             LineSeries.PointGeometrySize = 15;
             SeriesCollection_ = new SeriesCollection() { LineSeries};
+
+            temperature();
             Theme_listening();
-            //возможно дэйблы для игрика стоит хранить в числовом формате и просто настроить формат
             Ylabels = new[] { 10, 20, 30, 40, 50};
-            //если цельсии то:
-            Formatter = value => value.ToString("N0") + "°C";
-            //если фаренгейты то:
-            //Formatter = value => value.ToString("N0") + "°F";
-            Load_Info();
             Pogoda();
+            getting_new_data();
 
         }
         private async Task Loading_Info_Into_FirstPage()
         {
-            //for (int i = 0; i < 8; i++)
-            //{
-            //    ints.Add(i);
-            //    await Task.Delay(100);
-            //}
-
-            List<NiceList> listik = Working.Left_Panel(Properties.Settings.Default.CurrentCity);
-
             foreach (NiceList item in listik)
             {
-                ints.Add(Convert.ToDouble(item.tempr));
-                await Task.Delay(100);
+                if (temp_pressed)
+                {
+                    foreach (LineSeries line in SeriesCollection_)
+                    {
+                        line.Title = "Температура: ";
+                        await Task.Delay(100);
+                    }
+                    // check for C or F
+                    Formatter = value => value.ToString("N0") + "°C";
+                    ints.Add(Convert.ToDouble(item.tempr));
+                    await Task.Delay(100);
+                    XLabels.Add(item.time.Hour.ToString() + ":00");
+                    await Task.Delay(100);
+                }
+                else if (feels_pressed)
+                {
+                    foreach (LineSeries line in SeriesCollection_)
+                    {
+                        line.Title = "Ощущается как: ";
+                        await Task.Delay(100);
+                    }
+                    // check for C or F
+                    Formatter = value => value.ToString("N0") + "°C";
+                    ints.Add(Convert.ToDouble(item.oshys));
+                    await Task.Delay(100);
+                    XLabels.Add(item.time.Hour.ToString() + ":00");
+                    await Task.Delay(100);
+                }
+                else
+                {
+                    foreach (LineSeries line in SeriesCollection_)
+                    {
+                        line.Title = "Давление: ";
+                        await Task.Delay(100);
+                    }
+                    Formatter = value => value.ToString("N0") + "мм.рт.с.";
+                    ints.Add(Convert.ToDouble(item.pressure));
+                    await Task.Delay(100);
+                    XLabels.Add(item.time.Hour.ToString() + ":00");
+                    await Task.Delay(100);
+                }
+                
             }
         }
         private async void Load_Info()
@@ -328,6 +381,11 @@ namespace SonClounds.ViewModel
         }
         public void temperature()
         {
+            XLabels.Clear();
+            ints.Clear();
+            temp_pressed = true;
+            feels_pressed = false;
+            pressure_pressed = false;
             if(App.Theme == "MorningTheme" || App.Theme == "DayTheme")
             {
                 bg_first = new SolidColorBrush(Color.FromRgb(61, 149, 185));
@@ -340,9 +398,15 @@ namespace SonClounds.ViewModel
                 bg_second = new SolidColorBrush(Color.FromRgb(89, 30, 110));
                 bg_third = new SolidColorBrush(Color.FromRgb(89, 30, 110));
             }
+            Load_Info();
         }
         public void feelsLike()
         {
+            XLabels.Clear();
+            ints.Clear();
+            feels_pressed = true;
+            temp_pressed = false;
+            pressure_pressed = false;
             if (App.Theme == "MorningTheme" || App.Theme == "DayTheme")
             {
                 bg_first = new SolidColorBrush(Color.FromRgb(135, 182, 202));
@@ -355,9 +419,15 @@ namespace SonClounds.ViewModel
                 bg_second = new SolidColorBrush(Color.FromRgb(248, 197, 180));
                 bg_third = new SolidColorBrush(Color.FromRgb(89, 30, 110));
             }
+            Load_Info() ;
         }
         public void pressure()
         {
+            XLabels.Clear();
+            ints.Clear();
+            pressure_pressed = true;
+            temp_pressed = false;
+            feels_pressed = false;
             if (App.Theme == "MorningTheme" || App.Theme == "DayTheme")
             {
                 bg_first = new SolidColorBrush(Color.FromRgb(135, 182, 202));
@@ -370,8 +440,9 @@ namespace SonClounds.ViewModel
                 bg_second = new SolidColorBrush(Color.FromRgb(89, 30, 110));
                 bg_third = new SolidColorBrush(Color.FromRgb(248, 197, 180));
             }
+            Load_Info();
         }
-        // здесь будет таск для отслеживания нажатия кнопок, чтобы выводить корректные данные для диаграммы (или не будет)
+
         private async Task Theme_Listener()
         {
             while (Listen_Theme)
@@ -445,6 +516,20 @@ namespace SonClounds.ViewModel
 
             }
             
+        }
+
+        private async Task get_new_data()
+        {
+            while (get_data)
+            {
+                listik = Working.Left_Panel(Properties.Settings.Default.CurrentCity);
+                await Task.Delay(10800000);
+            }
+            
+        }
+        public async void getting_new_data()
+        {
+            await get_new_data();
         }
        
 
