@@ -280,42 +280,10 @@ namespace SonClounds.ViewModel
             FeelsLike = new BindableCommand(_ => feelsLike());
             Pressure1 = new BindableCommand(_ => pressure());
             temperature();
-
-            //if(DateTime.Now.Hour < 11)
-            //{
-            //    ints = new ChartValues<double> {5, 10, 45, 20, 30, 40, 38, 10, -5, 23,
-            //                                         45 };
-            //    XLabels = new[] { "00:00", "01:00", "02:00", "03:00", "04:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00" };
-            //}
-            //0 3 7 10 13 16 19 22 
-            //else
-            //{
-            //    ints = new ChartValues<double> {30, 37, -9, -2, 3, 4, 5, 6, 7, 25,
-            //                                         22, 45 };
-            //    XLabels = new[] {"12:00", "13:00",
-            //"14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"};
-            //}
-
-            //ints = new ChartValues<double> {5, 10, 45, 20, 30, 40, 38, 10};
-            Load_Info();
+            //Load_Info();
 
             XLabels = new string[] { "00:00", "03:00", "06:00", "09:00", "12:00", "15:00", "18:00", "21:00" };
-            //SeriesCollection_ = new SeriesCollection()
-            //{
-            //    new LineSeries
-            //    {
 
-            //        Values = ints,
-            //        Stroke = new SolidColorBrush(Color.FromRgb(61, 149, 185)),
-            //        Fill = Brushes.Transparent,
-            //        Title = "Градусов:",
-            //        PointForeground = new SolidColorBrush(Color.FromRgb(135,182,202)),
-            //        PointGeometrySize = 10,
-
-
-            //    }
-
-            //};
             LineSeries.Values = ints;
             LineSeries.Stroke = new SolidColorBrush(Color.FromRgb(61, 149, 185));
             LineSeries.Fill = Brushes.Transparent;
@@ -330,15 +298,23 @@ namespace SonClounds.ViewModel
             Formatter = value => value.ToString("N0") + "°C";
             //если фаренгейты то:
             //Formatter = value => value.ToString("N0") + "°F";
-
+            Load_Info();
             Pogoda();
 
         }
         private async Task Loading_Info_Into_FirstPage()
         {
-            for(int i = 0; i < 8; i++)
+            //for (int i = 0; i < 8; i++)
+            //{
+            //    ints.Add(i);
+            //    await Task.Delay(100);
+            //}
+
+            List<NiceList> listik = Working.Left_Panel(Properties.Settings.Default.CurrentCity);
+
+            foreach (NiceList item in listik)
             {
-                ints.Add(i);
+                ints.Add(Convert.ToDouble(item.tempr));
                 await Task.Delay(100);
             }
         }
