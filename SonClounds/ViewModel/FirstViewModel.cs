@@ -427,7 +427,7 @@ namespace SonClounds.ViewModel
                 Cur_Weather w = Working.Main_weather(SonClounds.Properties.Settings.Default.CurrentCity);
                 if(w == null)
                 {
-                    MessageBox.Show("Error"); //или как-то по другому сделать
+                    /*MessageBox.Show("Error");*/ //или как-то по другому сделать
                 }
                 else
                 {
