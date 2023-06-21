@@ -441,7 +441,7 @@ namespace SonClounds.ViewModel
                     Wind2 = w.wind2;
                 }
             
-                await Task.Delay(10800000);//Посмотреть мб каждый час или типо того
+                await Task.Delay(3600000);//Каждый час
 
             }
             

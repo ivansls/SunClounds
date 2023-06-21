@@ -25,7 +25,9 @@ namespace Api_Work
                     {
                         int cel = pogIn.list[i].main.temp - 273; //перевод в цельсию
                         int cel1 = pogIn.list[i].main.feels_like - 273; //перевод в цельсию
-                        voz.Add(new NiceList(cel.ToString(), pogIn.list[i].main.humidity.ToString(), cel1.ToString(), pogIn.list[i].weather[0].description.ToString(), Convert.ToDateTime(pogIn.list[i].dt_txt.ToString())));
+                        pogIn.list[i].main.pressure = pogIn.list[i].main.pressure/1.33322;
+                        pogIn.list[i].main.pressure = Math.Round((decimal)pogIn.list[i].main.pressure);
+                        voz.Add(new NiceList(cel.ToString(), pogIn.list[i].main.humidity.ToString(), cel1.ToString(), pogIn.list[i].weather[0].description.ToString(), Convert.ToDateTime(pogIn.list[i].dt_txt.ToString()), pogIn.list[i].main.pressure.ToString()));
                     }
                     return voz;
                 }
@@ -35,7 +37,9 @@ namespace Api_Work
                     {
                         int cel = pogIn.list[i].main.temp - 273; //перевод в цельсию
                         int cel1 = pogIn.list[i].main.feels_like - 273; //перевод в цельсию
-                        voz.Add(new NiceList(cel.ToString(), pogIn.list[i].main.humidity.ToString(), cel1.ToString(), pogIn.list[i].weather[0].description.ToString(), Convert.ToDateTime(pogIn.list[i].dt_txt.ToString())));
+                        pogIn.list[i].main.pressure = pogIn.list[i].main.pressure / 1.33322;
+                        pogIn.list[i].main.pressure = Math.Round((decimal)pogIn.list[i].main.pressure);
+                        voz.Add(new NiceList(cel.ToString(), pogIn.list[i].main.humidity.ToString(), cel1.ToString(), pogIn.list[i].weather[0].description.ToString(), Convert.ToDateTime(pogIn.list[i].dt_txt.ToString()), pogIn.list[i].main.pressure.ToString()));
                     }
                     return voz;
                 }

@@ -13,15 +13,16 @@ namespace Api_Work
         public string oshys;
         public string desc;
         public DateTime time;
+        public string pressure;
 
-        public NiceList(string v1, string v2, string v3, string v4, DateTime time1)
+        public NiceList(string v1, string v2, string v3, string v4, DateTime time1, string v5)
         {
             tempr = v1;
             vlazn = v2;
             oshys = v3;
             desc = v4;            
             time = time1;
-
+            pressure = v5;
         }
     }
 }
