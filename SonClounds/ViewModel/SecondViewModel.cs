@@ -80,12 +80,12 @@ namespace SonClounds.ViewModel
             SonClounds.Properties.Settings.Default.CurrentCity = CoreCity;
             MessageBox.Show(CoreCity);
             SonClounds.Properties.Settings.Default.Save();
+            //Сюда желательно добавить метод на смену левой панели For_left_Panel но как я хз
         }
 
         private void Add_City()
  
         {
-
             WeatherClass weatherClass = new WeatherClass();
             weatherClass.NameCity = "gfgh";
             weatherClass.latitude = 56;

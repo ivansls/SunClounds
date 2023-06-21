@@ -27,7 +27,7 @@ namespace Api_Work
                         int cel1 = pogIn.list[i].main.feels_like - 273; //перевод в цельсию
                         pogIn.list[i].main.pressure = pogIn.list[i].main.pressure/1.33322;
                         pogIn.list[i].main.pressure = Math.Round((decimal)pogIn.list[i].main.pressure);
-                        voz.Add(new NiceList(cel.ToString(), pogIn.list[i].main.humidity.ToString(), cel1.ToString(), pogIn.list[i].weather[0].description.ToString(), Convert.ToDateTime(pogIn.list[i].dt_txt.ToString()), pogIn.list[i].main.pressure.ToString()));
+                        voz.Add(new NiceList(cel.ToString(), pogIn.list[i].main.humidity.ToString(), cel1.ToString(), pogIn.list[i].weather[0].description.ToString(), Convert.ToDateTime(pogIn.list[i].dt_txt.ToString()), pogIn.list[i].main.pressure.ToString(), pogIn.list[i].weather[0].main.ToString()));
                     }
                     return voz;
                 }
@@ -39,7 +39,7 @@ namespace Api_Work
                         int cel1 = pogIn.list[i].main.feels_like - 273; //перевод в цельсию
                         pogIn.list[i].main.pressure = pogIn.list[i].main.pressure / 1.33322;
                         pogIn.list[i].main.pressure = Math.Round((decimal)pogIn.list[i].main.pressure);
-                        voz.Add(new NiceList(cel.ToString(), pogIn.list[i].main.humidity.ToString(), cel1.ToString(), pogIn.list[i].weather[0].description.ToString(), Convert.ToDateTime(pogIn.list[i].dt_txt.ToString()), pogIn.list[i].main.pressure.ToString()));
+                        voz.Add(new NiceList(cel.ToString(), pogIn.list[i].main.humidity.ToString(), cel1.ToString(), pogIn.list[i].weather[0].description.ToString(), Convert.ToDateTime(pogIn.list[i].dt_txt.ToString()), pogIn.list[i].main.pressure.ToString(), pogIn.list[i].weather[0].main.ToString()));
                     }
                     return voz;
                 }
@@ -57,7 +57,7 @@ namespace Api_Work
             try
             {
                 HttpClient client = new HttpClient();
-                HttpResponseMessage message = client.GetAsync($"https://api.openweathermap.org/data/2.5/weather?q={city}&appid=273fca0d7e6eb56d8c0ede4099553321").Result;
+                HttpResponseMessage message = client.GetAsync($"https://api.openweathermap.org/data/2.5/weather?q={city}&appid=273fca0d7e6eb56d8c0ede4099553321&lang=ru").Result;
                 string json = message.Content.ReadAsStringAsync().Result;
                 pogCur = JsonConvert.DeserializeObject(json);
                 pogCur.main.temp = Math.Round((decimal)pogCur.main.temp - 273);
@@ -66,7 +66,7 @@ namespace Api_Work
                 pogCur.main.temp_max = Math.Round((decimal)pogCur.main.temp_max - 273);
                 pogCur.main.pressure = pogCur.main.pressure/1.33322;
                 pogCur.main.pressure = Math.Round((decimal)pogCur.main.pressure);
-                Cur_Weather wh = new Cur_Weather(pogCur.main.temp.ToString(), pogCur.main.feels_like.ToString(), pogCur.main.temp_min.ToString(), pogCur.main.temp_max.ToString(), pogCur.main.pressure.ToString(), pogCur.main.humidity.ToString(), pogCur.wind.speed.ToString(), pogCur.wind.deg.ToString());
+                Cur_Weather wh = new Cur_Weather(pogCur.main.temp.ToString(), pogCur.main.feels_like.ToString(), pogCur.main.temp_min.ToString(), pogCur.main.temp_max.ToString(), pogCur.main.pressure.ToString(), pogCur.main.humidity.ToString(), pogCur.wind.speed.ToString(), pogCur.wind.deg.ToString(), pogCur.weather[0].description.ToString(), pogCur.weather[0].main.ToString());
                 return wh;
             }
             catch (Exception ex)

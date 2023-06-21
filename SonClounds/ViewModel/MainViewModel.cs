@@ -20,14 +20,14 @@ namespace SunClounds.ViewModel
         public SecondViewModel second = new SecondViewModel();
         private static Page Frame_Page = new First();
         private static string city_name;
-        private static string put1;
+        public static string put1;
         private static string put2;
         private static string put3;
         private static string put4;
         private static string timeFirst;
         private static string timeSecond;
         private static string timeThird;
-        private static string text_1;
+        public static string text_1;
         private static string text_2;
         private static string text_3;
         private static string text_4;
@@ -329,22 +329,77 @@ namespace SunClounds.ViewModel
             await time();
         }
 
-        private void For_Left_Panel()
+        public static void For_Left_Panel()
         {
             List<NiceList> listik = Working.Left_Panel(SonClounds.Properties.Settings.Default.CurrentCity);
-            //text_1 = listik[0].desc;
-            text_2 = listik[0].desc;
-            text_3 = listik[1].desc;
-            text_4 = listik[2].desc;
+            text_2 = listik[0].desc.Substring(0,1).ToUpper() + listik[0].desc.Substring(1);//Большая первая буква
+            text_3 = listik[1].desc.Substring(0, 1).ToUpper() + listik[1].desc.Substring(1);
+            text_4 = listik[2].desc.Substring(0, 1).ToUpper() + listik[2].desc.Substring(1);
             timeFirst = listik[0].time.Hour.ToString() + ":00";
             timeSecond = listik[1].time.Hour.ToString() + ":00";
             timeThird = listik[2].time.Hour.ToString() + ":00";
             for (int i = 0; i < 3; i++)
             {
-                switch(listik[i].desc)
+                switch(listik[i].Des_Main)
                 {
-                    case "облачно с прояснениями":
+                    case "Thunderstorm":
                         switch(i)
+                        {
+                            case 0:
+                                put2 = "/Resources/Picture/Thunderstorm.png";
+                                break;
+                            case 1:
+                                put3 = "/Resources/Picture/Thunderstorm.png";
+                                break;
+                            case 2:
+                                put4 = "/Resources/Picture/Thunderstorm.png"; 
+                                break;
+                        }
+                        break;
+                    case "Rain":
+                        switch (i)
+                        {
+                            case 0:
+                                put2 = "/Resources/Picture/Rainy.png";
+                                break;
+                            case 1:
+                                put3 = "/Resources/Picture/Rainy.png";
+                                break;
+                            case 2:
+                                put4 = "/Resources/Picture/Rainy.png";
+                                break;
+                        }
+                        break;
+                    case "Snow":
+                        switch (i)
+                        {
+                            case 0:
+                                put2 = "/Resources/Picture/Snow.png";
+                                break;
+                            case 1:
+                                put3 = "/Resources/Picture/Snow.png";
+                                break;
+                            case 2:
+                                put4 = "/Resources/Picture/Snow.png";
+                                break;
+                        }
+                        break;
+                    case "Clear":
+                        switch (i)
+                        {
+                            case 0:
+                                put2 = "/Resources/Picture/Sunny.png";
+                                break;
+                            case 1:
+                                put3 = "/Resources/Picture/Sunny.png";
+                                break;
+                            case 2:
+                                put4 = "/Resources/Picture/Sunny.png";
+                                break;
+                        }
+                        break;  
+                    case "Clouds":
+                        switch (i)
                         {
                             case 0:
                                 put2 = "/Resources/Picture/Cloudy.png";
@@ -357,18 +412,17 @@ namespace SunClounds.ViewModel
                                 break;
                         }
                         break;
-
-                    case "пасмурно": //доделать
-                        switch(i)
+                    case "Drizzle":
+                        switch (i)
                         {
                             case 0:
-                                put2 = "/Resources/Picture/Cloudy.png";
+                                put2 = "/Resources/Picture/Downpour.png";
                                 break;
                             case 1:
-                                put3 = "/Resources/Picture/Cloudy.png";
+                                put3 = "/Resources/Picture/Downpour.png";
                                 break;
                             case 2:
-                                put4 = "/Resources/Picture/Cloudy.png";
+                                put4 = "/Resources/Picture/Downpour.png";
                                 break;
                         }
                         break;

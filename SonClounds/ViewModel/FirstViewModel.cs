@@ -19,6 +19,7 @@ using System.Windows;
 using Microsoft.VisualBasic;
 using System.Threading;
 using Api_Work;
+using SunClounds.ViewModel;
 
 namespace SonClounds.ViewModel
 {
@@ -439,6 +440,29 @@ namespace SonClounds.ViewModel
                     Humidity = w.humidity + "%";
                     Wind = w.wind + " м/с";
                     Wind2 = w.wind2;
+                    //MainViewModel.text_1 = w.temp;
+                    MainViewModel.text_1 = w.desc.Substring(0, 1).ToUpper() + w.desc.Substring(1);
+                    switch (w.main)
+                    {
+                        case "Thunderstorm":
+                            MainViewModel.put1 = "/Resources/Picture/Thunderstorm.png";
+                            break;
+                        case "Rain":
+                            MainViewModel.put1 = "/Resources/Picture/Rainy.png";
+                            break;
+                        case "Snow":
+                            MainViewModel.put1 = "/Resources/Picture/Snow.png";
+                            break;
+                        case "Clear":
+                            MainViewModel.put1 = "/Resources/Picture/Sunny.png";
+                            break;
+                        case "Clouds":
+                            MainViewModel.put1 = "/Resources/Picture/Cloudy.png";
+                            break;
+                        case "Drizzle":
+                            MainViewModel.put1 = "/Resources/Picture/Downpour.png";
+                            break;
+                    }
                 }
             
                 await Task.Delay(3600000);//Каждый час

@@ -122,16 +122,25 @@ namespace SonClounds.ViewModel
             SonClounds.Properties.Settings.Default.CurrentCity = city;
             SonClounds.Properties.Settings.Default.Save();
             MessageBox.Show(city);
-            StartWindow st = new StartWindow();
-            st.Show();
-            MainViewModel mainViewModel = new MainViewModel();
-            mainViewModel.start_Scale();
-            MainWindow win = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
-            Tracking_time = false;
-            if (win != null)
+            Cur_Weather w = Working.Main_weather(SonClounds.Properties.Settings.Default.CurrentCity);
+            if (w == null)
             {
-                win.Close();
+                MessageBox.Show("Извините, произошла ошибка");
             }
+            else
+            {
+                StartWindow st = new StartWindow();
+                st.Show();
+                MainViewModel mainViewModel = new MainViewModel();
+                mainViewModel.start_Scale();
+                MainWindow win = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+                Tracking_time = false;
+                if (win != null)
+                {
+                    win.Close();
+                }
+            }
+          
         }
         public void CloseWindow()
         {
@@ -187,6 +196,7 @@ namespace SonClounds.ViewModel
             await time();
         }
 
+       
         
 
     }
