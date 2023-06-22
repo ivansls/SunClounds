@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="/Resources/Themes/DayTheme.xaml"/>
                 <ResourceDictionary Source="/Resources/Themes/ButtonST.xaml"/>
                 <ResourceDictionary Source="/Resources/Themes/ToolBarST.xaml"/>
+                <ResourceDictionary Source="/Resources/Themes/Scroll.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

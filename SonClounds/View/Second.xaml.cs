@@ -28,10 +28,10 @@ namespace SonClounds
             
             InitializeComponent();
             DataContext = new SecondViewModel();
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 15; i++)
             {
                 IzbranGoroda izbranGoroda = new IzbranGoroda();
-                UserEl.Children.Add(izbranGoroda);
+                UserEl.Items.Add(izbranGoroda);
             }
             
 

@@ -10,6 +10,7 @@
         WindowStyle="None" Height="{Binding HeightWindow, Mode=TwoWay}" Width="{Binding WidthWindow, Mode=TwoWay}" MinWidth="440" MinHeight="280" MouseLeftButtonDown="Window_MouseLeftButtonDown" >
     
     
+    
 
     
     <Grid>
@@ -192,7 +193,7 @@
                 </Button.Template>
             </Button>
         </Grid>
-        <ScrollViewer  Grid.Row="2" Grid.Column="1">
+        <ScrollViewer Style="{DynamicResource ScrollViewerStyle1}" Grid.Row="2" Grid.Column="1" Visibility="Visible">
             <Frame NavigationUIVisibility="Hidden" Content="{Binding framePage}"/>
         </ScrollViewer>
     </Grid>

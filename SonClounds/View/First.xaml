@@ -120,9 +120,13 @@
                 </Rectangle>
                 
                 <!--Для просмотра можно расскоментить-->
-                <ListBox x:Name="UserEl" Background="#0000">
+
+                <ListBox  ItemsSource="{Binding ListWeather}" Background="#0000" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+
                     <ListBox.ItemsPanel>
+
                         <ItemsPanelTemplate>
+
                             <VirtualizingStackPanel IsItemsHost="True" Orientation="Horizontal"/>
                         </ItemsPanelTemplate>
                     </ListBox.ItemsPanel>

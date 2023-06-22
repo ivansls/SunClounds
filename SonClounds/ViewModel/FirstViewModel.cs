@@ -20,6 +20,8 @@ using Microsoft.VisualBasic;
 using System.Threading;
 using Api_Work;
 using SunClounds.ViewModel;
+using SonClounds.View;
+using System.Windows.Media.Imaging;
 
 namespace SonClounds.ViewModel
 {
@@ -36,7 +38,7 @@ namespace SonClounds.ViewModel
 
         public bool PogWorking = true;
 
-
+        private static List<WeatherCart> listweather;
 
 
         public ICommand Temperature { get; }
@@ -44,6 +46,17 @@ namespace SonClounds.ViewModel
         public ICommand Pressure1 { get; }
 
         #region Svoystva
+
+        public List<WeatherCart> ListWeather
+        {
+            get { return listweather; }
+            set
+            {
+                listweather = value;
+                OnPropertyChenged();
+            }
+        }
+
 
         public string Degrees //Температура
         {
@@ -315,14 +328,60 @@ namespace SonClounds.ViewModel
             LineSeries.PointForeground = new SolidColorBrush(Color.FromRgb(135, 182, 202));
             LineSeries.PointGeometrySize = 15;
             SeriesCollection_ = new SeriesCollection() { LineSeries};
-
             temperature();
             Theme_listening();
             Ylabels = new[] { 10, 20, 30, 40, 50};
             Pogoda();
+            cart_weath();
             getting_new_data();
+            
 
         }
+
+        public void cart_weath()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                WeatherCart weatherCart = new WeatherCart();
+                switch (listik[i].Des_Main)
+                {
+                    case "Thunderstorm":
+                        weatherCart.pic.Source = new BitmapImage(new Uri("/Resources/Picture/Thunderstorm.png", UriKind.Relative));
+                        
+                        break;
+                    case "Rain":
+                       
+                        weatherCart.pic.Source = new BitmapImage(new Uri("/Resources/Picture/Thunderstorm.png", UriKind.Relative));
+                            
+                        
+                        break;
+                    case "Snow":
+                        weatherCart.pic.Source = new BitmapImage(new Uri("/Resources/Picture/Snow.png", UriKind.Relative));
+                        
+                        break;
+                    case "Clear":
+                        weatherCart.pic.Source = new BitmapImage(new Uri("/Resources/Picture/Sunny.png", UriKind.Relative));
+                        
+                        break;
+                    case "Clouds":
+                        weatherCart.pic.Source = new BitmapImage(new Uri("/Resources/Picture/Cloudy.png", UriKind.Relative));
+                        
+                        break;
+                    case "Drizzle":
+                        weatherCart.pic.Source = new BitmapImage(new Uri("/Resources/Picture/Downpour.png", UriKind.Relative));
+                        
+                        break;
+
+                }
+                weatherCart.TextUpCen.Text = listik[i].time.ToString();
+                weatherCart.TextDownCen.Text = listik[i].tempr.ToString();
+                weatherCart.TextRghtDr.Text = listik[i].vlazn.ToString();
+                weatherCart.TextRghtDl.Text = listik[i].oshys.ToString();
+                ListWeather.Add(weatherCart);
+
+            }
+        }
+
         private async Task Loading_Info_Into_FirstPage()
         {
             foreach (NiceList item in listik)
