@@ -332,7 +332,6 @@ namespace SonClounds.ViewModel
             Theme_listening();
             Ylabels = new[] { 10, 20, 30, 40, 50};
             Pogoda();
-            cart_weath();
             getting_new_data();
             
 
