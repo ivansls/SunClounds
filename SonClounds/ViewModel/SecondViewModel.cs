@@ -109,11 +109,19 @@ namespace SonClounds.ViewModel
         private void Add_City()
  
         {
-            WeatherClass weatherClass = new WeatherClass();
+            /*WeatherClass weatherClass = new WeatherClass();
             weatherClass.NameCity = "gfgh";
             weatherClass.latitude = 56;
             weatherClass.longitude = 76;
-            cityList.Add(weatherClass);
+            cityList.Add(weatherClass);*/
+
+
+            for (int i = 0; i <= 15; i++)
+            {
+                IzbranGoroda izbranGoroda = new IzbranGoroda { };
+
+            }
+
 
             MessageBox.Show("add");
         }

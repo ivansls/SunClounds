@@ -1,10 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
-		<TargetFramework>net6.0-windows10.0.22621.0</TargetFramework>
+		<TargetFramework>net6.0-windows8.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<UseWPF>true</UseWPF>
 		<ApplicationIcon>Resources\Picture\Icon.ico</ApplicationIcon>
+		<UseWindowsForms>False</UseWindowsForms>
 	</PropertyGroup>
 	<ItemGroup>
 		<None Remove="Resources\Font\Jura-Regular.ttf" />
