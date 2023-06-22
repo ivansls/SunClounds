@@ -38,7 +38,7 @@ namespace SonClounds.ViewModel
 
         public bool PogWorking = true;
 
-        private static List<WeatherCart> listweather;
+        private static List<WeatherCart> listweather = new List<WeatherCart> { };
 
 
         public ICommand Temperature { get; }
@@ -333,13 +333,14 @@ namespace SonClounds.ViewModel
             Ylabels = new[] { 10, 20, 30, 40, 50};
             Pogoda();
             getting_new_data();
-            
+            cart_weath();
 
         }
 
         public void cart_weath()
         {
-            for (int i = 0; i < 10; i++)
+            List<WeatherCart> listweather1 = new List<WeatherCart> { };
+            for (int i = 0; i < 9; i++)
             {
                 WeatherCart weatherCart = new WeatherCart();
                 switch (listik[i].Des_Main)
@@ -372,13 +373,14 @@ namespace SonClounds.ViewModel
                         break;
 
                 }
-                weatherCart.TextUpCen.Text = listik[i].time.ToString();
+                weatherCart.TextUpCen.Text = listik[i].time.ToString("HH:mm");
                 weatherCart.TextDownCen.Text = listik[i].tempr.ToString();
                 weatherCart.TextRghtDr.Text = listik[i].vlazn.ToString();
                 weatherCart.TextRghtDl.Text = listik[i].oshys.ToString();
-                ListWeather.Add(weatherCart);
+                listweather1.Add(weatherCart);
 
             }
+            ListWeather = listweather1;
         }
 
         private async Task Loading_Info_Into_FirstPage()

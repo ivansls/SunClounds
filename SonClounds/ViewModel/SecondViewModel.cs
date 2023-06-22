@@ -1,5 +1,6 @@
 
 ﻿using SonClounds.Model;
+using SonClounds.View;
 using SonClounds.ViewModel.Helpers;
 using SonClounds.ViewModel.Helpers;
 using SunClounds.ViewModel;
@@ -26,6 +27,18 @@ namespace SonClounds.ViewModel
 
         List<WeatherClass> cityList = new List<WeatherClass>();
 
+        private static List<IzbranGoroda> izbrans = new List<IzbranGoroda>();
+        
+
+        public List<IzbranGoroda> List_Favorit
+        {
+            get { return izbrans; }
+            set
+            {
+                izbrans = value;
+                OnPropertyChenged();
+            }
+        }
 
         public string CoreCity
         {

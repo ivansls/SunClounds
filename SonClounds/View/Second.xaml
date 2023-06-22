@@ -60,9 +60,9 @@
 
 
 
-                
-                
-                <ListBox Grid.Row="1" x:Name="UserEl">
+
+
+                <ListBox Grid.Row="1" x:Name="UserEl" ItemsSource="{Binding List_Favorit}">
                     <ListBox.Template>
                         <ControlTemplate>
                             <WrapPanel IsItemsHost="True">
