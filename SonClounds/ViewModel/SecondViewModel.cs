@@ -125,7 +125,7 @@ namespace SonClounds.ViewModel
         private void Cel()
         {
             MessageBox.Show("Cell");
-            SonClounds.Properties.Settings.Default.TempCond = TempSwitch;
+            Properties.Settings.Default.TempCond = TempSwitch;
             SonClounds.Properties.Settings.Default.Save();
         }
 
