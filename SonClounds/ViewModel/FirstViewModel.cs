@@ -374,9 +374,19 @@ namespace SonClounds.ViewModel
 
                 }
                 weatherCart.TextUpCen.Text = listik[i].time.ToString("HH:mm");
-                weatherCart.TextDownCen.Text = listik[i].tempr.ToString();
+                if (SonClounds.Properties.Settings.Default.TempCond == false)
+                {
+                    weatherCart.TextDownCen.Text = Math.Round((Convert.ToInt32(listik[i].tempr) * 1.8) + 32).ToString() + "°F";//Фаренгейты
+                    weatherCart.TextRghtDl.Text = Math.Round((Convert.ToInt32(listik[i].oshys) * 1.8) + 32).ToString() + "°F";
+                }
+                else
+                {
+                    weatherCart.TextDownCen.Text = listik[i].tempr.ToString() + "°C";//Цельсия
+                    weatherCart.TextRghtDl.Text = listik[i].oshys.ToString() + "°C";
+                }
+                //weatherCart.TextDownCen.Text = listik[i].tempr.ToString();
                 weatherCart.TextRghtDr.Text = listik[i].vlazn.ToString();
-                weatherCart.TextRghtDl.Text = listik[i].oshys.ToString();
+                //weatherCart.TextRghtDl.Text = listik[i].oshys.ToString();
                 listweather1.Add(weatherCart);
 
             }
