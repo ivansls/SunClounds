@@ -26,12 +26,7 @@ namespace SonClounds.View
         {
             InitializeComponent();
             DataContext = new FirstViewModel();
-            /*for (int i = 0; i < 10; i++)
-            {
-                WeatherCart izbranGoroda = new WeatherCart();
-                //UserEl.Children.Add(izbranGoroda);
-                UserEl.Items.Add(izbranGoroda);
-            }*/
+            
 
         }
 
