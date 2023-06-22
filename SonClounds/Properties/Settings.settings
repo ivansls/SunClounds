@@ -3,7 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="CurrentCity" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Moscow</Value>
+    </Setting>
+    <Setting Name="TempCond" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -17,8 +17,8 @@ namespace SonClounds.ViewModel
 {
     internal class SecondViewModel : BindingHelper
     {
-        
 
+        private static bool gradus = SonClounds.Properties.Settings.Default.TempCond;
 
         private static string Core_city;
 
@@ -44,6 +44,16 @@ namespace SonClounds.ViewModel
             set
             {
                 text_city = value;
+                OnPropertyChenged();
+            }
+        }
+
+        public bool TempSwitch
+        {
+            get { return gradus; }
+            set
+            {
+                gradus = value;
                 OnPropertyChenged();
             }
         }
@@ -102,11 +112,15 @@ namespace SonClounds.ViewModel
         private void Cel()
         {
             MessageBox.Show("Cell");
+            SonClounds.Properties.Settings.Default.TempCond = TempSwitch;
+            SonClounds.Properties.Settings.Default.Save();
         }
 
         private void Far()
         {
             MessageBox.Show("Far");
+            SonClounds.Properties.Settings.Default.TempCond = TempSwitch;
+            SonClounds.Properties.Settings.Default.Save();
         }
 
         public void clear()
