@@ -121,7 +121,7 @@ namespace SonClounds.ViewModel
         {
             Properties.Settings.Default.CurrentCity = city;
             Properties.Settings.Default.Save();
-            MessageBox.Show(city);
+            
             Cur_Weather w = Working.Main_weather(SonClounds.Properties.Settings.Default.CurrentCity);
             if (w == null)
             {
