@@ -158,8 +158,8 @@
                         </Grid.ColumnDefinitions>
                         <Rectangle Fill="{DynamicResource Button2}" Grid.Column="1" Opacity="0.5"/>
                         <Rectangle Fill="{DynamicResource Button2}" Grid.Column="3" Opacity="0.5"/>
-                        <RadioButton Command="{Binding Celisiy}" Content="Цельсий С" Grid.Column="1" FontSize="15px" Grid.Row="1" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Top"  Foreground="White" IsChecked="True" />
-                        <RadioButton Command="{Binding Faringate}" Content="Фарингейт F" Grid.Column="3" FontSize="15px" Grid.Row="1" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Top" Foreground="White" />
+                        <RadioButton Command="{Binding Celisiy}" Content="Цельсий С" Grid.Column="1" FontSize="15px" Grid.Row="1" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Top"  Foreground="White" IsChecked="{Binding TempSwitch}" />
+                        <RadioButton Command="{Binding Faringate}" Content="Фарингейт F" Grid.Column="3" FontSize="15px" Grid.Row="1" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Top" Foreground="White" IsChecked="True"/>
 
                     </Grid>
 
