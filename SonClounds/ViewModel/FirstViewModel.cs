@@ -537,10 +537,24 @@ namespace SonClounds.ViewModel
                 }
                 else
                 {
-                    Degrees = w.temp + "°";
-                    Feeling = w.feels + "°";
-                    Min = w.min_temp + "°";
-                    Max = w.max_temp + "°";
+                    if(SonClounds.Properties.Settings.Default.TempCond == false)
+                    {
+                        Degrees = Math.Round((w.temp*1.8)+32).ToString() + "°F";//Фаренгейты
+                        Feeling = Math.Round((w.feels * 1.8) + 32).ToString() + "°F";
+                        Min = Math.Round((w.min_temp * 1.8) + 32).ToString() + "°F";
+                        Max = Math.Round((w.max_temp * 1.8) + 32).ToString() + "°F";
+                    }
+                    else
+                    {
+                        Degrees = w.temp + "°C";//Цельсия
+                        Feeling = w.feels + "°C";
+                        Min = w.min_temp + "°C";
+                        Max = w.max_temp + "°C";
+                    }
+                    
+                   
+                   
+                   
                     Pressure = w.pressure + " мм рт. ст";
                     Humidity = w.humidity + "%";
                     Wind = w.wind + " м/с";
