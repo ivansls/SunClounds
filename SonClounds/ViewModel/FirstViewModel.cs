@@ -376,12 +376,12 @@ namespace SonClounds.ViewModel
                 weatherCart.TextUpCen.Text = listik[i].time.ToString("HH:mm");
                 if (SonClounds.Properties.Settings.Default.TempCond == false)
                 {
-                    weatherCart.TextDownCen.Text = Math.Round((Convert.ToInt32(listik[i].tempr) * 1.8) + 32).ToString() + "°F";//Фаренгейты
+                    weatherCart.TextDownCen.Text = Math.Round((Convert.ToInt32(listik[i].tempr) * 1.8) + 32).ToString() + "°F";
                     weatherCart.TextRghtDl.Text = Math.Round((Convert.ToInt32(listik[i].oshys) * 1.8) + 32).ToString() + "°F";
                 }
                 else
                 {
-                    weatherCart.TextDownCen.Text = listik[i].tempr.ToString() + "°C";//Цельсия
+                    weatherCart.TextDownCen.Text = listik[i].tempr.ToString() + "°C";
                     weatherCart.TextRghtDl.Text = listik[i].oshys.ToString() + "°C";
                 }
                 //weatherCart.TextDownCen.Text = listik[i].tempr.ToString();
