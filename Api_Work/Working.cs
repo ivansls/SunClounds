@@ -66,7 +66,7 @@ namespace Api_Work
                 pogCur.main.temp_max = Math.Round((decimal)pogCur.main.temp_max - 273);
                 pogCur.main.pressure = pogCur.main.pressure/1.33322;
                 pogCur.main.pressure = Math.Round((decimal)pogCur.main.pressure);
-                Cur_Weather wh = new Cur_Weather(pogCur.main.temp.ToString(), pogCur.main.feels_like.ToString(), pogCur.main.temp_min.ToString(), pogCur.main.temp_max.ToString(), pogCur.main.pressure.ToString(), pogCur.main.humidity.ToString(), pogCur.wind.speed.ToString(), pogCur.wind.deg.ToString(), pogCur.weather[0].description.ToString(), pogCur.weather[0].main.ToString());
+                Cur_Weather wh = new Cur_Weather(pogCur.main.temp.ToString(), pogCur.main.feels_like.ToString(), pogCur.main.temp_min.ToString(), pogCur.main.temp_max.ToString(), pogCur.main.pressure.ToString(), pogCur.main.humidity.ToString(), pogCur.wind.speed.ToString(), pogCur.wind.deg.ToString(), pogCur.weather[0].description.ToString(), pogCur.weather[0].main.ToString(), pogCur.coord.lon.ToString(), pogCur.coord.lat.ToString());
                 return wh;
             }
             catch (Exception ex)

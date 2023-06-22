@@ -18,8 +18,10 @@ namespace Api_Work
         public string wind2;
         public string desc;
         public string main;
+        public string lon;
+        public string lat;
 
-        public Cur_Weather(string v1, string v2, string v3, string v4, string v5, string v6, string v7, string v8, string v9,string v10)
+        public Cur_Weather(string v1, string v2, string v3, string v4, string v5, string v6, string v7, string v8, string v9,string v10,string v11,string v12)
         {
             temp = Convert.ToInt32(v1);
             feels = Convert.ToInt32(v2);
@@ -31,6 +33,8 @@ namespace Api_Work
             wind2 = v8;
             desc = v9;
             main = v10;
+            lon = v11;
+            lat = v12;
         }
     }
 }
