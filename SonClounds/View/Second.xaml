@@ -60,19 +60,24 @@
 
 
 
+                <Grid Grid.Row="1">
+                    <Grid.Background>
+                        <SolidColorBrush Color="#FFF8C5B4" Opacity="0.5"/>
+                    </Grid.Background>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto"  Grid.Row="1" Style="{DynamicResource ScrollViewerStyle1}" Background="Transparent">
+                        <ListBox x:Name="UserEl" ItemsSource="{Binding List_Favorit}">
+                            <ListBox.Template>
+                                <ControlTemplate>
+                                    <WrapPanel IsItemsHost="True">
 
-
-                <ListBox Grid.Row="1" x:Name="UserEl" ItemsSource="{Binding List_Favorit}">
-                    <ListBox.Template>
-                        <ControlTemplate>
-                            <WrapPanel IsItemsHost="True">
-                                <WrapPanel.Background>
-                                    <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
-                                </WrapPanel.Background>
-                            </WrapPanel>
-                        </ControlTemplate>
-                    </ListBox.Template>
-                </ListBox>
+                                    </WrapPanel>
+                                </ControlTemplate>
+                            </ListBox.Template>
+                        </ListBox>
+                    </ScrollViewer>
+                </Grid>
+                
+             
                 <!--нижняя тень-->
                 <Rectangle VerticalAlignment="Bottom" Height="2" Grid.Row="1">
                     <Rectangle.Fill>
