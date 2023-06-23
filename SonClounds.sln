@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SonClounds", "SonClounds\SonClounds.csproj", "{182CB97F-7603-4CC3-BBFE-4E6D98614091}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SonClounds", "SonClounds\SonClounds.csproj", "{182CB97F-7603-4CC3-BBFE-4E6D98614091}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api_Work", "Api_Work\Api_Work.csproj", "{D2CBA599-39EF-4C0D-92BF-0F11FE9168FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{182CB97F-7603-4CC3-BBFE-4E6D98614091}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{182CB97F-7603-4CC3-BBFE-4E6D98614091}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{182CB97F-7603-4CC3-BBFE-4E6D98614091}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2CBA599-39EF-4C0D-92BF-0F11FE9168FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2CBA599-39EF-4C0D-92BF-0F11FE9168FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2CBA599-39EF-4C0D-92BF-0F11FE9168FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2CBA599-39EF-4C0D-92BF-0F11FE9168FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

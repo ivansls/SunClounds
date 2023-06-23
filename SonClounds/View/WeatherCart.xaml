@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="SonClounds.View.WeatherCart"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SonClounds.View"
+             mc:Ignorable="d" 
+             Height="170" Width="110" Margin="10,2,10,2">
+    <Grid>
+
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+        <Rectangle Grid.ColumnSpan="2" Grid.Row="0" Fill="{DynamicResource Button2}" Opacity="0.5"/>
+
+        <Image x:Name="pic" HorizontalAlignment="Center"  Grid.Row="0"  Source="/Resources/Picture/Sunny.png" Height="50" />
+
+
+       
+
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Rectangle Grid.RowSpan="2" Grid.Row="0" Fill="{DynamicResource Button2}" Opacity="0.7" Stroke="{DynamicResource Button2}"/>
+            <TextBlock x:Name="TextUpCen" Grid.Row="0"  Foreground="White" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/Resources/Font/#Jura" Text="{Binding Timegod}"/>
+            <TextBlock x:Name="TextDownCen" Grid.Row="1"  Foreground="White" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/Resources/Font/#Jura" Text="{Binding bebra}"/>
+
+
+
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="2"  Grid.Row="0" Fill="{DynamicResource Button2}" Opacity="0.5"/>
+            <TextBlock x:Name="TextLeftUl" Foreground="White" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" FontFamily="/Resources/Font/#Jura" Text="Влаж"/>
+            <TextBlock x:Name="TextRghtUr"  Foreground="White" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" FontFamily="/Resources/Font/#Jura" Text="Ощущ"/>
+            <TextBlock x:Name="TextRghtDr"  Foreground="White" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" FontFamily="/Resources/Font/#Jura" Text="{Binding ochuc}"/>
+            <TextBlock x:Name="TextRghtDl"  Foreground="White" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" FontFamily="/Resources/Font/#Jura" Text="{Binding ochuc}"/>
+
+            <Rectangle Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Bottom" Height="0.5">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="{DynamicResource ShadowForWetherElem}" Opacity="0.4"/>
+                </Rectangle.Fill>
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="Black" BlurRadius="5" ShadowDepth="0"/>
+                </Rectangle.Effect>
+            </Rectangle>
+
+
+
+        </Grid>
+        
+    </Grid>
+</UserControl>

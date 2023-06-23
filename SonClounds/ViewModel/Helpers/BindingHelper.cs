@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pr7.ViewModel.Helpers
+namespace SonClounds.ViewModel.Helpers
 {
     internal class BindingHelper : INotifyPropertyChanged
     {

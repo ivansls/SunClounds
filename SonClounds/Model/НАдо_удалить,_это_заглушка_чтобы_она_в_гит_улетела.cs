@@ -8,5 +8,6 @@ namespace SonClounds.Model
 {
     internal class НАдо_удалить__это_заглушка_чтобы_она_в_гит_улетела
     {
+        //Удаляем
     }
 }

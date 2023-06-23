@@ -1,10 +1,108 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<ApplicationIcon>Resources\Picture\Icon.ico</ApplicationIcon>
+		<UseWindowsForms>False</UseWindowsForms>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="Resources\Font\Jura-Regular.ttf" />
+		<None Remove="Resources\Picture\Blizzard.png" />
+		<None Remove="Resources\Picture\Cloudy.png" />
+		<None Remove="Resources\Picture\Day.png" />
+		<None Remove="Resources\Picture\Downpour.png" />
+		<None Remove="Resources\Picture\Icon.png" />
+		<None Remove="Resources\Picture\krest.png" />
+		<None Remove="Resources\Picture\krest_dop.png" />
+		<None Remove="Resources\Picture\Line.png" />
+		<None Remove="Resources\Picture\minus.png" />
+		<None Remove="Resources\Picture\MorningEvening.png" />
+		<None Remove="Resources\Picture\Night.png" />
+		<None Remove="Resources\Picture\Rainy.png" />
+		<None Remove="Resources\Picture\Rectangle.png" />
+		<None Remove="Resources\Picture\Snow.png" />
+		<None Remove="Resources\Picture\Sunny.png" />
+		<None Remove="Resources\Picture\Thunderstorm.png" />
+		<None Remove="Resources\Picture\Wind.png" />
+		<None Remove="View\Day.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Content Include="Resources\Picture\Icon.ico" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="CircularProgressBar" Version="2.8.0.16" />
+	  <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+	  <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\Api_Work\Api_Work.csproj" />
+	</ItemGroup>
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWPF>true</UseWPF>
-  </PropertyGroup>
+	<ItemGroup>
+		<Resource Include="Resources\Font\Jura-Regular.ttf">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Picture\Blizzard.png" />
+		<Resource Include="Resources\Picture\Cloudy.png" />
+		<Resource Include="Resources\Picture\Day.png" />
+		<Resource Include="Resources\Picture\Downpour.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Picture\Icon.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Picture\krest.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Picture\krest_dop.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Picture\Line.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Picture\minus.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Picture\MorningEvening.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Picture\Night.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Picture\Rainy.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Picture\Rectangle.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Picture\Snow.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Picture\Sunny.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Picture\Thunderstorm.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Picture\Wind.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="Properties\Settings.Designer.cs">
+	    <DesignTimeSharedInput>True</DesignTimeSharedInput>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Settings.settings</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Properties\Settings.settings">
+	    <Generator>SettingsSingleFileGenerator</Generator>
+	    <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+	  </None>
+	</ItemGroup>
 </Project>
