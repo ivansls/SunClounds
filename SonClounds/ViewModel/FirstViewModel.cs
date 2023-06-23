@@ -404,9 +404,17 @@ namespace SonClounds.ViewModel
                         line.Title = "Температура: ";
                         await Task.Delay(100);
                     }
-                    // check for C or F
-                    Formatter = value => value.ToString("N0") + "°C";
-                    ints.Add(Convert.ToDouble(item.tempr));
+                    if(SonClounds.Properties.Settings.Default.TempCond == false)
+                    {
+                        Formatter = value => value.ToString("N0") + "°F";
+                        ints.Add(Math.Round((Convert.ToDouble(item.tempr) * 1.8) + 32));
+                    }
+                    else
+                    {
+                        Formatter = value => value.ToString("N0") + "°C";
+                        ints.Add(Convert.ToDouble(item.tempr));
+                    }
+ 
                     await Task.Delay(100);
                     XLabels.Add(item.time.Hour.ToString() + ":00");
                     await Task.Delay(100);
@@ -418,9 +426,17 @@ namespace SonClounds.ViewModel
                         line.Title = "Ощущается как: ";
                         await Task.Delay(100);
                     }
-                    // check for C or F
-                    Formatter = value => value.ToString("N0") + "°C";
-                    ints.Add(Convert.ToDouble(item.oshys));
+                    if (SonClounds.Properties.Settings.Default.TempCond == false)
+                    {
+                        Formatter = value => value.ToString("N0") + "°F";
+                        ints.Add(Math.Round((Convert.ToDouble(item.tempr) * 1.8) + 32));
+                    }
+                    else
+                    {
+                        Formatter = value => value.ToString("N0") + "°C";
+                        ints.Add(Convert.ToDouble(item.tempr));
+                    }
+
                     await Task.Delay(100);
                     XLabels.Add(item.time.Hour.ToString() + ":00");
                     await Task.Delay(100);
