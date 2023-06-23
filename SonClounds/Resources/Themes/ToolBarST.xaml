@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Luna">
     <SolidColorBrush x:Key="ToolBarButtonHover" Color="#210080FF"/>
     <SolidColorBrush x:Key="ToolBarMenuBorder" Color="#FFB6BDC5"/>
-    <SolidColorBrush x:Key="ToolBarSubMenuBackground" Color="#FFEEF5FD"/>
+    <SolidColorBrush x:Key="ToolBarSubMenuBackground" Color="#F8C5B4" Opacity="0.5"/>
     <SolidColorBrush x:Key="ToolBarHorizontalBackground" Color="#FFEEF5FD"/>
     <SolidColorBrush x:Key="ToolBarVerticalBackground" Color="#FFEEF5FD"/>
     <SolidColorBrush x:Key="ToolBarGripper" Color="#FF6D6D6D"/>
