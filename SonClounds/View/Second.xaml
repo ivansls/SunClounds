@@ -66,7 +66,7 @@
                         <SolidColorBrush Color="#FFF8C5B4" Opacity="0.5"/>
                     </Grid.Background>
                     <ScrollViewer VerticalScrollBarVisibility="Auto"  Grid.Row="1" Style="{DynamicResource ScrollViewerStyle1}" Background="Transparent" >
-                        <ListBox x:Name="UserEl" ItemsSource="{Binding List_Favorit}">
+                        <ListBox x:Name="UserEl" ItemsSource="{Binding List_Favorit, Mode=TwoWay}">
                             <ListBox.Template>
                                 <ControlTemplate>
                                     <WrapPanel IsItemsHost="True">

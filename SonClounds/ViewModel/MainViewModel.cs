@@ -329,7 +329,7 @@ namespace SunClounds.ViewModel
             await time();
         }
 
-        public static void For_Left_Panel()
+        public void For_Left_Panel()
         {
             List<NiceList> listik = Working.Left_Panel(SonClounds.Properties.Settings.Default.CurrentCity);
             text_2 = listik[0].desc.Substring(0,1).ToUpper() + listik[0].desc.Substring(1);//Большая первая буква

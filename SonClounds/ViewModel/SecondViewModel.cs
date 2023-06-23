@@ -29,7 +29,7 @@ namespace SonClounds.ViewModel
         //List<WeatherClass> cityList = new List<WeatherClass>();
 
         private static List<IzbranGoroda> izbrans = new List<IzbranGoroda>();
-
+        private static List<IzbranGoroda> izbrans1 = new List<IzbranGoroda>();
 
 
         public List<IzbranGoroda> List_Favorit
@@ -106,6 +106,8 @@ namespace SonClounds.ViewModel
             SonClounds.Properties.Settings.Default.CurrentCity = CoreCity;
             MessageBox.Show(CoreCity);
             SonClounds.Properties.Settings.Default.Save();
+            //MainViewModel win = Application.Current.MainWindow.OfType<MainViewModel>().First();
+            //win.For_Left_Panel();
             //Сюда желательно добавить метод на смену левой панели For_left_Panel но как я хз
         }
 
@@ -187,13 +189,13 @@ namespace SonClounds.ViewModel
                 {
                     IzbranGoroda izbranGoroda = new IzbranGoroda();
                     izbranGoroda.UpText.Text = a[i];
-                    izbranGoroda.DownTextL.Text = "55 45'07" + "c.ш";
-                    izbranGoroda.DownTextR.Text = "37 36'56" + "в.д.";
-                    List_Favorit.Add(izbranGoroda);
+                    izbranGoroda.DownTextL.Text = "55 45'07" + " c.ш";
+                    izbranGoroda.DownTextR.Text = "37 36'56" + " в.д.";
+                    izbrans1.Add(izbranGoroda);
                 }
-                
-
             }
+            List_Favorit = null;
+            List_Favorit = izbrans1;
         }
     }
 }
