@@ -76,18 +76,18 @@
 			</Button>
 		</Grid>
 		<!--нижняя тень-->
-		<Rectangle Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" Height="2">
+		<Rectangle Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" Height="1" Opacity="0.5">
 			<Rectangle.Fill>
-				<SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
+				<SolidColorBrush Color="{DynamicResource Shadows}" Opacity="0.5"/>
 			</Rectangle.Fill>
 			<Rectangle.Effect>
 				<DropShadowEffect Color="Black" BlurRadius="5" ShadowDepth="2" Direction="260"/>
 			</Rectangle.Effect>
 		</Rectangle>
 		<!--правая тень-->
-		<Rectangle Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Width="1">
+		<Rectangle Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Width="0.5">
 			<Rectangle.Fill>
-				<SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
+				<SolidColorBrush Color="{DynamicResource Shadows}" Opacity="0.5"/>
 			</Rectangle.Fill>
 			<Rectangle.Effect>
 				<DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="2"/>

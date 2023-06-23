@@ -13,4 +13,5 @@
     <Color x:Key="SecondWButtonsColor">#591E6E</Color>
     <Color x:Key="ShadowForWetherElem">#591E6E</Color>
     <Color x:Key="DeepBlue_Blue_Purple">#591E6E</Color>
+    <Color x:Key="Shadows">Black</Color>
 </ResourceDictionary>

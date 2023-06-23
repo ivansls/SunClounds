@@ -48,9 +48,10 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Rectangle Grid.Column="2" Grid.Row="0" Grid.RowSpan="6" HorizontalAlignment="Right" Width="1">
+            
+            <Rectangle Grid.Column="2" Grid.Row="0" Grid.RowSpan="6" HorizontalAlignment="Right" Width="0.5" Opacity="0.5">
                 <Rectangle.Fill>
-                    <SolidColorBrush Color="#F8C5B4" Opacity="0.5"/>
+                    <SolidColorBrush Color="{DynamicResource Shadows}" Opacity="0.5"/>
                 </Rectangle.Fill>
                 <Rectangle.Effect>
                     <DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="2"/>
