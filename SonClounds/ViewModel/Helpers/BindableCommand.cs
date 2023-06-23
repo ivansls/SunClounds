@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace SonClounds.ViewModel.Helpers
 {
-    internal class BindableCommand : ICommand
+    public class BindableCommand : ICommand
     {
         private Action<object> execute;
         private Func<object, bool> canExecute;

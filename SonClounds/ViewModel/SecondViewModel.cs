@@ -18,12 +18,13 @@ using System.Windows.Media;
 
 namespace SonClounds.ViewModel
 {
-    internal class SecondViewModel : BindingHelper
+    public class SecondViewModel : BindingHelper
     {
 
         private static bool gradus = SonClounds.Properties.Settings.Default.TempCond;
 
         private static string Core_city;
+        private static int selected;
 
         private static string text_city = "Название города";
 
@@ -49,6 +50,15 @@ namespace SonClounds.ViewModel
             set
             {
                 Core_city = value;
+                OnPropertyChenged();
+            }
+        }
+        public int Selected
+        {
+            get { return selected; }
+            set
+            {
+                selected = value;
                 OnPropertyChenged();
             }
         }
@@ -79,6 +89,7 @@ namespace SonClounds.ViewModel
         public SecondViewModel()
         {
             Save = new BindableCommand(_ => Save_());
+            SmenaGor = new BindableCommand(_ => Smena_());
             AddCity = new BindableCommand(_ => Add_City());
             Celisiy = new BindableCommand(_ => Cel());
             Faringate = new BindableCommand(_ => Far());
@@ -98,10 +109,19 @@ namespace SonClounds.ViewModel
         public ICommand Faringate { get; }
 
         public ICommand Clear { get; }
+        public ICommand SmenaGor { get; }
         public BindableCommand Clear_Upper_Txb { get; }
 
 
+        private void Smena_()
+        {
+            
+            MessageBox.Show("Вы выбрали город:" + izbrans1[selected].UpText.Text);
+            SonClounds.Properties.Settings.Default.CurrentCity = izbrans1[selected].UpText.Text;
+            SonClounds.Properties.Settings.Default.Save();
+            CoreCity = izbrans1[selected].UpText.Text;
 
+        }
         private void Save_()
         {
             SonClounds.Properties.Settings.Default.CurrentCity = CoreCity;

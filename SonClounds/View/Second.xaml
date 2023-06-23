@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SonClounds"
       mc:Ignorable="d" 
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
       d:DesignHeight="850" d:DesignWidth="1500"
       Title="Second">
     <Grid >
@@ -66,7 +67,12 @@
                         <SolidColorBrush Color="#FFF8C5B4" Opacity="0.5"/>
                     </Grid.Background>
                     <ScrollViewer VerticalScrollBarVisibility="Auto"  Grid.Row="1" Style="{DynamicResource ScrollViewerStyle1}" Background="Transparent" >
-                        <ListBox x:Name="UserEl" ItemsSource="{Binding List_Favorit, Mode=TwoWay}">
+                        <ListBox x:Name="UserEl" ItemsSource="{Binding List_Favorit, Mode=TwoWay}" SelectedIndex="{Binding Selected}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <i:InvokeCommandAction Command="{Binding SmenaGor}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
                             <ListBox.Template>
                                 <ControlTemplate>
                                     <WrapPanel IsItemsHost="True">

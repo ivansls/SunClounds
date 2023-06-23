@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SonClounds.ViewModel.Helpers
 {
-    internal class BindingHelper : INotifyPropertyChanged
+    public class BindingHelper : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

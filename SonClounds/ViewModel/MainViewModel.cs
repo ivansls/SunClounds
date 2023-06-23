@@ -15,7 +15,7 @@ using System.Collections.Generic;
 namespace SunClounds.ViewModel
 {
 
-    internal class MainViewModel : BindingHelper
+    public class MainViewModel : BindingHelper
     {
         public SecondViewModel second = new SecondViewModel();
         private static Page Frame_Page = new First();
@@ -63,7 +63,6 @@ namespace SunClounds.ViewModel
                 OnPropertyChenged();
             }
         }
-
 
         private async Task Tochki()
         {
