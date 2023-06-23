@@ -17,7 +17,21 @@ namespace SunClounds.ViewModel
 
     public class MainViewModel : BindingHelper
     {
-        public SecondViewModel second = new SecondViewModel();
+        public MainViewModel()
+        {
+            Time_Track();
+            ToSettings = new BindableCommand(_ => to_settings());
+            ToWeather = new BindableCommand(_ => to_weather());
+            CloseCommand = new BindableCommand(_ => CloseWindow());
+            AllScreenCommand = new BindableCommand(_ => OpenWideWindow());
+            LessCommand = new BindableCommand(_ => OpenLessWindow());
+            ScaleWindow = new BindableCommand(_ => start_Scale());
+            start_Scale();
+            CityName = SonClounds.Properties.Settings.Default.CurrentCity;
+            For_Left_Panel();
+        }
+
+        //public SecondViewModel second = new SecondViewModel(this);
         private static Page Frame_Page = new First();
         private static string city_name;
         public static string put1;
@@ -234,19 +248,7 @@ namespace SunClounds.ViewModel
 
 
 
-        public MainViewModel()
-        {
-            Time_Track();
-            ToSettings = new BindableCommand(_ => to_settings());
-            ToWeather = new BindableCommand(_ => to_weather());
-            CloseCommand = new BindableCommand(_ => CloseWindow());
-            AllScreenCommand = new BindableCommand(_ => OpenWideWindow());
-            LessCommand = new BindableCommand(_ => OpenLessWindow());
-            ScaleWindow = new BindableCommand(_ => start_Scale());
-            start_Scale();
-            CityName = SonClounds.Properties.Settings.Default.CurrentCity;
-            For_Left_Panel();
-        }
+        
 
         public ICommand ToSettings { get; }
         public ICommand ToWeather { get; }
@@ -258,7 +260,7 @@ namespace SunClounds.ViewModel
         public BindableCommand AllScreenCommand { get; set; }
         private void to_settings()
         {
-            framePage = new Second();
+            framePage = new Second(this);
             
 
 
@@ -331,9 +333,9 @@ namespace SunClounds.ViewModel
         public void For_Left_Panel()
         {
             List<NiceList> listik = Working.Left_Panel(SonClounds.Properties.Settings.Default.CurrentCity);
-            text_2 = listik[0].desc.Substring(0,1).ToUpper() + listik[0].desc.Substring(1);//Большая первая буква
-            text_3 = listik[1].desc.Substring(0, 1).ToUpper() + listik[1].desc.Substring(1);
-            text_4 = listik[2].desc.Substring(0, 1).ToUpper() + listik[2].desc.Substring(1);
+            Text2 = listik[0].desc.Substring(0,1).ToUpper() + listik[0].desc.Substring(1);//Большая первая буква
+            Text3 = listik[1].desc.Substring(0, 1).ToUpper() + listik[1].desc.Substring(1);
+            Text4 = listik[2].desc.Substring(0, 1).ToUpper() + listik[2].desc.Substring(1);
             timeFirst = listik[0].time.Hour.ToString() + ":00";
             timeSecond = listik[1].time.Hour.ToString() + ":00";
             timeThird = listik[2].time.Hour.ToString() + ":00";
@@ -345,13 +347,13 @@ namespace SunClounds.ViewModel
                         switch(i)
                         {
                             case 0:
-                                put2 = "/Resources/Picture/Thunderstorm.png";
+                                PutSecond = "/Resources/Picture/Thunderstorm.png";
                                 break;
                             case 1:
-                                put3 = "/Resources/Picture/Thunderstorm.png";
+                                PutThird = "/Resources/Picture/Thunderstorm.png";
                                 break;
                             case 2:
-                                put4 = "/Resources/Picture/Thunderstorm.png"; 
+                                PutFourth = "/Resources/Picture/Thunderstorm.png"; 
                                 break;
                         }
                         break;
@@ -359,13 +361,13 @@ namespace SunClounds.ViewModel
                         switch (i)
                         {
                             case 0:
-                                put2 = "/Resources/Picture/Rainy.png";
+                                PutSecond = "/Resources/Picture/Rainy.png";
                                 break;
                             case 1:
-                                put3 = "/Resources/Picture/Rainy.png";
+                                PutThird = "/Resources/Picture/Rainy.png";
                                 break;
                             case 2:
-                                put4 = "/Resources/Picture/Rainy.png";
+                                PutFourth = "/Resources/Picture/Rainy.png";
                                 break;
                         }
                         break;
@@ -373,13 +375,13 @@ namespace SunClounds.ViewModel
                         switch (i)
                         {
                             case 0:
-                                put2 = "/Resources/Picture/Snow.png";
+                                PutSecond = "/Resources/Picture/Snow.png";
                                 break;
                             case 1:
-                                put3 = "/Resources/Picture/Snow.png";
+                                PutThird = "/Resources/Picture/Snow.png";
                                 break;
                             case 2:
-                                put4 = "/Resources/Picture/Snow.png";
+                                PutFourth = "/Resources/Picture/Snow.png";
                                 break;
                         }
                         break;
@@ -387,13 +389,13 @@ namespace SunClounds.ViewModel
                         switch (i)
                         {
                             case 0:
-                                put2 = "/Resources/Picture/Sunny.png";
+                                PutSecond = "/Resources/Picture/Sunny.png";
                                 break;
                             case 1:
-                                put3 = "/Resources/Picture/Sunny.png";
+                                PutThird = "/Resources/Picture/Sunny.png";
                                 break;
                             case 2:
-                                put4 = "/Resources/Picture/Sunny.png";
+                                PutFourth = "/Resources/Picture/Sunny.png";
                                 break;
                         }
                         break;  
@@ -401,13 +403,13 @@ namespace SunClounds.ViewModel
                         switch (i)
                         {
                             case 0:
-                                put2 = "/Resources/Picture/Cloudy.png";
+                                PutSecond = "/Resources/Picture/Cloudy.png";
                                 break;
                             case 1:
-                                put3 = "/Resources/Picture/Cloudy.png";
+                                PutThird = "/Resources/Picture/Cloudy.png";
                                 break;
                             case 2:
-                                put4 = "/Resources/Picture/Cloudy.png";
+                                PutFourth = "/Resources/Picture/Cloudy.png";
                                 break;
                         }
                         break;
@@ -415,13 +417,13 @@ namespace SunClounds.ViewModel
                         switch (i)
                         {
                             case 0:
-                                put2 = "/Resources/Picture/Downpour.png";
+                                PutSecond = "/Resources/Picture/Downpour.png";
                                 break;
                             case 1:
-                                put3 = "/Resources/Picture/Downpour.png";
+                                PutThird = "/Resources/Picture/Downpour.png";
                                 break;
                             case 2:
-                                put4 = "/Resources/Picture/Downpour.png";
+                                PutFourth = "/Resources/Picture/Downpour.png";
                                 break;
                         }
                         break;

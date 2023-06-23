@@ -85,8 +85,8 @@ namespace SonClounds.ViewModel
         }
 
 
-
-        public SecondViewModel()
+        MainViewModel m;
+        public SecondViewModel(MainViewModel main)
         {
             Save = new BindableCommand(_ => Save_());
             SmenaGor = new BindableCommand(_ => Smena_());
@@ -96,9 +96,12 @@ namespace SonClounds.ViewModel
             Clear = new BindableCommand(_ => clear());
             Clear_Upper_Txb = new BindableCommand(_ => clear_upper());
             Core_city = SonClounds.Properties.Settings.Default.CurrentCity;
+            m = main;
             CartFavorit();
 
         }
+        
+        
 
         public ICommand Save { get; }
 
@@ -127,6 +130,7 @@ namespace SonClounds.ViewModel
             SonClounds.Properties.Settings.Default.CurrentCity = CoreCity;
             MessageBox.Show(CoreCity);
             SonClounds.Properties.Settings.Default.Save();
+            m.For_Left_Panel();
             //MainViewModel win = Application.Current.MainWindow.OfType<MainViewModel>().First();
             //win.For_Left_Panel();
             //Сюда желательно добавить метод на смену левой панели For_left_Panel но как я хз

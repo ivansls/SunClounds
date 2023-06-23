@@ -23,11 +23,11 @@ namespace SonClounds
     /// </summary>
     public partial class Second : Page
     {
-        public Second()
+        public Second(MainViewModel main)
         {
             
             InitializeComponent();
-            DataContext = new SecondViewModel();
+            DataContext = new SecondViewModel(main);
             /*for (int i = 0; i < 15; i++)
             {
                 IzbranGoroda izbranGoroda = new IzbranGoroda();
