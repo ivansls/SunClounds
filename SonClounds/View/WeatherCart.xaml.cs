@@ -24,7 +24,6 @@ namespace SonClounds.View
         public WeatherCart()
         {
             InitializeComponent();
-            //DataContext = new FirstViewModel();
         }
     }
 }

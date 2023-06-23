@@ -386,7 +386,6 @@ namespace SonClounds.ViewModel
                 }
                 //weatherCart.TextDownCen.Text = listik[i].tempr.ToString();
                 weatherCart.TextRghtDr.Text = listik[i].vlazn.ToString();
-                //weatherCart.TextRghtDl.Text = listik[i].oshys.ToString();
                 listweather1.Add(weatherCart);
 
             }
