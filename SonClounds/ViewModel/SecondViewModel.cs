@@ -1,5 +1,6 @@
 
-﻿using SonClounds.Model;
+using Api_Work;
+using SonClounds.Model;
 using SonClounds.View;
 using SonClounds.ViewModel.Helpers;
 using SonClounds.ViewModel.Helpers;
@@ -119,8 +120,14 @@ namespace SonClounds.ViewModel
             weatherClass.latitude = 56;
             weatherClass.longitude = 76;
             cityList.Add(weatherClass);*/
+            Cur_Weather w = Working.Main_weather(TextCity);
+            if (w == null)
+            {
+                MessageBox.Show("Такого города нет");
+            }
             if (Properties.Settings.Default.ListFavoritCity.Contains(TextCity))
             {
+               
                 MessageBox.Show("Такой город уже есть");
             }
             else
@@ -164,7 +171,7 @@ namespace SonClounds.ViewModel
         }
 
 
-        private async Task CartFavorit()
+        private void CartFavorit()
         {
             try
             {
@@ -187,11 +194,19 @@ namespace SonClounds.ViewModel
             {
                 if (a[i] != "")
                 {
-                    IzbranGoroda izbranGoroda = new IzbranGoroda();
-                    izbranGoroda.UpText.Text = a[i];
-                    izbranGoroda.DownTextL.Text = "55 45'07" + " c.ш";
-                    izbranGoroda.DownTextR.Text = "37 36'56" + " в.д.";
-                    izbrans1.Add(izbranGoroda);
+                    Cur_Weather w = Working.Main_weather(a[i]);
+                    if(w != null)
+                    {
+                        IzbranGoroda izbranGoroda = new IzbranGoroda();
+                        izbranGoroda.UpText.Text = a[i];
+
+                        izbranGoroda.DownTextL.Text = w.lat + " c.ш";
+                        izbranGoroda.DownTextR.Text = w.lon + " в.д.";
+                        izbrans1.Add(izbranGoroda);
+                    }
+                    
+                    
+
                 }
             }
             List_Favorit = null;
