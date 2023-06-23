@@ -99,6 +99,7 @@ namespace SonClounds.ViewModel
             m = main;
             CartFavorit();
 
+
         }
         
         
@@ -118,17 +119,23 @@ namespace SonClounds.ViewModel
 
         private void Smena_()
         {
+            try
+            {
+                SonClounds.Properties.Settings.Default.CurrentCity = izbrans1[selected].UpText.Text;
+                SonClounds.Properties.Settings.Default.Save();
+                CoreCity = izbrans1[selected].UpText.Text;
+                m.For_Left_Panel();
+            }
+            catch
+            {
+
+            }
             
-            MessageBox.Show("Вы выбрали город:" + izbrans1[selected].UpText.Text);
-            SonClounds.Properties.Settings.Default.CurrentCity = izbrans1[selected].UpText.Text;
-            SonClounds.Properties.Settings.Default.Save();
-            CoreCity = izbrans1[selected].UpText.Text;
 
         }
         private void Save_()
         {
             SonClounds.Properties.Settings.Default.CurrentCity = CoreCity;
-            MessageBox.Show(CoreCity);
             SonClounds.Properties.Settings.Default.Save();
             m.For_Left_Panel();
             //MainViewModel win = Application.Current.MainWindow.OfType<MainViewModel>().First();
@@ -149,7 +156,7 @@ namespace SonClounds.ViewModel
             {
                 MessageBox.Show("Такого города нет");
             }
-            if (Properties.Settings.Default.ListFavoritCity.Contains(TextCity))
+            else if (Properties.Settings.Default.ListFavoritCity.Contains(TextCity))
             {
                
                 MessageBox.Show("Такой город уже есть");
@@ -172,14 +179,12 @@ namespace SonClounds.ViewModel
 
         private void Cel()
         {
-            MessageBox.Show("Cell");
             Properties.Settings.Default.TempCond = TempSwitch;
             SonClounds.Properties.Settings.Default.Save();
         }
 
         private void Far()
         {
-            MessageBox.Show("Far");
             SonClounds.Properties.Settings.Default.TempCond = TempSwitch;
             SonClounds.Properties.Settings.Default.Save();
         }
@@ -200,12 +205,16 @@ namespace SonClounds.ViewModel
             try
             {
                 List_Favorit.Clear();
+                izbrans1.Clear();
                 for_Favorit();
             }
             catch
             {
                 for_Favorit();
             }
+            
+            
+            
         }
 
         
@@ -223,7 +232,6 @@ namespace SonClounds.ViewModel
                     {
                         IzbranGoroda izbranGoroda = new IzbranGoroda();
                         izbranGoroda.UpText.Text = a[i];
-
                         izbranGoroda.DownTextL.Text = w.lat + " c.ш";
                         izbranGoroda.DownTextR.Text = w.lon + " в.д.";
                         izbrans1.Add(izbranGoroda);
