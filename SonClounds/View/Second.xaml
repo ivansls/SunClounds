@@ -26,6 +26,7 @@
                     <RowDefinition Height="52*"/>
                     <RowDefinition Height="25*"/>
                 </Grid.RowDefinitions>
+                
                 <TextBlock Text="Ваш oсновной город" Grid.Row="0" FontSize="28px" Grid.Column="2" FontFamily="/Resources/Font/#Jura" HorizontalAlignment="Center" Foreground="White"/>
                 <TextBox Text="{Binding CoreCity, Mode=TwoWay}" Grid.Row="1" VerticalAlignment="Top" TextAlignment="Center" FontFamily="/Resources/Font/#Jura" FontSize="15px" Foreground="White">
                     <TextBox.Background>
@@ -58,13 +59,13 @@
 
                 <TextBlock Text="Избранные города:" FontSize="28px" HorizontalAlignment="Center" FontFamily="/Resources/Font/#Jura" VerticalAlignment="Center" Foreground="White"/>
 
-
+                
 
                 <Grid Grid.Row="1">
                     <Grid.Background>
                         <SolidColorBrush Color="#FFF8C5B4" Opacity="0.5"/>
                     </Grid.Background>
-                    <ScrollViewer VerticalScrollBarVisibility="Auto"  Grid.Row="1" Style="{DynamicResource ScrollViewerStyle1}" Background="Transparent">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto"  Grid.Row="1" Style="{DynamicResource ScrollViewerStyle1}" Background="Transparent" >
                         <ListBox x:Name="UserEl" ItemsSource="{Binding List_Favorit}">
                             <ListBox.Template>
                                 <ControlTemplate>

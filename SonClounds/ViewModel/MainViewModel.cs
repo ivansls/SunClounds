@@ -36,7 +36,7 @@ namespace SunClounds.ViewModel
 
         public bool isWorking = true;
 
-        public int width_window { get; set; } = 1500;
+        public int width_window { get; set; } = 1580;
         public int WidthWindow
         {
             get

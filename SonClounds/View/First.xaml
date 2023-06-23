@@ -119,9 +119,11 @@
                     </Rectangle.Effect>
                 </Rectangle>
                 
+                
+                
                 <!--Для просмотра можно расскоментить-->
 
-                <ListBox  ItemsSource="{Binding ListWeather}" Background="#0000" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+                <ListBox  ItemsSource="{Binding ListWeather}" Background="#0000" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Visible" d:ItemsSource="{d:SampleData ItemCount=5}">
 
                     <ListBox.ItemsPanel>
 
@@ -135,6 +137,8 @@
                         <SolidColorBrush Color="Transparent"/>
                     </ListBox.BorderBrush>
                 </ListBox>
+                 
+                
                 <ProgressBar IsIndeterminate="True" VerticalAlignment="Center" Background="{DynamicResource SecondaryColour}" Foreground="{DynamicResource Button}" MinHeight="45" BorderBrush="#F8C5B4" BorderThickness="2" Visibility="{Binding Visible_PrBar_1}"/>
 
             </Grid>

@@ -46,5 +46,17 @@ namespace SonClounds.Properties {
                 this["TempCond"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ListFavoritCity {
+            get {
+                return ((string)(this["ListFavoritCity"]));
+            }
+            set {
+                this["ListFavoritCity"] = value;
+            }
+        }
     }
 }

@@ -6,6 +6,7 @@ using SonClounds.ViewModel.Helpers;
 using SunClounds.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,10 +26,11 @@ namespace SonClounds.ViewModel
 
         private static string text_city = "Название города";
 
-        List<WeatherClass> cityList = new List<WeatherClass>();
+        //List<WeatherClass> cityList = new List<WeatherClass>();
 
         private static List<IzbranGoroda> izbrans = new List<IzbranGoroda>();
-        
+
+
 
         public List<IzbranGoroda> List_Favorit
         {
@@ -71,7 +73,7 @@ namespace SonClounds.ViewModel
             }
         }
 
-       
+
 
         public SecondViewModel()
         {
@@ -82,8 +84,9 @@ namespace SonClounds.ViewModel
             Clear = new BindableCommand(_ => clear());
             Clear_Upper_Txb = new BindableCommand(_ => clear_upper());
             Core_city = SonClounds.Properties.Settings.Default.CurrentCity;
+            CartFavorit();
 
-    }
+        }
 
         public ICommand Save { get; }
 
@@ -95,7 +98,7 @@ namespace SonClounds.ViewModel
 
         public ICommand Clear { get; }
         public BindableCommand Clear_Upper_Txb { get; }
-        
+
 
 
         private void Save_()
@@ -107,23 +110,27 @@ namespace SonClounds.ViewModel
         }
 
         private void Add_City()
- 
+
         {
             /*WeatherClass weatherClass = new WeatherClass();
             weatherClass.NameCity = "gfgh";
             weatherClass.latitude = 56;
             weatherClass.longitude = 76;
             cityList.Add(weatherClass);*/
-
-
-            for (int i = 0; i <= 15; i++)
+            if (Properties.Settings.Default.ListFavoritCity.Contains(TextCity))
             {
-                IzbranGoroda izbranGoroda = new IzbranGoroda { };
-
+                MessageBox.Show("Такой город уже есть");
             }
+            else
+            {
+                Properties.Settings.Default.ListFavoritCity += TextCity + ",";
+                Properties.Settings.Default.Save();
+                CartFavorit();
+            }
+            
+            
 
-
-            MessageBox.Show("add");
+            
         }
 
 
@@ -154,6 +161,39 @@ namespace SonClounds.ViewModel
             CoreCity = "";
         }
 
-      
+
+        private async Task CartFavorit()
+        {
+            try
+            {
+                List_Favorit.Clear();
+                for_Favorit();
+            }
+            catch
+            {
+                for_Favorit();
+            }
+        }
+
+        
+
+        private void for_Favorit()
+        {
+            string cit = Properties.Settings.Default.ListFavoritCity;
+            string[] a = cit.Split(",");
+            for (int i = 0; i < a.Length ; i++)
+            {
+                if (a[i] != "")
+                {
+                    IzbranGoroda izbranGoroda = new IzbranGoroda();
+                    izbranGoroda.UpText.Text = a[i];
+                    izbranGoroda.DownTextL.Text = "55 45'07" + "c.ш";
+                    izbranGoroda.DownTextR.Text = "37 36'56" + "в.д.";
+                    List_Favorit.Add(izbranGoroda);
+                }
+                
+
+            }
+        }
     }
 }
