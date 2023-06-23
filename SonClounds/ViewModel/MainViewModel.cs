@@ -344,10 +344,12 @@ namespace SunClounds.ViewModel
 
         public void For_Left_Panel()
         {
+            Cur_Weather w = Working.Main_weather(SonClounds.Properties.Settings.Default.CurrentCity);
             List<NiceList> listik = Working.Left_Panel(SonClounds.Properties.Settings.Default.CurrentCity);
             Text2 = listik[0].desc.Substring(0,1).ToUpper() + listik[0].desc.Substring(1);//Большая первая буква
             Text3 = listik[1].desc.Substring(0, 1).ToUpper() + listik[1].desc.Substring(1);
             Text4 = listik[2].desc.Substring(0, 1).ToUpper() + listik[2].desc.Substring(1);
+
             timeFirst = listik[0].time.Hour.ToString() + ":00";
             timeSecond = listik[1].time.Hour.ToString() + ":00";
             timeThird = listik[2].time.Hour.ToString() + ":00";
@@ -440,6 +442,29 @@ namespace SunClounds.ViewModel
                         }
                         break;
 
+                }
+
+                Text1 = w.desc.Substring(0, 1).ToUpper() + w.desc.Substring(1);
+                switch (w.main)
+                {
+                    case "Thunderstorm":
+                        PutFirst = "/Resources/Picture/Thunderstorm.png";
+                        break;
+                    case "Rain":
+                        PutFirst = "/Resources/Picture/Rainy.png";
+                        break;
+                    case "Snow":
+                        PutFirst = "/Resources/Picture/Snow.png";
+                        break;
+                    case "Clear":   
+                        PutFirst = "/Resources/Picture/Sunny.png";
+                        break;
+                    case "Clouds":
+                        PutFirst = "/Resources/Picture/Cloudy.png";
+                        break;
+                    case "Drizzle":
+                        PutFirst = "/Resources/Picture/Downpour.png";
+                        break;
                 }
             }
         }

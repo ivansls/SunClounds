@@ -87,7 +87,7 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                <Image Grid.Column="1" Grid.Row="1" Grid.RowSpan="5" Source="/Resources/Picture/Line.png" Margin="0,70,0,20"/>
+                <Image Grid.Column="1" Grid.Row="1" Grid.RowSpan="5" Source="/Resources/Picture/Line.png" Margin="0,80,0,20"/>
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
