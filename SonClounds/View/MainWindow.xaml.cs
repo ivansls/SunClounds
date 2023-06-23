@@ -28,16 +28,7 @@ namespace SonClounds.View
             DataContext = new StartWindowViewModel();
         }
 
-        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            try
-            {
-                DragMove();
-            }
-            catch
-            {
-            }
-        }
+        
 
        
 

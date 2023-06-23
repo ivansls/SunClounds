@@ -7,12 +7,16 @@
         xmlns:local="clr-namespace:SonClounds.View"
         mc:Ignorable="d"
         WindowState="{Binding W_S}"
-        WindowStyle="None" Height="{Binding HeightWindow, Mode=TwoWay}" Width="{Binding WidthWindow, Mode=TwoWay}" MinWidth="440" MinHeight="280" MouseLeftButtonDown="Window_MouseLeftButtonDown" >
-    
-    
-    
+        WindowStyle="None" Height="{Binding HeightWindow, Mode=TwoWay}" Width="{Binding WidthWindow, Mode=TwoWay}" MinWidth="440" MinHeight="280" >
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="MouseLeftButtonDown">
+                <i:InvokeCommandAction Command="{Binding Drag}" />
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
 
-    
+
+
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="438px"/>

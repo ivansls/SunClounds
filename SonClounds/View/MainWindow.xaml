@@ -15,14 +15,14 @@
         d:Height="400px"
         d:Width="666px"
 
-        WindowState="{Binding W_S, Mode=TwoWay}" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+        WindowState="{Binding W_S, Mode=TwoWay}">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="MouseLeftButtonDown">
+            <i:InvokeCommandAction Command="{Binding Drag}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
 
-	<!--<Window.Background>
-        <ImageBrush ImageSource="{DynamicResource BackG}"/>
-	</Window.Background>-->
-	
-
-	<Grid>
+    <Grid>
         
 		<Grid.RowDefinitions>
 			<RowDefinition Height="0.25*"/>
@@ -156,8 +156,7 @@
 				<ColumnDefinition Width="0.25*"/>
 			</Grid.ColumnDefinitions>
 		</Grid>
-        <Image Margin="0,0,210,15" Source="/Vector 46.png" Stretch="Fill"/>
-        <Image Margin="0,0,210,15" Source="/Vector 47.png" Stretch="Fill"/>
+        
 
     </Grid>
 </Window>

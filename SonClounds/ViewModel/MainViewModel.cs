@@ -11,6 +11,7 @@ using System.Windows.Media.Media3D;
 using System.Threading.Tasks;
 using Api_Work;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SunClounds.ViewModel
 {
@@ -26,6 +27,7 @@ namespace SunClounds.ViewModel
             AllScreenCommand = new BindableCommand(_ => OpenWideWindow());
             LessCommand = new BindableCommand(_ => OpenLessWindow());
             ScaleWindow = new BindableCommand(_ => start_Scale());
+            Drag = new BindableCommand(_ => drag());
             start_Scale();
             CityName = SonClounds.Properties.Settings.Default.CurrentCity;
             For_Left_Panel();
@@ -78,7 +80,7 @@ namespace SunClounds.ViewModel
             }
         }
 
-        private async Task Tochki()
+        private async Task Scale()
         {
             
             while (isWorking)
@@ -101,7 +103,7 @@ namespace SunClounds.ViewModel
 
         public async void start_Scale()
         {
-            await Tochki();
+            await Scale();
         }
 
         public Page framePage
@@ -248,7 +250,7 @@ namespace SunClounds.ViewModel
 
 
 
-        
+        public ICommand Drag { get; }
 
         public ICommand ToSettings { get; }
         public ICommand ToWeather { get; }
@@ -265,6 +267,16 @@ namespace SunClounds.ViewModel
 
 
         }
+
+        private void drag()
+        {
+            Application.Current.Windows.OfType<StartWindow>().FirstOrDefault().DragMove();
+
+
+
+        }
+
+
 
         public void to_weather()
         {

@@ -1,4 +1,5 @@
 ﻿using Api_Work;
+using Microsoft.VisualBasic;
 using SonClounds.View;
 using SonClounds.ViewModel.Helpers;
 using SunClounds.ViewModel;
@@ -104,10 +105,19 @@ namespace SonClounds.ViewModel
             TextStartedChangingCommand = new BindableCommand(_ => TextChanging());
             ClearAllTextCommand = new BindableCommand(_ => ClearText());
             NowWeatherCommand = new BindableCommand(_ => NowWeather());
+            Drag = new BindableCommand(_ => drag());
 
         }
 
-        
+        public ICommand Drag { get; }
+
+        private void drag()
+        {
+            Application.Current.Windows.OfType<MainWindow>().FirstOrDefault().DragMove();
+
+
+
+        }
 
         public void TextChanging()
         {
