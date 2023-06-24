@@ -13,6 +13,7 @@
                 <ResourceDictionary Source="/Resources/Themes/Scroll.xaml"/>
                 <ResourceDictionary Source="/Resources/Themes/HorToolBat.xaml"/>
                 <ResourceDictionary Source="/Resources/Themes/TextBoxStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/Themes/listSt.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
