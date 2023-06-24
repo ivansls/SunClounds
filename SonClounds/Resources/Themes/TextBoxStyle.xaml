@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="CitySt" TargetType="TextBox">
+        <Setter Property="Background" Value="#87B6CA"/>
+        <Setter Property="Foreground" Value="#ffffff"/>
+        <Setter Property="FontFamily" Value="/view/resources/fonts/#Jura Regular"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Margin" Value="18px 0px 18px 0"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+</ResourceDictionary>

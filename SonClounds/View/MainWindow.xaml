@@ -114,7 +114,7 @@
                     <SolidColorBrush Color="{DynamicResource FirstWButtonsColor}" Opacity="0.5"/>
                 </Grid.Background>
             </Grid>
-            <TextBox x:Name="CityTxb" Grid.Column="1" Grid.Row="2" Text="{Binding City}" FontFamily="/Resources/Font/#Jura" FlowDirection="RightToLeft" TextAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="{Binding BaseFontSize}" FontWeight="Normal" HorizontalAlignment="Stretch">
+            <TextBox x:Name="CityTxb" Grid.Column="1" Grid.Row="2" Text="{Binding City}" Style="{DynamicResource CitySt}"  FlowDirection="RightToLeft" TextAlignment="Center"  FontSize="{Binding BaseFontSize}" VerticalAlignment="Center" FontWeight="Normal" HorizontalAlignment="Stretch">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="TextChanged">
                         <i:InvokeCommandAction Command="{Binding TextStartedChangingCommand}"/>

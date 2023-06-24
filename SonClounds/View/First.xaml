@@ -121,7 +121,7 @@
 
                 <!--Для просмотра можно расскоментить-->
 
-                <ListBox  ItemsSource="{Binding ListWeather}" Background="#0000" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Visible" d:ItemsSource="{d:SampleData ItemCount=5}">
+                <ListBox  ItemsSource="{Binding ListWeather}" Background="#0000" ScrollViewer.VerticalScrollBarVisibility="Disabled"   d:ItemsSource="{d:SampleData ItemCount=5}">
 
                     <ListBox.ItemsPanel>
 
