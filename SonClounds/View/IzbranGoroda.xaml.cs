@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SonClounds.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,11 @@ namespace SonClounds.View
     /// </summary>
     public partial class IzbranGoroda : UserControl
     {
-        public IzbranGoroda()
+        public IzbranGoroda(SecondViewModel s)
         {
             InitializeComponent();
+            DataContext = new izbranViewModel(s, this);
         }
+
     }
 }

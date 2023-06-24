@@ -25,12 +25,8 @@ namespace SonClounds
     {
         public Second(MainViewModel main)
         {
-            
             InitializeComponent();
             DataContext = new SecondViewModel(main);
-            
-
-
         }
 
     }

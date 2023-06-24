@@ -1,6 +1,5 @@
 
 using Api_Work;
-using SonClounds.Model;
 using SonClounds.View;
 using SonClounds.ViewModel.Helpers;
 using SonClounds.ViewModel.Helpers;
@@ -181,12 +180,14 @@ namespace SonClounds.ViewModel
         {
             Properties.Settings.Default.TempCond = TempSwitch;
             SonClounds.Properties.Settings.Default.Save();
+            m.For_Left_Panel();
         }
 
         private void Far()
         {
             SonClounds.Properties.Settings.Default.TempCond = TempSwitch;
             SonClounds.Properties.Settings.Default.Save();
+            m.For_Left_Panel();
         }
 
         public void clear()
@@ -217,6 +218,31 @@ namespace SonClounds.ViewModel
             
         }
 
+        public void DelFavorit(IzbranGoroda iz)
+        {
+            string cit = Properties.Settings.Default.ListFavoritCity;
+            List<string> a = cit.Split(",").ToList();
+            a.Remove(iz.UpText.Text);
+            for (int i = 0; i < izbrans1.Count; i++)
+            {
+                if (izbrans1[i].UpText.Text == iz.UpText.Text)
+                {
+                    izbrans1.RemoveAt(i);
+                    
+                }
+            }
+            Properties.Settings.Default.ListFavoritCity = "";
+            SonClounds.Properties.Settings.Default.Save();
+            foreach (var item in a)
+            {
+                Properties.Settings.Default.ListFavoritCity += item + ",";
+            }
+            SonClounds.Properties.Settings.Default.Save();
+            List_Favorit = null;
+            List_Favorit = izbrans1;
+
+
+        }
         
 
         private void for_Favorit()
@@ -230,7 +256,7 @@ namespace SonClounds.ViewModel
                     Cur_Weather w = Working.Main_weather(a[i]);
                     if(w != null)
                     {
-                        IzbranGoroda izbranGoroda = new IzbranGoroda();
+                        IzbranGoroda izbranGoroda = new IzbranGoroda(this);
                         izbranGoroda.UpText.Text = a[i];
                         izbranGoroda.DownTextL.Text = w.lat + " c.ш";
                         izbranGoroda.DownTextR.Text = w.lon + " в.д.";

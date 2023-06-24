@@ -52,7 +52,7 @@ namespace SunClounds.ViewModel
 
         public bool isWorking = true;
 
-        public int width_window { get; set; } = 1580;
+        public int width_window { get; set; } = 1500;
         public int WidthWindow
         {
             get
@@ -346,10 +346,26 @@ namespace SunClounds.ViewModel
         {
             Cur_Weather w = Working.Main_weather(SonClounds.Properties.Settings.Default.CurrentCity);
             List<NiceList> listik = Working.Left_Panel(SonClounds.Properties.Settings.Default.CurrentCity);
-            Text2 = listik[0].desc.Substring(0,1).ToUpper() + listik[0].desc.Substring(1);//Большая первая буква
-            Text3 = listik[1].desc.Substring(0, 1).ToUpper() + listik[1].desc.Substring(1);
-            Text4 = listik[2].desc.Substring(0, 1).ToUpper() + listik[2].desc.Substring(1);
-
+            if (SonClounds.Properties.Settings.Default.TempCond == false)
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    listik[i].tempr = Math.Round((Convert.ToInt32(listik[i].tempr) * 1.8) + 32).ToString() + "°F";//Фаренгейты
+                    listik[i].oshys = Math.Round((Convert.ToInt32(listik[i].oshys) * 1.8) + 32).ToString() + "°F";
+                }
+                
+            }
+            else
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    listik[i].tempr += "°C";//Фаренгейты
+                    listik[i].oshys += "°C";
+                }
+            }
+            Text2 = listik[0].desc.Substring(0,1).ToUpper() + listik[0].desc.Substring(1) + ". " + listik[0].tempr + "° " + "Ощущается как " + listik[0].oshys + "°";//Большая первая буква
+            Text3 = listik[1].desc.Substring(0, 1).ToUpper() + listik[1].desc.Substring(1) + ". " + listik[1].tempr + "° " + "Ощущается как " + listik[1].oshys + "°"; ;
+            Text4 = listik[2].desc.Substring(0, 1).ToUpper() + listik[2].desc.Substring(1) + ". " + listik[2].tempr + "° " + "Ощущается как " + listik[2].oshys + "°"; ;
             timeFirst = listik[0].time.Hour.ToString() + ":00";
             timeSecond = listik[1].time.Hour.ToString() + ":00";
             timeThird = listik[2].time.Hour.ToString() + ":00";
@@ -444,28 +460,39 @@ namespace SunClounds.ViewModel
 
                 }
 
-                Text1 = w.desc.Substring(0, 1).ToUpper() + w.desc.Substring(1);
-                switch (w.main)
-                {
-                    case "Thunderstorm":
-                        PutFirst = "/Resources/Picture/Thunderstorm.png";
-                        break;
-                    case "Rain":
-                        PutFirst = "/Resources/Picture/Rainy.png";
-                        break;
-                    case "Snow":
-                        PutFirst = "/Resources/Picture/Snow.png";
-                        break;
-                    case "Clear":   
-                        PutFirst = "/Resources/Picture/Sunny.png";
-                        break;
-                    case "Clouds":
-                        PutFirst = "/Resources/Picture/Cloudy.png";
-                        break;
-                    case "Drizzle":
-                        PutFirst = "/Resources/Picture/Downpour.png";
-                        break;
-                }
+                
+            }
+            if (SonClounds.Properties.Settings.Default.TempCond == false)
+            {
+                w.temp = (int)Math.Round((w.temp * 1.8) + 32);//Фаренгейты
+                w.feels = (int)Math.Round((w.feels * 1.8) + 32);
+                Text1 = w.desc.Substring(0, 1).ToUpper() + w.desc.Substring(1) + ". " + w.temp + "°" + "Ощущается как " + w.feels + "°F";
+            }
+            else
+            {
+                Text1 = w.desc.Substring(0, 1).ToUpper() + w.desc.Substring(1) + ". " + w.temp + "°" + "Ощущается как " + w.feels + "°С";
+            }
+
+            switch (w.main)
+            {
+                case "Thunderstorm":
+                    PutFirst = "/Resources/Picture/Thunderstorm.png";
+                    break;
+                case "Rain":
+                    PutFirst = "/Resources/Picture/Rainy.png";
+                    break;
+                case "Snow":
+                    PutFirst = "/Resources/Picture/Snow.png";
+                    break;
+                case "Clear":
+                    PutFirst = "/Resources/Picture/Sunny.png";
+                    break;
+                case "Clouds":
+                    PutFirst = "/Resources/Picture/Cloudy.png";
+                    break;
+                case "Drizzle":
+                    PutFirst = "/Resources/Picture/Downpour.png";
+                    break;
             }
         }
 
